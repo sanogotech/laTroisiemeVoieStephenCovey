@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Troisième Voie - Stephen Covey</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Animate.css pour les animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #17a2b8;
+            --success-color: #28a745;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --gradient-primary: linear-gradient(135deg, #4a6fa5 0%, #166088 100%);
+            --gradient-secondary: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9fbfd;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,192C672,181,768,139,864,128C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: bottom;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-hero {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-hero:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            color: var(--secondary-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+        
+        .card-rex {
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            height: 100%;
+            background-color: white;
+        }
+        
+        .card-rex:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .card-rex-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .card-rex-icon {
+            position: absolute;
+            top: -25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-rex-body {
+            padding: 2rem;
+        }
+        
+        .badge-solution {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .process-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .process-step {
+            width: 200px;
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-step i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .process-arrow {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin: 0 20px;
+            z-index: 2;
+        }
+        
+        .process-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            z-index: 1;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .table-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1.5rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .table-row {
+            display: flex;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .table-cell {
+            padding: 1.5rem;
+            flex: 1;
+        }
+        
+        .table-cell:nth-child(1) {
+            font-weight: 600;
+            background-color: #f8f9fa;
+        }
+        
+        .prompt-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 2px solid #e1e5eb;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(23, 162, 184, 0.25);
+        }
+        
+        .btn-generate {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+        
+        .btn-generate:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .solution-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        .solution-card:hover {
+            transform: translateX(10px);
+        }
+        
+        .solution-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-secondary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+        
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(74, 111, 165, 0.1);
+            z-index: 1;
+        }
+        
+        .floating-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .floating-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 15%;
+            right: 8%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 5rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .process-diagram {
+                flex-direction: column;
+            }
+            
+            .process-arrow {
+                transform: rotate(90deg);
+                margin: 20px 0;
+            }
+            
+            .process-line {
+                top: 0;
+                left: 50%;
+                width: 4px;
+                height: 100%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--primary-color); font-size: 1.8rem;">
+                <i class="fas fa-route me-2"></i>3ème Voie
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#intro">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rex">5 REX</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#method">Méthode</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#generator">Générateur</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+        
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center hero-content">
+                    <h1 class="hero-title animate__animated animate__fadeInDown">La Troisième Voie de Stephen Covey</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                        Ni compromis mou, ni rapport de force, mais <span class="fw-bold">solution créative supérieure</span>.
+                        Découvrez 5 retours d'expérience concrets et une méthode puissante pour transformer vos conflits en opportunités.
+                    </p>
+                    <a href="#rex" class="btn btn-hero animate__animated animate__fadeInUp animate__delay-2s">
+                        Découvrir les REX <i class="fas fa-arrow-down ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="intro" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="section-title">La Puissance de la Troisième Voie</h2>
+                    <p class="text-center mb-5 fs-5">
+                        Stephen Covey, auteur du best-seller "Les 7 habitudes des gens efficaces", propose une approche révolutionnaire pour résoudre les conflits : 
+                        la troisième voie. Il ne s'agit ni de gagner ni de perdre, mais de co-créer une solution qui dépasse les positions initiales pour répondre 
+                        aux besoins réels de toutes les parties.
+                    </p>
+                    
+                    <!-- Process Diagram -->
+                    <div class="process-diagram">
+                        <div class="process-line"></div>
+                        
+                        <div class="process-step">
+                            <i class="fas fa-user-friends"></i>
+                            <h5>Positions Opposées</h5>
+                            <p class="small">Chaque partie défend sa position</p>
+                        </div>
+                        
+                        <div class="process-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        
+                        <div class="process-step">
+                            <i class="fas fa-search"></i>
+                            <h5>Identifier les Besoins</h5>
+                            <p class="small">Comprendre les besoins réels derrière les positions</p>
+                        </div>
+                        
+                        <div class="process-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        
+                        <div class="process-step">
+                            <i class="fas fa-lightbulb"></i>
+                            <h5>Solution Créative</h5>
+                            <p class="small">Co-créer une 3ème voie supérieure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 REX Section -->
+    <section id="rex" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">5 Retours d'Expérience Concrets</h2>
+            <p class="text-center mb-5">Découvrez comment la troisième voie a résolu des situations conflictuelles variées</p>
+            
+            <div class="row g-4">
+                <!-- REX 1 -->
+                <div class="col-lg-6">
+                    <div class="card-rex fade-in">
+                        <div class="card-rex-header">
+                            <h4 class="mb-0">REX 1 — Conflit salarié / manager</h4>
+                            <div class="card-rex-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                        </div>
+                        <div class="card-rex-body">
+                            <p class="mb-3"><strong>Situation :</strong> Manager exige présence 5j/5 vs salarié veut télétravail total.</p>
+                            <p class="mb-3"><strong>Solutions classiques :</strong> Compromis (2 jours télétravail) ou autorité (refus du télétravail).</p>
+                            <div class="mb-3">
+                                <span class="badge-solution">Troisième Voie</span>
+                                <ul class="mt-2">
+                                    <li>2 jours bureau collectifs obligatoires</li>
+                                    <li>2 jours télétravail</li>
+                                    <li>1 jour libre au choix selon charge projet</li>
+                                    <li>KPI clairs sur résultats, pas sur présence</li>
+                                </ul>
+                            </div>
+                            <p class="mb-0"><strong>Résultat :</strong> +18% de productivité, climat de confiance renforcé, zéro départ sur 12 mois.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- REX 2 -->
+                <div class="col-lg-6">
+                    <div class="card-rex fade-in">
+                        <div class="card-rex-header">
+                            <h4 class="mb-0">REX 2 — Couple et pression familiale</h4>
+                            <div class="card-rex-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="card-rex-body">
+                            <p class="mb-3"><strong>Situation :</strong> Famille exige grande cérémonie coûteuse vs couple souhaite mariage simple.</p>
+                            <p class="mb-3"><strong>Solutions classiques :</strong> Se plier à la famille ou refuser net.</p>
+                            <div class="mb-3">
+                                <span class="badge-solution">Troisième Voie</span>
+                                <ul class="mt-2">
+                                    <li>Cérémonie familiale symbolique (faible coût)</li>
+                                    <li>Célébration intime financée par le couple</li>
+                                    <li>Projet commun post-mariage présenté comme "héritage durable"</li>
+                                </ul>
+                            </div>
+                            <p class="mb-0"><strong>Résultat :</strong> Familles respectées, couple aligné, zéro dette, projet commun lancé.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- REX 3 -->
+                <div class="col-lg-6">
+                    <div class="card-rex fade-in">
+                        <div class="card-rex-header">
+                            <h4 class="mb-0">REX 3 — Projet IT : métier vs DSI</h4>
+                            <div class="card-rex-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                        </div>
+                        <div class="card-rex-body">
+                            <p class="mb-3"><strong>Situation :</strong> Métier veut livrer vite vs DSI exige sécurité et conformité.</p>
+                            <p class="mb-3"><strong>Solutions classiques :</strong> Forcer la DSI ou bloquer le métier.</p>
+                            <div class="mb-3">
+                                <span class="badge-solution">Troisième Voie</span>
+                                <ul class="mt-2">
+                                    <li>MVP sécurisé (scope réduit)</li>
+                                    <li>DevSecOps léger</li>
+                                    <li>Environnements sandbox métiers</li>
+                                    <li>Comité décision rapide (48h)</li>
+                                </ul>
+                            </div>
+                            <p class="mb-0"><strong>Résultat :</strong> Time-to-market divisé par 2, aucune faille critique, métier et DSI co-propriétaires du succès.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- REX 4 -->
+                <div class="col-lg-6">
+                    <div class="card-rex fade-in">
+                        <div class="card-rex-header">
+                            <h4 class="mb-0">REX 4 — Conflit communautaire / terrain</h4>
+                            <div class="card-rex-icon">
+                                <i class="fas fa-globe-africa"></i>
+                            </div>
+                        </div>
+                        <div class="card-rex-body">
+                            <p class="mb-3"><strong>Situation :</strong> Village A revendique la terre vs Village B l'exploite depuis 20 ans.</p>
+                            <p class="mb-3"><strong>Solutions classiques :</strong> Décision administrative ou partage arbitraire.</p>
+                            <div class="mb-3">
+                                <span class="badge-solution">Troisième Voie</span>
+                                <ul class="mt-2">
+                                    <li>Coopérative commune</li>
+                                    <li>Village A : propriété foncière reconnue</li>
+                                    <li>Village B : exploitation et gestion</li>
+                                    <li>Partage des revenus + emplois locaux</li>
+                                </ul>
+                            </div>
+                            <p class="mb-0"><strong>Résultat :</strong> Paix sociale durable, revenus multipliés par 3, exemple repris par l'administration.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- REX 5 -->
+                <div class="col-lg-8 mx-auto">
+                    <div class="card-rex fade-in">
+                        <div class="card-rex-header">
+                            <h4 class="mb-0">REX 5 — Éducation : parent vs école</h4>
+                            <div class="card-rex-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div class="card-rex-body">
+                            <p class="mb-3"><strong>Situation :</strong> École veut discipline stricte vs parent estime que l'enfant est bridé.</p>
+                            <p class="mb-3"><strong>Solutions classiques :</strong> Parent change d'école ou école sanctionne davantage.</p>
+                            <div class="mb-3">
+                                <span class="badge-solution">Troisième Voie</span>
+                                <ul class="mt-2">
+                                    <li>Contrat éducatif personnalisé</li>
+                                    <li>Temps de liberté encadrée</li>
+                                    <li>Suivi mensuel école-parent-enfant</li>
+                                </ul>
+                            </div>
+                            <p class="mb-0"><strong>Résultat :</strong> Enfant +40% de résultats, baisse des sanctions, relation école-famille apaisée.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="method" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Synthèse des Approches</h2>
+            
+            <div class="comparison-table fade-in">
+                <div class="table-header text-center">Comparaison des Méthodes de Résolution de Conflit</div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Situation</div>
+                    <div class="table-cell">Réflexe Classique</div>
+                    <div class="table-cell" style="background-color: rgba(23, 162, 184, 0.1); font-weight: 600; color: var(--secondary-color);">Troisième Voie</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Conflit</div>
+                    <div class="table-cell">Compromis / Force</div>
+                    <div class="table-cell">Création</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Objectif</div>
+                    <div class="table-cell">Gagner</div>
+                    <div class="table-cell">Réussir ensemble</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Logique</div>
+                    <div class="table-cell">Positions</div>
+                    <div class="table-cell">Besoins</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Résultat</div>
+                    <div class="table-cell">Perdants discrets</div>
+                    <div class="table-cell">Valeur nouvelle</div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto">
+                    <div class="prompt-container fade-in">
+                        <h3 class="text-center mb-4">🧠 Méthode Complète de la Troisième Voie</h3>
+                        <p class="text-center mb-4">
+                            Utilisez cette approche structurée pour analyser n'importe quelle situation conflictuelle et générer des solutions créatives de troisième voie.
+                        </p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-bullseye me-2"></i>Objectif</h5>
+                                <p>Analyser une situation conflictuelle pour produire des solutions créatives gagnant-gagnant durables.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-list-ol me-2"></i>Étapes Clés</h5>
+                                <ol class="ps-3">
+                                    <li>Décrire le contexte factuellement</li>
+                                    <li>Identifier les acteurs et leurs besoins réels</li>
+                                    <li>Formuler le problème central</li>
+                                    <li>Générer 4 troisièmes voies créatives</li>
+                                    <li>Classer et évaluer les solutions</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generator Section -->
+    <section id="generator" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Générateur de Troisième Voie</h2>
+            <p class="text-center mb-5">Appliquez la méthode à votre propre situation et générez des solutions innovantes</p>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="prompt-container">
+                        <h4 class="mb-4">Analysez Votre Situation</h4>
+                        
+                        <form id="thirdWayForm">
+                            <div class="mb-4">
+                                <label class="form-label">Domaine de la situation :</label>
+                                <select class="form-select" id="domain">
+                                    <option value="personnel">Personnel</option>
+                                    <option value="couple">Couple / Famille</option>
+                                    <option value="entreprise">Entreprise</option>
+                                    <option value="projet">Projet</option>
+                                    <option value="communauté">Communauté</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Décrivez la situation de manière factuelle :</label>
+                                <textarea class="form-control" id="situation" rows="3" placeholder="Ex: Notre équipe marketing veut lancer une campagne agressive, tandis que l'équipe juridique insiste sur les risques de conformité..."></textarea>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label">Acteur 1 (Position A) :</label>
+                                    <input type="text" class="form-control" id="actor1" placeholder="Ex: Équipe marketing">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Acteur 2 (Position B) :</label>
+                                    <input type="text" class="form-control" id="actor2" placeholder="Ex: Équipe juridique">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Quels sont les besoins réels derrière les positions ? (pour chaque acteur)</label>
+                                <textarea class="form-control" id="needs" rows="3" placeholder="Ex: Marketing: visibilité et croissance; Juridique: protection de l'entreprise et conformité..."></textarea>
+                            </div>
+                            
+                            <button type="button" class="btn btn-generate" id="generateBtn">
+                                <i class="fas fa-bolt me-2"></i>Générer 3 Troisièmes Voies
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Results Section -->
+                    <div id="resultsSection" class="mt-5" style="display: none;">
+                        <h3 class="text-center mb-4">Solutions de Troisième Voie Générées</h3>
+                        
+                        <div id="solutionsContainer">
+                            <!-- Solutions will be inserted here by JavaScript -->
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <button class="btn btn-hero" id="resetBtn">
+                                <i class="fas fa-redo me-2"></i>Analyser une autre situation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h3 class="mb-4">
+                        <i class="fas fa-route me-2"></i>La Troisième Voie
+                    </h3>
+                    <p class="mb-4">Ni compromis mou, ni rapport de force, mais solution créative supérieure.</p>
+                    
+                    <div class="footer-links mb-4">
+                        <a href="#intro" class="mx-3">Introduction</a>
+                        <a href="#rex" class="mx-3">5 REX</a>
+                        <a href="#method" class="mx-3">Méthode</a>
+                        <a href="#generator" class="mx-3">Générateur</a>
+                    </div>
+                    
+                    <p class="small">© 2023 - Méthode de la Troisième Voie inspirée des travaux de Stephen R. Covey</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Fade in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Check on load
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Generator functionality
+            const generateBtn = document.getElementById('generateBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const resultsSection = document.getElementById('resultsSection');
+            const solutionsContainer = document.getElementById('solutionsContainer');
+            const form = document.getElementById('thirdWayForm');
+            
+            // Sample third way solutions based on different domains
+            const solutionTemplates = {
+                'entreprise': [
+                    {
+                        title: "Cadre flexible avec indicateurs de performance",
+                        description: "Créer un cadre de travail hybride où la présence physique est requise pour les activités collaboratives, tandis que le télétravail est autorisé pour les tâches nécessitant de la concentration. Mettre en place des indicateurs de performance clairs basés sur les résultats plutôt que sur la présence.",
+                        advantages: "Satisfaction des deux parties, augmentation de la productivité, réduction des coûts de bureau",
+                        conditions: "Mise en place d'outils de collaboration efficaces, formation des managers à la gestion à distance"
+                    },
+                    {
+                        title: "Pilotage par projet avec autonomie contrôlée",
+                        description: "Diviser les projets en phases claires avec des jalons de validation. Donner une autonomie complète entre les jalons, avec des points de synchronisation obligatoires. Permettre aux équipes de choisir leur mode de travail tant que les jalons sont atteints.",
+                        advantages: "Responsabilisation des équipes, meilleure prévisibilité, adaptation aux besoins spécifiques de chaque projet",
+                        conditions: "Définition précise des jalons et critères de succès, communication transparente"
+                    },
+                    {
+                        title: "Espace de co-working interne et externe",
+                        description: "Transformer le bureau en espace de collaboration premium et proposer des abonnements à des espaces de co-working locaux. Les employés choisissent leur lieu de travail selon leurs besoins du jour, avec une obligation de présence au siège pour les réunions stratégiques.",
+                        advantages: "Réduction des coûts immobiliers, amélioration du bien-être, attractivité employeur renforcée",
+                        conditions: "Budget pour les abonnements co-working, politique claire d'utilisation"
+                    }
+                ],
+                'couple': [
+                    {
+                        title: "Célébration en deux temps",
+                        description: "Organiser une petite cérémonie intime pour le couple proche, suivie d'une réception plus large pour la famille élargie et les amis à une date ultérieure. Financer la première avec le budget du couple, et la seconde avec une participation familiale.",
+                        advantages: "Respect des valeurs de chacun, contrôle budgétaire, création de deux expériences mémorables",
+                        conditions: "Communication claire sur les attentes, planification soignée des deux événements"
+                    },
+                    {
+                        title: "Mariage expérientiel plutôt que matériel",
+                        description: "Remplacer les éléments coûteux traditionnels par des expériences significatives. Par exemple, au lieu d'une grande salle, une cérémonie en nature; au lieu d'un banquet, un buffet collaboratif où chaque famille apporte un plat spécial.",
+                        advantages: "Réduction des coûts, personnalisation authentique, création de souvenirs uniques",
+                        conditions: "Acceptation des traditions alternatives, bonne organisation logistique"
+                    },
+                    {
+                        title: "Investissement dans l'avenir commun",
+                        description: "Allouer une partie du budget mariage à un investissement pour l'avenir du couple (apport immobilier, création d'entreprise, fonds d'études). Présenter cet investissement aux familles comme un héritage durable issu de leur union.",
+                        advantages: "Début de vie commune solide, approbation familiale, création de valeur à long terme",
+                        conditions: "Alignement du couple sur les priorités financières, communication persuasive aux familles"
+                    }
+                ],
+                'projet': [
+                    {
+                        title: "Approche agile avec contrôles intégrés",
+                        description: "Adopter une méthodologie agile avec des sprints courts et des démonstrations fréquentes, tout en intégrant des checkpoints de conformité et sécurité à chaque fin de sprint. Créer des environnements de test isolés pour les développements rapides.",
+                        advantages: "Vitesse de livraison maintenue, risques maîtrisés, transparence accrue",
+                        conditions: "Formation aux méthodes agiles, automatisation des tests de sécurité"
+                    },
+                    {
+                        title: "Équipe hybride métier-DSI",
+                        description: "Créer une équipe dédiée au projet composée à la fois de membres du métier et de la DSI. Cette équipe fonctionne de manière autonome avec un double reporting et prend des décisions conjointes. Les compromis sont trouvés en temps réel.",
+                        advantages: "Alignment parfait des objectifs, réduction des frictions, accélération des prises de décision",
+                        conditions: "Soutien de la direction, clarification des responsabilités"
+                    },
+                    {
+                        title: "MVP régulé avec roadmap évolutive",
+                        description: "Lancer une version minimale du produit (MVP) qui respecte tous les critères de conformité, puis itérer rapidement sur les versions suivantes. Établir une roadmap claire qui montre comment les exigences métier et DSI seront intégrées progressivement.",
+                        advantages: "Time-to-market rapide, conformité garantie, flexibilité pour l'évolution",
+                        conditions: "Acceptation d'un scope initial réduit, planification réaliste"
+                    }
+                ]
+            };
+            
+            // Default solutions for other domains
+            const defaultSolutions = [
+                {
+                    title: "Cadre structuré avec flexibilité interne",
+                    description: "Établir un cadre global qui satisfait les exigences de base des deux parties, puis permettre des ajustements internes selon les besoins spécifiques. Cette approche maintient les principes fondamentaux tout en offrant une adaptabilité contextuelle.",
+                    advantages: "Respect des contraintes essentielles, capacité d'adaptation, réduction des tensions",
+                    conditions: "Définition claire du cadre non-négociable, mécanisme de feedback pour les ajustements"
+                },
+                {
+                    title: "Transformation du conflit en opportunité commune",
+                    description: "Reconceptualiser la situation non pas comme un problème à résoudre mais comme une opportunité à saisir ensemble. Identifier un objectif supérieur qui transcende les positions initiales et mobilise toutes les parties vers un but commun.",
+                    advantages: "Création de valeur nouvelle, renforcement des relations, innovation issue de la diversité",
+                    conditions: "Ouverture d'esprit de toutes les parties, capacité à penser au-delà des positions"
+                },
+                {
+                    title: "Processus décisionnel collaboratif",
+                    description: "Mettre en place un processus structuré où chaque partie contribue à la décision finale. Utiliser des techniques de créativité (brainstorming, pensée latérale) pour générer des options, puis évaluer conjointement les solutions possibles.",
+                    advantages: "Propriété partagée de la solution, amélioration de la qualité décisionnelle, renforcement de la confiance",
+                    conditions: "Temps consacré au processus, compétences en facilitation"
+                }
+            ];
+            
+            generateBtn.addEventListener('click', function() {
+                const domain = document.getElementById('domain').value;
+                const situation = document.getElementById('situation').value;
+                const actor1 = document.getElementById('actor1').value;
+                const actor2 = document.getElementById('actor2').value;
+                const needs = document.getElementById('needs').value;
+                
+                // Validate form
+                if (!situation || !actor1 || !actor2 || !needs) {
+                    alert("Veuillez remplir tous les champs du formulaire.");
+                    return;
+                }
+                
+                // Select solutions based on domain
+                let solutions = solutionTemplates[domain] || defaultSolutions;
+                
+                // Clear previous solutions
+                solutionsContainer.innerHTML = '';
+                
+                // Generate solution cards
+                solutions.forEach((solution, index) => {
+                    const solutionCard = document.createElement('div');
+                    solutionCard.className = 'solution-card fade-in';
+                    solutionCard.innerHTML = `
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="solution-number">${index + 1}</div>
+                            <h4 class="mb-0">${solution.title}</h4>
+                        </div>
+                        <p class="mb-3"><strong>Description :</strong> ${solution.description}</p>
+                        <p class="mb-3"><strong>Avantages :</strong> ${solution.advantages}</p>
+                        <p class="mb-0"><strong>Conditions de réussite :</strong> ${solution.conditions}</p>
+                    `;
+                    
+                    solutionsContainer.appendChild(solutionCard);
+                });
+                
+                // Show results section
+                resultsSection.style.display = 'block';
+                
+                // Scroll to results
+                setTimeout(() => {
+                    resultsSection.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+                
+                // Trigger fade-in animation for new cards
+                setTimeout(() => {
+                    const newFadeElements = document.querySelectorAll('#solutionsContainer .fade-in');
+                    newFadeElements.forEach(element => {
+                        element.classList.add('visible');
+                    });
+                }, 500);
+            });
+            
+            resetBtn.addEventListener('click', function() {
+                // Reset form
+                form.reset();
+                
+                // Hide results
+                resultsSection.style.display = 'none';
+                
+                // Scroll to form
+                document.getElementById('generator').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Initialize tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+</body>
+</html>
