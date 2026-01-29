@@ -1,14 +1,6 @@
-# laTroisiemeVoieStephenCovey
-la Troisieme Voie Stephen Covey : Trouver les bonnes alternatives win win a 120% pour resoudre les problèmes
+# La Troisieme Voie Stephen Covey 
 
-Excellent contenu de départ 👍
-Je vais **fusionner**, **structurer** et **approfondir** tout cela pour obtenir une **présentation cohérente, riche et pédagogique** de **La Troisième Voie de Stephen R. Covey**, intégrant :
-
-* la **philosophie du livre**
-* le **processus en profondeur**
-* la notion clé de **Win-Win à 120%**
-* les **différences avec compromis / négociation classique**
-* des **clés de mise en pratique concrète**
+* Trouver les bonnes alternatives win win a 120% pour resoudre les problèmes
 
 ---
 
