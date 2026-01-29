@@ -336,11 +336,303 @@
 
 ---
 
-👉 Si tu veux, prochaine étape possible :
 
-* transformer les **10 REX** en **manuel de formation**
-* créer un **canvas universel “Troisième Voie”**
-* adapter à un **contexte africain / gouvernance / spiritualité**
-* produire un **document `.md` premium structuré**
+---
 
-Dis-moi : **outil, formation ou framework ?**
+# 🌍 5 REX supplémentaires — La Troisième Voie (Vision 360°)
+
+---
+
+## 🔹 REX 6 — Gouvernance publique : État vs citoyens (politique publique)
+
+### 🎯 Situation
+
+* L’État veut **augmenter les taxes locales** pour financer les infrastructures
+* Les citoyens refusent (pouvoir d’achat déjà faible)
+  👉 Crise de confiance, manifestations
+
+---
+
+### ❌ Réflexes classiques
+
+* Imposer la taxe → révolte, fraude
+* Annuler la taxe → infrastructures dégradées
+
+---
+
+### 🧠 Étapes Covey (processus)
+
+**1. Clarification des besoins**
+
+* État → ressources, stabilité budgétaire
+* Citoyens → justice, transparence, impact réel
+
+**2. Respect & écoute**
+
+* Forums citoyens
+* Données budgétaires ouvertes
+
+**3. Élargissement du cadre**
+
+* Le problème n’est pas “la taxe”
+* Le vrai problème = **manque de confiance**
+
+---
+
+### ✨ Troisième Voie
+
+* Taxe progressive **conditionnée**
+* Affectation visible (routes, écoles locales)
+* Comité citoyen de suivi
+* Clause de révision annuelle
+
+---
+
+### 📊 Résultats
+
+* +27 % de taux de paiement
+* Disparition des tensions
+* Légitimité renforcée
+
+📌 **Clé Covey** : quand la confiance augmente, la contrainte devient inutile.
+
+---
+
+## 🔹 REX 7 — Religion / spiritualité : tradition vs jeunesse
+
+### 🎯 Situation
+
+* Autorités religieuses veulent préserver les rites
+* Jeunes se sentent exclus, rigides, incompris
+  👉 Désengagement massif
+
+---
+
+### ❌ Solutions classiques
+
+* Maintien strict → fuite des jeunes
+* Modernisation totale → perte d’identité
+
+---
+
+### 🧠 Étapes Covey
+
+**1. Besoins réels**
+
+* Autorités → transmission, sacralité
+* Jeunes → sens, expression, utilité sociale
+
+**2. Écoute mutuelle**
+
+* Cercles de parole intergénérationnels
+
+**3. Redéfinition du problème**
+
+* Ce n’est pas “ancien vs moderne”
+* C’est **sens vs forme**
+
+---
+
+### ✨ Troisième Voie
+
+* Maintien du rituel central
+* Espaces parallèles : actions sociales, débats, formats courts
+* Jeunes impliqués comme co-animateurs
+
+---
+
+### 📊 Résultats
+
+* Participation des jeunes ×2
+* Respect accru des anciens
+* Continuité + renouveau
+
+📌 **Clé Covey** : préserver l’essence, réinventer la forme.
+
+---
+
+## 🔹 REX 8 — Santé : médecin vs patient (maladie chronique)
+
+### 🎯 Situation
+
+* Médecin impose un protocole strict
+* Patient ne suit pas (fatigue, incompréhension)
+  👉 Échec thérapeutique
+
+---
+
+### ❌ Réflexes classiques
+
+* Autorité médicale pure
+* Abandon du traitement
+
+---
+
+### 🧠 Étapes Covey
+
+**1. Compréhension empathique**
+
+* Médecin écoute le vécu réel
+* Patient exprime ses limites
+
+**2. Changement de paradigme**
+
+* Le patient n’est pas un exécutant
+* C’est un **partenaire de soin**
+
+---
+
+### ✨ Troisième Voie
+
+* Protocole modulable
+* Objectifs progressifs
+* Suivi digital simple
+* Éducation thérapeutique
+
+---
+
+### 📊 Résultats
+
+* Observance +45 %
+* Réduction des rechutes
+* Relation médecin-patient restaurée
+
+📌 **Clé Covey** : sans adhésion intérieure, aucune solution ne tient.
+
+---
+
+## 🔹 REX 9 — Transmission familiale : héritage vs équité
+
+### 🎯 Situation
+
+* Parent veut transmettre équitablement
+* Enfants ont contribué différemment
+  👉 Ressentiments silencieux
+
+---
+
+### ❌ Solutions classiques
+
+* Égalité stricte → injustice perçue
+* Décision arbitraire → conflit ouvert
+
+---
+
+### 🧠 Étapes Covey
+
+**1. Clarifier les non-dits**
+
+* Reconnaître les contributions invisibles
+
+**2. Redéfinir la justice**
+
+* Justice ≠ égalité mathématique
+
+---
+
+### ✨ Troisième Voie
+
+* Socle commun égal
+* Bonus différencié assumé et expliqué
+* Projet collectif familial (immobilier / entreprise)
+
+---
+
+### 📊 Résultats
+
+* Aucun conflit post-transmission
+* Patrimoine valorisé
+* Lien familial préservé
+
+📌 **Clé Covey** : la paix vaut plus que la perfection juridique.
+
+---
+
+## 🔹 REX 10 — Stratégie business : croissance vs résilience
+
+### 🎯 Situation
+
+* Actionnaires veulent croissance rapide
+* Direction craint la fragilité long terme
+
+---
+
+### ❌ Réflexes classiques
+
+* Hypercroissance risquée
+* Prudence excessive → perte de marché
+
+---
+
+### 🧠 Étapes Covey
+
+**1. Besoins profonds**
+
+* Actionnaires → rendement
+* Direction → pérennité
+
+**2. Vision élargie**
+
+* Court terme ET long terme
+
+---
+
+### ✨ Troisième Voie
+
+* Croissance par paliers
+* Indicateurs de résilience intégrés
+* Réinvestissement automatique partiel
+* Gouvernance adaptative
+
+---
+
+### 📊 Résultats
+
+* Croissance soutenue
+* Zéro crise majeure
+* Valorisation long terme supérieure
+
+📌 **Clé Covey** : la vraie performance est durable ou n’est pas.
+
+---
+
+# 🧠 Méta-synthèse 360°
+
+| Dimension | Réflexe classique   | Troisième Voie          |
+| --------- | ------------------- | ----------------------- |
+| Pouvoir   | Imposer             | Co-construire           |
+| Logique   | Positions           | Besoins                 |
+| Décision  | Rapide mais fragile | Plus lente mais durable |
+| Relation  | Sacrifiée           | Renforcée               |
+| Résultat  | Accepté             | Désiré                  |
+
+---
+
+# 🧭 Processus universel (résumé opérationnel)
+
+1️⃣ Suspendre le jugement
+2️⃣ Clarifier ses vrais besoins
+3️⃣ Comprendre ceux de l’autre
+4️⃣ Élargir le problème
+5️⃣ Créer sans censurer
+6️⃣ Décider par adhésion
+7️⃣ Sécuriser la mise en œuvre
+
+---
+
+💬 **Phrase clé Covey (esprit du livre)**
+
+> *La Troisième Voie n’est pas une solution intelligente.
+> C’est une intelligence collective en action.*
+
+---
+
+### Prochaines options possibles
+
+* 🔹 Transformer les **10 REX** en **outil de formation certifiant**
+* 🔹 Créer un **canvas “Troisième Voie” universel**
+* 🔹 Adapter à un **contexte africain / leadership / gouvernance**
+* 🔹 Produire un **document `.md` structuré premium**
+
+👉 Dis-moi : **outil, formation, canvas ou document final ?**
+
