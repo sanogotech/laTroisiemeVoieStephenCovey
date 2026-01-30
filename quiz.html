@@ -1,0 +1,2984 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - La Troisième Voie de Stephen Covey</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --principles-color: #0ea5e9;
+            --implementation-color: #10b981;
+            --rex-color: #8b5cf6;
+            --tools-color: #ef4444;
+            --innovation-color: #f59e0b;
+            --synergy-color: #6366f1;
+            --light-bg: #f8fafc;
+            --dark-bg: #0f172a;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-light: #64748b;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            padding-top: 1rem;
+            background-attachment: fixed;
+        }
+
+        .quiz-container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--principles-color) 0%, var(--synergy-color) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin-top: -1rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .quiz-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .quiz-header h1 {
+            font-weight: 800;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .quiz-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: white;
+        }
+
+        .year-badge {
+            background: linear-gradient(135deg, var(--synergy-color) 0%, var(--innovation-color) 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Progress & Score */
+        .progress-container {
+            margin-bottom: 2rem;
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        #question-counter {
+            font-weight: 600;
+            color: var(--principles-color);
+            font-size: 1.1rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        #current-score {
+            font-weight: 600;
+            color: var(--implementation-color);
+            font-size: 1.1rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .progress {
+            height: 12px;
+            border-radius: 10px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--rex-color) 0%, var(--principles-color) 100%);
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Question Card */
+        #question-card {
+            border: none;
+            border-radius: 15px;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--principles-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #question-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+        }
+        
+        #question-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .thematic-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            border: 2px solid;
+        }
+
+        .badge-principles {
+            background-color: rgba(14, 165, 233, 0.1);
+            border-color: var(--principles-color);
+            color: var(--principles-color);
+        }
+
+        .badge-implementation {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-color: var(--implementation-color);
+            color: var(--implementation-color);
+        }
+
+        .badge-rex {
+            background-color: rgba(139, 92, 246, 0.1);
+            border-color: var(--rex-color);
+            color: var(--rex-color);
+        }
+
+        .badge-tools {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-color: var(--tools-color);
+            color: var(--tools-color);
+        }
+
+        .badge-innovation {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-color: var(--innovation-color);
+            color: var(--innovation-color);
+        }
+
+        .badge-synergy {
+            background-color: rgba(99, 102, 241, 0.1);
+            border-color: var(--synergy-color);
+            color: var(--synergy-color);
+        }
+
+        /* Options */
+        .option-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            background-color: white;
+            transition: all 0.3s ease;
+            font-family: 'Roboto Mono', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-btn:hover:not([disabled]) {
+            border-color: var(--principles-color);
+            background-color: #eff6ff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);
+        }
+        
+        .option-btn.correct {
+            background-color: #f0fdf4;
+            border-color: var(--implementation-color);
+            color: #065f46;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .option-btn.incorrect {
+            background-color: #fef2f2;
+            border-color: var(--tools-color);
+            color: #7f1d1d;
+            font-weight: 600;
+        }
+
+        /* Explanation Box */
+        #explanation-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            animation: fadeIn 0.5s ease;
+            border-left: 4px solid;
+        }
+        
+        #explanation-box h5 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .explanation-correct {
+            background-color: #f0fdf4;
+            border-left-color: var(--implementation-color);
+        }
+
+        .explanation-incorrect {
+            background-color: #fef2f2;
+            border-left-color: var(--tools-color);
+        }
+
+        /* Tip Box */
+        .tip-box {
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            border-left: 4px solid var(--principles-color);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+        
+        .tip-box h6 {
+            color: var(--principles-color);
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-synergy {
+            background: linear-gradient(135deg, var(--synergy-color) 0%, var(--principles-color) 100%);
+            color: white;
+            border: none;
+        }
+
+        /* Thematic Cards */
+        .theme-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--principles-color);
+        }
+        
+        .theme-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--principles-color) 0%, var(--implementation-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Modal Results */
+        .modal-header {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: white;
+            border-radius: 0;
+        }
+
+        .modal-title-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        
+        .final-score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            background: linear-gradient(135deg, var(--rex-color) 0%, var(--implementation-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .score-text {
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .skill-meter {
+            background: var(--light-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+            
+            .quiz-header {
+                padding: 2rem 1rem;
+            }
+            
+            .quiz-header h1 {
+                font-size: 2rem;
+            }
+            
+            #question-card {
+                padding: 1.5rem;
+            }
+            
+            .quiz-navigation {
+                flex-direction: column;
+            }
+            
+            .nav-btn {
+                width: 100%;
+            }
+        }
+
+        /* Synergy elements */
+        .synergy-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' font-family='monospace' font-size='12' fill='rgba(14, 165, 233, 0.05)'%3E⊕⊖⊗%3C/text%3E%3Ctext x='40' y='40' font-family='monospace' font-size='12' fill='rgba(14, 165, 233, 0.05)'%3E∞∆%25%3C/text%3E%3Ctext x='70' y='60' font-family='monospace' font-size='12' fill='rgba(14, 165, 233, 0.05)'%3E§¶%3C/text%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .synergy-badge {
+            background: linear-gradient(135deg, var(--rex-color) 0%, var(--innovation-color) 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .case-study {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--principles-color);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .win-win-300 {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px dashed #f59e0b;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        
+        .win-win-300 h6 {
+            color: #d97706;
+        }
+    </style>
+</head>
+<body>
+    <div class="synergy-background"></div>
+    
+    <div class="container py-4">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h1><i class="fas fa-route"></i> La Troisième Voie <i class="fas fa-handshake"></i></h1>
+                <p>Quiz sur la mise en œuvre pratique selon Stephen Covey - REX, outils et méthodes pour des solutions win-win à 200%+</p>
+                <div class="year-badge">
+                    120 Questions - Niveau Expert en Résolution Créative de Problèmes
+                </div>
+            </div>
+            
+            <!-- Configuration Panel -->
+            <div id="settings-panel" class="settings-panel">
+                <h4 class="text-center mb-4"><i class="fas fa-cogs"></i> Configuration du Quiz - La Troisième Voie</h4>
+                
+                <div class="row mb-4">
+                    <div class="col-md-8">
+                        <label for="question-count" class="form-label">Nombre de questions :</label>
+                        <select id="question-count" class="form-select">
+                            <option value="20">20 questions (Introduction)</option>
+                            <option value="40" selected>40 questions (Standard)</option>
+                            <option value="60">60 questions (Avancé)</option>
+                            <option value="120">120 questions (Expert - 3ème Voie Master)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button id="start-quiz-btn" class="btn btn-synergy w-100 pulse-animation">
+                            <i class="fas fa-rocket"></i> Démarrer le Quiz
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h5><i class="fas fa-filter"></i> Domaines à Évaluer</h5>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-principles" checked>
+                                <label class="form-check-label" for="domain-principles">
+                                    <i class="fas fa-brain text-primary me-2"></i>Principes Fondamentaux
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-implementation" checked>
+                                <label class="form-check-label" for="domain-implementation">
+                                    <i class="fas fa-cogs text-success me-2"></i>Mise en Œuvre Pratique
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-rex" checked>
+                                <label class="form-check-label" for="domain-rex">
+                                    <i class="fas fa-chart-line text-purple me-2"></i>REX & Cas Concrets
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-tools" checked>
+                                <label class="form-check-label" for="domain-tools">
+                                    <i class="fas fa-tools text-danger me-2"></i>Outils & Méthodes
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-innovation" checked>
+                                <label class="form-check-label" for="domain-innovation">
+                                    <i class="fas fa-lightbulb text-warning me-2"></i>Innovation & Créativité
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-synergy" checked>
+                                <label class="form-check-label" for="domain-synergy">
+                                    <i class="fas fa-infinity text-indigo me-2"></i>Synergie 200%+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Thématiques -->
+                <div class="mt-4">
+                    <h5><i class="fas fa-brain"></i> 6 Domaines Clés de la Troisième Voie</h5>
+                    <div class="row mt-3">
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-brain"></i></div>
+                                <h6>Principes Fondamentaux</h6>
+                                <p class="small mb-2">Paradigmes, Win-Win à 120%, Pensée Synergique, Respect Mutuel</p>
+                                <div>
+                                    <span class="synergy-badge">Paradigmes</span>
+                                    <span class="synergy-badge">Synergie</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-cogs"></i></div>
+                                <h6>Mise en Œuvre</h6>
+                                <p class="small mb-2">Processus 7 étapes, Écoute Empathique, Redéfinition des Problèmes</p>
+                                <div>
+                                    <span class="synergy-badge">7 étapes</span>
+                                    <span class="synergy-badge">Écoute</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-chart-line"></i></div>
+                                <h6>REX & Cas Concrets</h6>
+                                <p class="small mb-2">10 REX détaillés, Entreprise, Famille, Communauté, Gouvernance</p>
+                                <div>
+                                    <span class="synergy-badge">Cas réels</span>
+                                    <span class="synergy-badge">REX</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-tools"></i></div>
+                                <h6>Outils & Méthodes</h6>
+                                <p class="small mb-2">Canvas 3ème Voie, Design Thinking, Médiation Créative, Négociation</p>
+                                <div>
+                                    <span class="synergy-badge">Canvas</span>
+                                    <span class="synergy-badge">Design Thinking</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-lightbulb"></i></div>
+                                <h6>Innovation</h6>
+                                <p class="small mb-2">Thinking Outside the Box, Co-création, Prototypage, Solutions Radicales</p>
+                                <div>
+                                    <span class="synergy-badge">Créativité</span>
+                                    <span class="synergy-badge">Co-création</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-infinity"></i></div>
+                                <h6>Synergie 200%+</h6>
+                                <p class="small mb-2">Valeur Supérieure, Solutions Durables, Impact Multiplicateur</p>
+                                <div>
+                                    <span class="synergy-badge">200%+</span>
+                                    <span class="synergy-badge">Impact</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Win-Win 300% Section -->
+                <div class="win-win-300 mt-4">
+                    <h6><i class="fas fa-bolt"></i> Objectif Win-Win à 300%</h6>
+                    <p class="mb-2 small">Ce quiz vous prépare à dépasser le simple compromis pour créer des solutions où <strong>toutes les parties gagnent 3 fois plus</strong> que dans un scénario classique.</p>
+                    <div class="row text-center mt-3">
+                        <div class="col-md-4">
+                            <div class="synergy-badge w-100">+100% pour Partie A</div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="synergy-badge w-100">+100% pour Partie B</div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="synergy-badge w-100">+100% Valeur Collective</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Content -->
+            <div id="quiz-content" class="d-none">
+                <div class="progress-container">
+                     <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span id="question-counter">Question 1 / 40</span>
+                        <span id="current-score">Score: 0</span>
+                     </div>
+                    <div class="progress">
+                        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 2.5%;" aria-valuenow="2.5" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <div id="question-card" class="card">
+                    <div class="card-body">
+                        <div class="thematic-badge badge-principles" id="thematic-badge">Principes Fondamentaux</div>
+                        <h2 id="question-text">Chargement de la question...</h2>
+                        <div id="options-container">
+                            <!-- Les options seront insérées ici -->
+                        </div>
+                        <div id="explanation-box" class="d-none">
+                            <h5 id="explanation-title"></h5>
+                            <p id="explanation-text"></p>
+                            <div class="win-win-300 mt-3">
+                                <h6><i class="fas fa-bolt"></i> Application Win-Win 200%+</h6>
+                                <p id="win-win-tip" class="mb-0 small"></p>
+                            </div>
+                            <div id="tip-box" class="tip-box d-none">
+                                <h6><i class="fas fa-lightbulb"></i> Pour Maîtriser la 3ème Voie</h6>
+                                <p id="tip-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-navigation">
+                    <button id="prev-btn" class="btn btn-outline-secondary nav-btn" disabled>
+                        <i class="fas fa-arrow-left"></i> Précédent
+                    </button>
+                    <button id="next-btn" class="btn btn-synergy nav-btn">
+                        Suivant <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button id="finish-btn" class="btn btn-success nav-btn d-none">
+                        <i class="fas fa-trophy"></i> Terminer & Voir les Résultats
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Résultats -->
+    <div class="modal fade" id="resultsModal" tabindex="-1" aria-labelledby="resultsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultsModalLabel">
+                        <i class="fas fa-route modal-title-icon"></i>Résultats du Quiz - La Troisième Voie
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="text-center mb-4">
+                        <h4 class="score-text">Votre niveau de maîtrise de la 3ème Voie :</h4>
+                        <p class="final-score" id="final-score-percentage">0%</p>
+                        <p class="text-muted fs-5">
+                            <span id="final-score-correct">0</span> bonnes réponses sur 
+                            <span id="final-score-total">0</span> questions
+                        </p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skill-meter">
+                                <h6><i class="fas fa-cogs"></i> Compétences Techniques</h6>
+                                <div class="progress mt-2" style="height: 20px;">
+                                    <div id="tech-skills" class="progress-bar bg-primary" style="width: 0%;"></div>
+                                </div>
+                                <p id="tech-skills-text" class="mt-2 small">Évaluation en cours...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-meter">
+                                <h6><i class="fas fa-infinity"></i> Compétences Synergiques</h6>
+                                <div class="progress mt-2" style="height: 20px;">
+                                    <div id="strategic-skills" class="progress-bar bg-success" style="width: 0%;"></div>
+                                </div>
+                                <p id="strategic-skills-text" class="mt-2 small">Évaluation en cours...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-4">
+                    
+                    <div id="final-recommendations">
+                        <!-- Recommandations seront insérées ici -->
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5><i class="fas fa-road"></i> Roadmap vers l'Expertise 3ème Voie</h5>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="alert alert-primary">
+                                    <h6><i class="fas fa-graduation-cap"></i> Phase 1 : Assimilation (3 mois)</h6>
+                                    <p id="short-term" class="small mb-0">Chargement...</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-success">
+                                    <h6><i class="fas fa-rocket"></i> Phase 2 : Maîtrise (6-12 mois)</h6>
+                                    <p id="long-term" class="small mb-0">Chargement...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Canvas 3ème Voie -->
+                    <div class="mt-4">
+                        <h5><i class="fas fa-palette"></i> Votre Canvas 3ème Voie Personnalisé</h5>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <div class="card border-primary">
+                                    <div class="card-body">
+                                        <h6><i class="fas fa-user"></i> Vos Forces</h6>
+                                        <p id="strengths" class="small mb-0">Analyse en cours...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card border-warning">
+                                    <div class="card-body">
+                                        <h6><i class="fas fa-tools"></i> Outils à Maîtriser</h6>
+                                        <p id="tools-to-master" class="small mb-0">Analyse en cours...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card border-success">
+                                    <div class="card-body">
+                                        <h6><i class="fas fa-bullseye"></i> Prochain Projet 200%+</h6>
+                                        <p id="next-project" class="small mb-0">Analyse en cours...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i> Fermer
+                    </button>
+                    <button type="button" class="btn btn-synergy" id="restart-quiz-btn">
+                        <i class="fas fa-redo"></i> Recommencer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Questions La Troisième Voie - 120 questions réparties en 6 thématiques
+        const quizData = {
+            questions: [
+                // ============ THÉMATIQUE 1: PRINCIPES FONDAMENTAUX (20 questions) ============
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Selon Stephen Covey, qu'est-ce que la Troisième Voie ?",
+                    options: [
+                        "Un compromis où chacun abandonne quelque chose",
+                        "Une solution nouvelle, créative et supérieure que les parties n'auraient pas trouvée seules",
+                        "La victoire d'une partie sur l'autre après négociation",
+                        "Une médiation imposée par un tiers"
+                    ],
+                    correctAnswer: "Une solution nouvelle, créative et supérieure que les parties n'auraient pas trouvée seules",
+                    explanation: "La Troisième Voie n'est ni 'ma solution' ni 'ta solution', mais une solution nouvelle qui dépasse le cadre initial du conflit.",
+                    winWinTip: "Dans un scénario 200%+, cette approche génère +100% de valeur pour chaque partie +100% de valeur collective.",
+                    tip: "La Troisième Voie exige un changement de paradigme : passer de 'qui a raison ?' à 'qu'est-ce qui marcherait vraiment ?'"
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quelle est la différence fondamentale entre le compromis et la Troisième Voie ?",
+                    options: [
+                        "Le compromis partage la douleur, la Troisième Voie crée de la valeur",
+                        "Le compromis prend moins de temps",
+                        "La Troisième Voie implique toujours un médiateur",
+                        "Il n'y a pas de différence"
+                    ],
+                    correctAnswer: "Le compromis partage la douleur, la Troisième Voie crée de la valeur",
+                    explanation: "Le compromis laisse chacun insatisfait à 50%. La Troisième Voie cherche à satisfaire chaque partie à 100% ou plus.",
+                    winWinTip: "Un compromis génère 50%+50%=100% de satisfaction. La 3ème Voie vise 100%+100%+100%=300% de valeur totale.",
+                    tip: "Covey dit : 'Ne cherchez pas à mieux répartir le gâteau, créez un gâteau plus grand.'"
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Qu'est-ce qu'un 'paradigme' dans la pensée de Covey ?",
+                    options: [
+                        "La manière dont nous voyons le monde - notre carte mentale de la réalité",
+                        "Un modèle économique",
+                        "Une procédure standard",
+                        "Un outil de gestion"
+                    ],
+                    correctAnswer: "La manière dont nous voyons le monde - notre carte mentale de la réalité",
+                    explanation: "Changer de paradigme est la première étape vers la Troisième Voie. On doit passer du paradigme du 'ou' (soit/soit) au paradigme du 'et'.",
+                    winWinTip: "Changer de paradigme peut multiplier la valeur perçue par 10 dans un conflit apparemment insoluble.",
+                    tip: "La plupart des conflits viennent de paradigmes différents, pas d'intentions mauvaises."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel est le principal obstacle à la Troisième Voie selon Covey ?",
+                    options: [
+                        "L'incapacité à écouter vraiment et à comprendre le point de vue de l'autre",
+                        "Le manque de temps",
+                        "L'absence de médiateur qualifié",
+                        "La complexité juridique"
+                    ],
+                    correctAnswer: "L'incapacité à écouter vraiment et à comprendre le point de vue de l'autre",
+                    explanation: "Sans écoute empathique (Habitude 5 : Chercher d'abord à comprendre, ensuite à être compris), la Troisième Voie est impossible.",
+                    winWinTip: "L'écoute empathique révèle souvent des besoins cachés qui, une fois satisfaits, créent une valeur exponentielle.",
+                    tip: "Posez-vous cette question : 'Ai-je vraiment compris ce qui est important pour l'autre, ou est-ce que je prépare juste ma réponse ?'"
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'Win-Win à 120%' dans le contexte de la Troisième Voie ?",
+                    options: [
+                        "Chaque partie obtient plus que ce qu'elle espérait initialement",
+                        "Une partie gagne 120% et l'autre 0%",
+                        "Un gain financier de 120% par rapport à l'investissement",
+                        "Une solution qui prend 120% du temps prévu"
+                    ],
+                    correctAnswer: "Chaque partie obtient plus que ce qu'elle espérait initialement",
+                    explanation: "Le Win-Win à 120% dépasse les attentes initiales des deux parties grâce à la synergie créative.",
+                    winWinTip: "Le vrai Win-Win à 200%+ crée non seulement de la valeur pour les parties mais aussi pour le système entier (clients, communauté, environnement).",
+                    tip: "Ne négociez pas sur les positions ('je veux X'), mais sur les besoins ('j'ai besoin de Y pour Z')."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quelle est la relation entre la synergie et la Troisième Voie ?",
+                    options: [
+                        "La synergie est le mécanisme par lequel la Troisième Voie émerge",
+                        "La synergie est une alternative à la Troisième Voie",
+                        "La synergie n'a rien à voir avec la Troisième Voie",
+                        "La synergie est la première étape avant d'abandonner pour un compromis"
+                    ],
+                    correctAnswer: "La synergie est le mécanisme par lequel la Troisième Voie émerge",
+                    explanation: "La synergie (1+1=3 ou plus) est le processus créatif qui génère des solutions supérieures aux propositions initiales.",
+                    winWinTip: "Une synergie réussie peut générer des solutions à 500%+ de valeur quand elle combine des perspectives radicalement différentes.",
+                    tip: "La synergie nécessite une sécurité psychologique : chacun doit se sentir assez en sécurité pour partager ses idées les plus folles."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel principe doit précéder toute tentative de Troisième Voie ?",
+                    options: [
+                        "Le respect mutuel et la reconnaissance de la légitimité de l'autre",
+                        "La préparation d'arguments solides",
+                        "La consultation d'un expert",
+                        "La définition claire de ses positions"
+                    ],
+                    correctAnswer: "Le respect mutuel et la reconnaissance de la légitimité de l'autre",
+                    explanation: "Sans respect authentique, on reste dans un rapport de force où la Troisième Voie est impossible.",
+                    winWinTip: "Le respect mutuel crée un capital relationnel qui permet de prendre des risques créatifs ensemble.",
+                    tip: "Posez-vous cette question : 'Est-ce que je considère vraiment l'autre comme mon égal dans cette situation ?'"
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'penser gagnant-gagnant' selon Covey ?",
+                    options: [
+                        "Chercher des bénéfices mutuels dans toutes les interactions",
+                        "Touvoir gagner plus que l'autre",
+                        "Faire des compromis équitables",
+                        "Éviter les conflits à tout prix"
+                    ],
+                    correctAnswer: "Chercher des bénéfices mutuels dans toutes les interactions",
+                    explanation: "Le paradigme gagnant-gagnant voit la vie comme un champ de coopération, pas de compétition.",
+                    winWinTip: "Le mindset gagnant-gagnant transforme les 'adversaires' en 'partenaires de création de valeur'.",
+                    tip: "Entraînez-vous à voir les conflits comme des opportunités de création de valeur, pas comme des batailles à gagner."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quelle est l'importance de l'abondance mentality dans la Troisième Voie ?",
+                    options: [
+                        "Elle permet de croire qu'il y a assez pour tout le monde et que la réussite des autres n'empêche pas la sienne",
+                        "Elle est sans importance",
+                        "Elle concerne seulement les ressources financières",
+                        "Elle encourage l'individualisme"
+                    ],
+                    correctAnswer: "Elle permet de croire qu'il y a assez pour tout le monde et que la réussite des autres n'empêche pas la sienne",
+                    explanation: "La mentalité d'abondance contraste avec la mentalité de rareté qui voit la vie comme un jeu à somme nulle.",
+                    winWinTip: "Avec une mentalité d'abondance, vous cherchez à élargir le jeu plutôt qu'à prendre la part des autres.",
+                    tip: "Quand vous vous surprenez à penser 'ou' (soit moi soit toi), remplacez-le par 'et' (moi et toi)."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Comment Covey définit-il l'interdépendance ?",
+                    options: [
+                        "La reconnaissance que nous avons besoin les uns des autres pour réaliser nos plus grandes aspirations",
+                        "La dépendance mutuelle qui affaiblit les individus",
+                        "Une relation commerciale",
+                        "Un état à éviter pour préserver son autonomie"
+                    ],
+                    correctAnswer: "La reconnaissance que nous avons besoin les uns des autres pour réaliser nos plus grandes aspirations",
+                    explanation: "L'interdépendance est le niveau de maturité supérieur à l'indépendance, permettant la synergie.",
+                    winWinTip: "L'interdépendance bien gérée crée un effet multiplicateur où 1+1=11 plutôt que 2.",
+                    tip: "Les plus grandes innovations viennent rarement d'individus isolés mais de collaborations interdépendantes."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quelle est la différence entre les besoins et les positions dans un conflit ?",
+                    options: [
+                        "Les positions sont ce que je demande, les besoins sont ce que je cherche réellement",
+                        "Les besoins sont plus importants que les positions",
+                        "Il n'y a pas de différence",
+                        "Les positions sont émotionnelles, les besoins sont rationnels"
+                    ],
+                    correctAnswer: "Les positions sont ce que je demande, les besoins sont ce que je cherche réellement",
+                    explanation: "Défendre une position ('je veux augmenter mon salaire de 10%') cache des besoins réels ('je veux être reconnu pour ma contribution').",
+                    winWinTip: "En découvrant les besoins cachés derrière les positions, on trouve souvent 10 façons de les satisfaire au lieu d'une.",
+                    tip: "Demandez 'Pourquoi est-ce important pour vous ?' jusqu'à ce que vous atteigniez le besoin fondamental."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Qu'est-ce que le 'cercle d'influence' dans le contexte de la Troisième Voie ?",
+                    options: [
+                        "Les choses sur lesquelles nous avons un contrôle direct et où nous pouvons initier le changement",
+                        "Les personnes qui nous influencent",
+                        "Notre réseau professionnel",
+                        "Notre zone de confort"
+                    ],
+                    correctAnswer: "Les choses sur lesquelles nous avons un contrôle direct et où nous pouvons initier le changement",
+                    explanation: "En nous concentrant sur notre cercle d'influence plutôt que sur notre cercle de préoccupation, nous devenons proactifs dans la création de solutions.",
+                    winWinTip: "Même dans un conflit apparemment bloqué, vous avez toujours un cercle d'influence : votre attitude, votre écoute, vos questions.",
+                    tip: "Au lieu de dire 'Si seulement l'autre changeait...', demandez 'Qu'est-ce que JE peux faire différemment pour créer une ouverture ?'"
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Pourquoi la transparence est-elle essentielle dans la Troisième Voie ?",
+                    options: [
+                        "Elle permet de construire la confiance nécessaire à la synergie",
+                        "Elle est légalement requise",
+                        "Elle accélère le processus",
+                        "Elle n'est pas essentielle"
+                    ],
+                    correctAnswer: "Elle permet de construire la confiance nécessaire à la synergie",
+                    explanation: "Sans transparence sur ses vrais intérêts et contraintes, on ne peut pas co-créer des solutions authentiques.",
+                    winWinTip: "La transparence stratégique (partager ce qui est vraiment important) crée un espace où des solutions inattendues peuvent émerger.",
+                    tip: "Partagez votre 'pourquoi' avant votre 'quoi'. Les gens s'engagent plus dans une solution quand ils comprennent ses fondements."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'chercher d'abord à comprendre' dans la pratique ?",
+                    options: [
+                        "Écouter avec l'intention de vraiment comprendre, pas avec l'intention de répondre",
+                        "Faire des recherches sur l'autre personne",
+                        "Comprendre la loi applicable",
+                        "Analyser les données avant de parler"
+                    ],
+                    correctAnswer: "Écouter avec l'intention de vraiment comprendre, pas avec l'intention de répondre",
+                    explanation: "Cette habitude brise le pattern typique du dialogue de sourds où chacun prépare sa réponse pendant que l'autre parle.",
+                    winWinTip: "Une compréhension profonde révèle souvent des opportunités de valeur cachée que ni l'une ni l'autre partie n'avait vues.",
+                    tip: "Pratiquez la reformulation : 'Si je comprends bien, ce qui est vraiment important pour vous, c'est...'"
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel rôle joue l'humilité dans la Troisième Voie ?",
+                    options: [
+                        "Elle permet de reconnaître qu'on ne détient pas toute la vérité et qu'on peut apprendre de l'autre",
+                        "Elle est un signe de faiblesse à éviter",
+                        "Elle concerne seulement les relations personnelles",
+                        "Elle n'a aucun rôle"
+                    ],
+                    correctAnswer: "Elle permet de reconnaître qu'on ne détient pas toute la vérité et qu'on peut apprendre de l'autre",
+                    explanation: "L'humilité intellectuelle ouvre la porte à de nouvelles perspectives et à des solutions innovantes.",
+                    winWinTip: "L'humilité combinée au courage (pour exprimer ses besoins) crée la formule magique de la Troisième Voie.",
+                    tip: "Rappelez-vous : 'Aucun de nous n'est aussi intelligent que tous nous réunis.'"
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Qu'est-ce que la 'proactivité' dans le contexte de la Troisième Voie ?",
+                    options: [
+                        "La capacité à prendre l'initiative de changer ce qui peut l'être plutôt que de réagir aux circonstances",
+                        "Être le premier à parler dans une négociation",
+                        "Anticiper les objections de l'autre",
+                        "Préparer plusieurs options d'avance"
+                    ],
+                    correctAnswer: "La capacité à prendre l'initiative de changer ce qui peut l'être plutôt que de réagir aux circonstances",
+                    explanation: "Être proactif signifie choisir sa réponse plutôt que de réagir automatiquement, même dans des situations difficiles.",
+                    winWinTip: "La proactivité transforme les problèmes en projets et les adversaires en collaborateurs.",
+                    tip: "Entre un stimulus et votre réponse, il y a un espace de liberté. C'est dans cet espace que naît la Troisième Voie."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Comment définir l'intelligence émotionnelle dans le cadre de la Troisième Voie ?",
+                    options: [
+                        "La capacité à reconnaître et gérer ses émotions et celles des autres pour faciliter la collaboration",
+                        "Être toujours calme et rationnel",
+                        "Cacher ses émotions pendant les négociations",
+                        "Utiliser les émotions pour manipuler l'autre"
+                    ],
+                    correctAnswer: "La capacité à reconnaître et gérer ses émotions et celles des autres pour faciliter la collaboration",
+                    explanation: "L'intelligence émotionnelle permet de créer un climat de sécurité psychologique où la créativité peut s'exprimer.",
+                    winWinTip: "Une haute IE permet de transformer l'énergie émotionnelle d'un conflit en carburant pour l'innovation.",
+                    tip: "Nommez les émotions présentes ('Je vois que cette situation est frustrante pour vous aussi') pour les désamorcer et les canaliser."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quelle est l'importance du cadre de référence dans un conflit ?",
+                    options: [
+                        "Chaque partie voit la situation à travers son propre cadre, et la Troisième Voie nécessite de comprendre ces cadres",
+                        "Le cadre est fixé par la loi et ne peut être changé",
+                        "Le cadre n'a pas d'importance, seuls les faits comptent",
+                        "Il faut imposer un cadre commun dès le début"
+                    ],
+                    correctAnswer: "Chaque partie voit la situation à travers son propre cadre, et la Troisième Voie nécessite de comprendre ces cadres",
+                    explanation: "Les conflits viennent souvent de cadres de référence différents, pas de mauvaises intentions.",
+                    winWinTip: "En élargissant le cadre ('passer de la photo au film'), on découvre souvent des solutions invisibles dans le cadre initial.",
+                    tip: "Demandez : 'Si nous regardions cette situation avec 5 ans de recul, qu'est-ce qui serait vraiment important ?'"
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'penser en termes de système' pour la Troisième Voie ?",
+                    options: [
+                        "Comprendre comment les différentes parties interagissent et s'influencent mutuellement",
+                        "Utiliser des logiciels de modélisation",
+                        "Penser de façon linéaire et logique",
+                        "Considérer seulement les aspects techniques"
+                    ],
+                    correctAnswer: "Comprendre comment les différentes parties interagissent et s'influencent mutuellement",
+                    explanation: "Une pensée systémique révèle les boucles de rétroaction et les effets secondaires qui peuvent être transformés en opportunités.",
+                    winWinTip: "Les solutions systémiques créent souvent des bénéfices en cascade qui démultiplient la valeur initiale.",
+                    tip: "Au lieu de chercher LA cause d'un problème, cherchez LES interactions qui le maintiennent."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel est le rôle de la vision dans la Troisième Voie ?",
+                    options: [
+                        "Créer une image inspirante d'un futur meilleur que les parties peuvent co-créer ensemble",
+                        "Avoir une vision claire de ce qu'on veut obtenir pour soi",
+                        "Prévoir tous les scénarios possibles",
+                        "Établir un plan détaillé dès le début"
+                    ],
+                    correctAnswer: "Créer une image inspirante d'un futur meilleur que les parties peuvent co-créer ensemble",
+                    explanation: "Une vision partagée aligne les énergies et transforme un conflit en projet commun.",
+                    winWinTip: "Une vision ambitieuse ('Que pourrions-nous créer ensemble qui serait extraordinaire ?') libère la créativité et l'engagement.",
+                    tip: "Commencez par la fin : 'À quoi ressemblerait une solution tellement bonne que nous en parlerions encore dans 5 ans ?'"
+
+                // ============ THÉMATIQUE 2: MISE EN ŒUVRE PRATIQUE (20 questions) ============
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quelle est la première étape concrète pour initier une démarche de Troisième Voie ?",
+                    options: [
+                        "Inviter l'autre partie à explorer une solution créative ensemble",
+                        "Préparer ses arguments les plus forts",
+                        "Consulter un expert externe",
+                        "Établir un cadre juridique"
+                    ],
+                    correctAnswer: "Inviter l'autre partie à explorer une solution créative ensemble",
+                    explanation: "L'invitation doit être sincère et exprimer une volonté authentique de trouver une solution qui bénéficie à tous.",
+                    winWinTip: "Une invitation bien formulée ('Et si nous cherchions une solution où nous gagnerions tous les deux plus que ce que nous imaginons ?') crée immédiatement 50% de l'énergie nécessaire.",
+                    tip: "Utilisez des questions ouvertes qui commencent par 'Et si...' pour ouvrir le champ des possibles."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Comment créer un climat de sécurité psychologique pendant le processus ?",
+                    options: [
+                        "Établir des règles de communication respectueuses et garantir qu'aucune idée ne sera ridiculisée",
+                        "Faire signer un accord de confidentialité",
+                        "Tenir les discussions dans un lieu neutre",
+                        "Limiter le temps de parole de chacun"
+                    ],
+                    correctAnswer: "Établir des règles de communication respectueuses et garantir qu'aucune idée ne sera ridiculisée",
+                    explanation: "La sécurité psychologique permet aux parties de partager leurs vrais besoins et idées créatives sans crainte.",
+                    winWinTip: "Dans un climat de sécurité psychologique, les parties osent proposer des solutions radicales qui peuvent générer 1000% de valeur.",
+                    tip: "Commencez par co-créer les règles du jeu : 'Quelles règles devrions-nous établir pour que nous nous sentions tous en sécurité pour partager nos vraies pensées ?'"
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quelle technique utilise-t-on pour découvrir les besoins cachés derrière les positions ?",
+                    options: [
+                        "La technique des '5 Pourquoi' (demander 'Pourquoi est-ce important ?' successivement)",
+                        "L'analyse SWOT",
+                        "La méditation avant la réunion",
+                        "L'étude de marché"
+                    ],
+                    correctAnswer: "La technique des '5 Pourquoi' (demander 'Pourquoi est-ce important ?' successivement)",
+                    explanation: "En demandant 'Pourquoi ?' plusieurs fois, on atteint les besoins fondamentaux (reconnaissance, sécurité, autonomie, etc.).",
+                    winWinTip: "Un besoin fondamental satisfait (comme 'être reconnu') crée souvent 10 fois plus de valeur qu'une position satisfaite ('avoir une augmentation de 5%').",
+                    tip: "Écoutez comme un anthropologue : vous découvrez la culture et les valeurs de l'autre, pas seulement ses demandes."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quel outil visuel peut aider à cartographier les intérêts de toutes les parties ?",
+                    options: [
+                        "La carte des parties prenantes avec leurs intérêts, besoins et craintes",
+                        "Un diagramme de Gantt",
+                        "Un tableau Excel avec les coûts",
+                        "Une présentation PowerPoint"
+                    ],
+                    correctAnswer: "La carte des parties prenantes avec leurs intérêts, besoins et craintes",
+                    explanation: "Visualiser ensemble les différents intérêts aide à identifier les zones de convergence et les opportunités de création de valeur.",
+                    winWinTip: "Une carte complète révèle souvent des synergies cachées où satisfaire un besoin d'une partie coûte peu à l'autre mais crée énormément de valeur.",
+                    tip: "Utilisez des post-its de couleurs différentes pour chaque partie - la visualisation crée une objectivité partagée."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Comment gérer les émotions fortes pendant le processus ?",
+                    options: [
+                        "Les reconnaître et les nommer ('Je vois que ce point est émotionnellement chargé'), puis les mettre de côté temporairement pour continuer",
+                        "Ignorer les émotions et se concentrer sur les faits",
+                        "Arrêter la discussion jusqu'à ce que les émotions passent",
+                        "Faire appel à un médiateur professionnel"
+                    ],
+                    correctAnswer: "Les reconnaître et les nommer ('Je vois que ce point est émotionnellement chargé'), puis les mettre de côté temporairement pour continuer",
+                    explanation: "Nommer les émotions les désamorce souvent et permet de les traiter comme des données importantes plutôt que comme des obstacles.",
+                    winWinTip: "Les émotions fortes signalent souvent des besoins importants non satisfaits - ce sont des indices précieux pour des solutions à haute valeur.",
+                    tip: "Pratiquez la validation émotionnelle : 'Il est tout à fait compréhensible que vous vous sentiez ainsi, étant donné...'"
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quelle est la technique du 'brainwriting' dans le contexte de la Troisième Voie ?",
+                    options: [
+                        "Chacun écrit ses idées silencieusement avant de les partager, pour éviter l'influence du premier qui parle",
+                        "Rédiger un procès-verbal détaillé",
+                        "Préparer un mémoire écrit de ses positions",
+                        "Utiliser un tableau blanc collaboratif en ligne"
+                    ],
+                    correctAnswer: "Chacun écrit ses idées silencieusement avant de les partager, pour éviter l'influence du premier qui parle",
+                    explanation: "Le brainwriting donne une voix égale à toutes les parties et génère plus d'idées créatives que le brainstorming traditionnel.",
+                    winWinTip: "Le brainwriting génère souvent des idées 'folles' qui, une fois combinées, créent des solutions révolutionnaires à 500%+.",
+                    tip: "Fixez une quantité minimale d'idées (ex: '10 idées chacun') pour dépasser les solutions évidentes."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Comment élargir le cadre du problème pour découvrir de nouvelles solutions ?",
+                    options: [
+                        "Poser des questions comme 'Si nous avions un budget illimité, que ferions-nous ?' ou 'Comment résoudrions-nous ce problème dans 100 ans ?'",
+                        "Consulter des experts d'autres domaines",
+                        "Augmenter le temps alloué à la résolution",
+                        "Diminuer les contraintes artificiellement"
+                    ],
+                    correctAnswer: "Poser des questions comme 'Si nous avions un budget illimité, que ferions-nous ?' ou 'Comment résoudrions-nous ce problème dans 100 ans ?'",
+                    explanation: "Les questions 'et si...' radicales libèrent la créativité en levant temporairement les contraintes mentales.",
+                    winWinTip: "Une solution 'idéale' imaginée puis adaptée aux contraintes réelles crée souvent 200% de la valeur d'une solution 'réaliste' initiale.",
+                    tip: "Pratiquez le 'comment pourrions-nous...' (How Might We) : formulez le problème comme une opportunité de conception."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quelle technique utiliser pour combiner les idées de différentes parties ?",
+                    options: [
+                        "Le 'Yes, And...' (au lieu de 'Yes, But...') où on améliore chaque idée plutôt qu'on la critique",
+                        "Le vote à la majorité",
+                        "L'analyse coût-bénéfice de chaque option",
+                        "La délégation à un sous-comité"
+                    ],
+                    correctAnswer: "Le 'Yes, And...' (au lieu de 'Yes, But...') où on améliore chaque idée plutôt qu'on la critique",
+                    explanation: "'Yes, And...' construit sur les idées des autres, créant une spirale ascendante de créativité collective.",
+                    winWinTip: "Une seule idée améliorée 5 fois par 'Yes, And...' devient souvent une solution à 1000% meilleure que l'idée initiale.",
+                    tip: "Interdisez le mot 'mais' pendant les phases créatives. Remplacez-le systématiquement par 'et'."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Comment tester rapidement une solution potentielle sans s'engager définitivement ?",
+                    options: [
+                        "Créer un prototype ou un pilote à petite échelle",
+                        "Faire une étude de marché approfondie",
+                        "Consulter tous les stakeholders",
+                        "Attendre que tout soit parfait"
+                    ],
+                    correctAnswer: "Créer un prototype ou un pilote à petite échelle",
+                    explanation: "Un prototype permet d'apprendre rapidement et à moindre coût, et d'ajuster la solution avant un déploiement complet.",
+                    winWinTip: "Un prototype raté mais instructif crée souvent plus de valeur à long terme qu'une solution 'sûre' mais médiocre.",
+                    tip: "Pensez 'petit, rapide, cheap' pour vos premiers tests. Même un prototype en papier peut révéler des insights cruciaux."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quelle est l'importance de célébrer les petites victoires pendant le processus ?",
+                    options: [
+                        "Cela maintient la motivation et renforce la confiance entre les parties",
+                        "Cela fait perdre du temps",
+                        "Cela n'est important qu'à la fin du processus",
+                        "Cela crée des attentes irréalistes"
+                    ],
+                    correctAnswer: "Cela maintient la motivation et renforce la confiance entre les parties",
+                    explanation: "Les processus de Troisième Voie peuvent être longs ; célébrer les progrès maintient l'énergie et l'engagement.",
+                    winWinTip: "Chaque petite victoire construit le capital relationnel qui permet d'aborder les défis plus difficiles avec succès.",
+                    tip: "Prenez le temps de reconnaître explicitement les concessions et contributions de l'autre : 'J'apprécie vraiment que vous ayez...'"
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Comment gérer les désaccords persistants sur certains points ?",
+                    options: [
+                        "Les mettre 'au frigo' temporairement et se concentrer sur les points d'accord, puis y revenir plus tard avec une perspective fraîche",
+                        "Insister jusqu'à ce qu'une partie cède",
+                        "Faire appel à un arbitre externe",
+                        "Abandonner le processus"
+                    ],
+                    correctAnswer: "Les mettre 'au frigo' temporairement et se concentrer sur les points d'accord, puis y revenir plus tard avec une perspective fraîche",
+                    explanation: "Parfois, résoudre d'autres aspects du problème change la dynamique des points bloqués.",
+                    winWinTip: "Un point bloqué vu sous un angle différent (après avoir résolu d'autres aspects) devient souvent une opportunité de création de valeur unique.",
+                    tip: "Créez un 'parking lot' visuel pour les points difficiles - cela rassure que rien ne sera oublié tout en permettant d'avancer."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quelle technique utiliser pour prendre une décision finale ?",
+                    options: [
+                        "Le consentement (personne n'a d'objection majeure) plutôt que le consensus (tout le monde est d'accord à 100%)",
+                        "Le vote à la majorité simple",
+                        "La décision du plus haut gradé",
+                        "Le tirage au sort"
+                    ],
+                    correctAnswer: "Le consentement (personne n'a d'objection majeure) plutôt que le consensus (tout le monde est d'accord à 100%)",
+                    explanation: "Le consentement permet d'avancer avec une solution 'assez bonne pour le moment, assez sûre pour essayer' sans bloquer sur la perfection.",
+                    winWinTip: "Une décision par consentement avec une clause de révision ('testons pour 3 mois puis réévaluons') crée 90% de la valeur d'une solution 'parfaite' en 10% du temps.",
+                    tip: "Demandez : 'Y a-t-il une raison fondamentale pour laquelle nous ne devrions PAS essayer cette solution ?' plutôt que 'Est-ce que tout le monde l'aime ?'"
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Comment documenter l'accord final pour qu'il soit durable ?",
+                    options: [
+                        "Rédiger un 'protocole d'accord créatif' qui capture l'esprit de la solution, pas seulement les termes techniques",
+                        "Faire un contrat juridique détaillé",
+                        "Prendre des notes informelles",
+                        "S'en remettre à la mémoire collective"
+                    ],
+                    correctAnswer: "Rédiger un 'protocole d'accord créatif' qui capture l'esprit de la solution, pas seulement les termes techniques",
+                    explanation: "Un bon accord capture le 'pourquoi' (les besoins satisfaits) autant que le 'quoi' (les actions spécifiques).",
+                    winWinTip: "Un accord qui inclut les principes sous-jacents ('nous nous engageons à...') crée un cadre flexible qui s'adapte aux changements tout en préservant l'esprit win-win.",
+                    tip: "Incluez une 'clause de révision créative' : 'Nous nous rencontrerons dans 6 mois non pas pour vérifier le respect du contrat, mais pour chercher comment améliorer encore la solution.'"
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quelle est l'importance de la communication après l'accord ?",
+                    options: [
+                        "Elle permet de maintenir la confiance, d'ajuster en cours de route, et de célébrer les succès",
+                        "Elle est inutile une fois l'accord signé",
+                        "Elle ne concerne que les problèmes",
+                        "Elle doit être minimale pour éviter les conflits"
+                    ],
+                    correctAnswer: "Elle permet de maintenir la confiance, d'ajuster en cours de route, et de célébrer les succès",
+                    explanation: "La Troisième Voie est un processus continu, pas un événement ponctuel.",
+                    winWinTip: "Une communication post-accord régulière transforme une transaction en relation, créant un capital relationnel qui facilite les futures collaborations.",
+                    tip: "Planifiez des 'check-ins' réguliers non menaçants : 'Comment ça marche pour vous ? Qu'est-ce qui pourrait être encore mieux ?'"
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Comment gérer les parties prenantes qui n'étaient pas à la table mais sont affectées par l'accord ?",
+                    options: [
+                        "Les consulter avant la finalisation et intégrer leurs perspectives dans l'accord",
+                        "Leur annoncer la décision une fois prise",
+                        "Ignorer leur impact s'ils n'étaient pas présents",
+                        "Leur donner un veto sur l'accord"
+                    ],
+                    correctAnswer: "Les consulter avant la finalisation et intégrer leurs perspectives dans l'accord",
+                    explanation: "Une solution vraiment durable considère l'impact sur toutes les parties affectées, directement ou indirectement.",
+                    winWinTip: "Intégrer les parties prenantes externes révèle souvent des bénéfices systémiques supplémentaires qui transforment un win-win en win-win-win.",
+                    tip: "Même une consultation rapide ('Voici ce que nous envisageons - quel impact cela aurait-il sur vous ?') peut prévenir des problèmes majeurs."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quel est le rôle du silence dans le processus de Troisième Voie ?",
+                    options: [
+                        "Il permet la réflexion, l'écoute profonde, et l'émergence d'idées nouvelles",
+                        "Il est un signe de désaccord ou de malaise",
+                        "Il doit être évité à tout prix",
+                        "Il n'a aucun rôle particulier"
+                    ],
+                    correctAnswer: "Il permet la réflexion, l'écoute profonde, et l'émergence d'idées nouvelles",
+                    explanation: "Les silences productifs sont ceux où les gens réfléchissent profondément, pas ceux où ils se retiennent de parler.",
+                    winWinTip: "Un silence de 30 secondes après une question difficile permet souvent l'émergence d'idées beaucoup plus profondes et créatives.",
+                    tip: "Quand vous posez une question importante, comptez mentalement jusqu'à 10 avant de rompre le silence."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Comment utiliser les métaphores et les analogies dans le processus ?",
+                    options: [
+                        "Elles aident à expliquer des concepts complexes et à trouver des solutions dans d'autres domaines",
+                        "Elles rendent la communication confuse",
+                        "Elles sont inutiles dans des discussions sérieuses",
+                        "Elles doivent être évitées car trop subjectives"
+                    ],
+                    correctAnswer: "Elles aident à expliquer des concepts complexes et à trouver des solutions dans d'autres domaines",
+                    explanation: "Une bonne métaphore crée un langage commun et ouvre de nouvelles perspectives sur un problème.",
+                    winWinTip: "Une analogie avec un domaine complètement différent ('Comment la nature résoudrait-elle ce problème ?') peut inspirer des solutions radicales à 1000%.",
+                    tip: "Quand vous êtes bloqués, demandez : 'À quoi ce problème ressemble-t-il dans un autre contexte ?'"
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quelle est l'importance du langage corporel et du ton de voix ?",
+                    options: [
+                        "Ils communiquent souvent plus que les mots et influencent profondément le climat de confiance",
+                        "Ils sont moins importants que le contenu verbal",
+                        "Ils ne doivent pas être interprétés pour éviter les malentendus",
+                        "Ils sont culturellement spécifiques et donc inutiles à considérer"
+                    ],
+                    correctAnswer: "Ils communiquent souvent plus que les mots et influencent profondément le climat de confiance",
+                    explanation: "L'alignement entre les mots et le non-verbal est essentiel pour construire une confiance authentique.",
+                    winWinTip: "Un langage corporel ouvert et un ton de voix calme créent un espace psychologique où des solutions créatives peuvent émerger.",
+                    tip: "Pratiquez le 'matching and leading' : ajustez subtilement votre langage corporel à celui de l'autre, puis guidez vers une posture plus ouverte."
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Comment gérer les différences culturelles dans une démarche de Troisième Voie ?",
+                    options: [
+                        "S'informer et respecter les différences culturelles tout en cherchant des valeurs universelles partagées",
+                        "Imposer la culture dominante",
+                        "Ignorer les différences culturelles pour rester 'objectif'",
+                        "Abandonner si les différences culturelles sont trop importantes"
+                    ],
+                    correctAnswer: "S'informer et respecter les différences culturelles tout en cherchant des valeurs universelles partagées",
+                    explanation: "Les besoins humains fondamentaux (reconnaissance, respect, sécurité) sont universels même si leur expression est culturelle.",
+                    winWinTip: "Les différences culturelles, bien comprises, deviennent une source de richesse créative plutôt qu'un obstacle.",
+                    tip: "Demandez explicitement : 'Dans votre culture, comment aborderiez-vous normalement ce type de situation ?'"
+                },
+                {
+                    thematic: "Mise en Œuvre Pratique",
+                    question: "Quel est le rôle des questions 'naïves' (celles qui remettent en cause les évidences) ?",
+                    options: [
+                        "Elles permettent de remettre en question les hypothèses limitantes et d'ouvrir de nouveaux possibles",
+                        "Elles font perdre du temps sur des évidences",
+                        "Elles montrent un manque de préparation",
+                        "Elles doivent être évitées dans les discussions sérieuses"
+                    ],
+                    correctAnswer: "Elles permettent de remettre en question les hypothèses limitantes et d'ouvrir de nouveaux possibles",
+                    explanation: "Les questions naïves sont souvent les plus puissantes car elles remettent en cause ce que tout le monde tient pour acquis.",
+                    winWinTip: "Une seule hypothèse remise en cause par une question 'naïve' peut libérer des solutions créant 10 fois plus de valeur.",
+                    tip: "Osez poser la question 'Pourquoi faisons-nous cela de cette façon ?' même si la réponse semble évidente."
+
+                // ============ THÉMATIQUE 3: REX & CAS CONCRETS (20 questions) ============
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans le REX 1 (Salarié/Manager : Présence vs Télétravail), quelle était la Troisième Voie trouvée ?",
+                    options: [
+                        "Présence ciblée à forte valeur collective + Flexibilité individuelle + Pilotage par KPI de résultats",
+                        "Télétravail complet pour le salarié",
+                        "Présence obligatoire 5 jours par semaine",
+                        "Embauche d'un remplaçant"
+                    ],
+                    correctAnswer: "Présence ciblée à forte valeur collective + Flexibilité individuelle + Pilotage par KPI de résultats",
+                    explanation: "Cette solution satisfaisait le besoin du manager (coordination, visibilité) et du salarié (concentration, équilibre) tout en augmentant la productivité de 18%.",
+                    winWinTip: "En passant du contrôle des inputs (heures présentes) au pilotage des outputs (résultats), on a créé +100% de satisfaction pour chaque partie.",
+                    tip: "Quand un conflit porte sur les moyens (comment), recentrez-le sur les fins (pourquoi)."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans le REX 2 (Couple/Familles : Mariage & pression financière), quel besoin caché des familles a été découvert ?",
+                    options: [
+                        "La reconnaissance sociale et le respect des traditions, pas nécessairement une fête coûteuse",
+                        "Un mariage luxueux à tout prix",
+                        "L'endettement du couple comme preuve d'engagement",
+                        "L'exclusion des amis du couple"
+                    ],
+                    correctAnswer: "La reconnaissance sociale et le respect des traditions, pas nécessairement une fête coûteuse",
+                    explanation: "En comprenant que le besoin réel était l'honneur et la reconnaissance, pas le budget, le couple a créé un rituel symbolique qui satisfaisait tout le monde sans dette.",
+                    winWinTip: "Satisfaire le besoin d'honneur (valeur sociale) a créé 10 fois plus de valeur relationnelle que satisfaire la demande initiale (fête coûteuse).",
+                    tip: "Derrière une demande apparemment matérielle ('une grande fête'), cherchez toujours le besoin relationnel ou identitaire ('reconnaissance, appartenance')."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans le REX 3 (Projet IT : Métier vs DSI), comment a-t-on transformé le paradigme 'vitesse OU sécurité' ?",
+                    options: [
+                        "En le redéfinissant comme 'vitesse ET sécurité, mais autrement' via des méthodes DevSecOps pragmatiques",
+                        "En donnant raison à la DSI et en ralentissant tout",
+                        "En contournant la DSI pour aller plus vite",
+                        "En abandonnant les exigences de sécurité"
+                    ],
+                    correctAnswer: "En le redéfinissant comme 'vitesse ET sécurité, mais autrement' via des méthodes DevSecOps pragmatiques",
+                    explanation: "La solution a combiné MVP sécurisé, décisions rapides partagées et responsabilité collective, divisant les délais par 2 sans faille critique.",
+                    winWinTip: "En alignant les incitations (responsabilité collective pour la vitesse ET la sécurité), on a créé une synergie où 1+1=3 en performance.",
+                    tip: "Quand on vous présente un dilemme ('soit A soit B'), cherchez toujours la façon d'avoir 'A et B'."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans le REX 4 (Conflit foncier communautaire), quelle Troisième Voie a évité la violence ?",
+                    options: [
+                        "Création d'une coopérative commune avec séparation propriété/exploitation et redistribution équitable",
+                        "Division égalitaire du terrain",
+                        "Vente du terrain à un tiers",
+                        "Décision imposée par une autorité externe"
+                    ],
+                    correctAnswer: "Création d'une coopérative commune avec séparation propriété/exploitation et redistribution équitable",
+                    explanation: "Cette solution a satisfait les besoins d'identité et de dignité (propriété symbolique) et les besoins économiques (exploitation productive), créant même des emplois.",
+                    winWinTip: "En séparant la propriété (valeur symbolique) de l'exploitation (valeur économique), on a créé deux sources de valeur là où il n'y en avait qu'une conflictuelle.",
+                    tip: "Quand un conflit porte sur une ressource limitée, cherchez à en créer de nouvelles ou à utiliser différemment celle qui existe."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans le REX 5 (École/Parent/Enfant), comment a-t-on redéfini la 'discipline' ?",
+                    options: [
+                        "Comme 'cadre + sens' plutôt qu'obéissance aveugle, via un contrat éducatif personnalisé",
+                        "Comme obéissance stricte aux règles",
+                        "Comme liberté totale sans cadre",
+                        "Comme punition systématique"
+                    ],
+                    correctAnswer: "Comme 'cadre + sens' plutôt qu'obéissance aveugle, via un contrat éducatif personnalisé",
+                    explanation: "En incluant l'enfant comme acteur du processus et en créant un contrat personnalisé, les résultats scolaires ont augmenté de 40% dans un climat apaisé.",
+                    winWinTip: "En donnant du sens au cadre ('Pourquoi cette règle ?'), on transforme la contrainte en autonomie responsable, multipliant l'engagement par 4.",
+                    tip: "Impliquez toujours les 'exécutants' dans la conception des règles qui les concernent."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans le REX 6 (Gouvernance publique : État vs citoyens), comment a-t-on transformé la méfiance en coopération ?",
+                    options: [
+                        "Taxe progressive conditionnée + affectation visible + comité citoyen de suivi",
+                        "Imposition forcée de la taxe",
+                        "Abandon du projet d'infrastructure",
+                        "Consultation superficielle puis décision unilatérale"
+                    ],
+                    correctAnswer: "Taxe progressive conditionnée + affectation visible + comité citoyen de suivi",
+                    explanation: "Cette approche a augmenté le taux de paiement de 27% en transformant une obligation imposée en projet collectif transparent.",
+                    winWinTip: "La transparence radicale ('voici exactement où va chaque euro') a multiplié la légitimité perçue et donc la compliance volontaire.",
+                    tip: "Quand les gens résistent à une décision, demandez-vous s'ils résistent à la décision elle-même ou au processus qui l'a produite."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans le REX 7 (Religion/spiritualité : tradition vs jeunesse), comment a-t-on concilié tradition et modernité ?",
+                    options: [
+                        "Maintien du rituel central + espaces parallèles d'actions sociales et débats + jeunes comme co-animateurs",
+                        "Modernisation complète des rites",
+                        "Maintien strict des traditions sans changement",
+                        "Création de deux groupes séparés"
+                    ],
+                    correctAnswer: "Maintien du rituel central + espaces parallèles d'actions sociales et débats + jeunes comme co-animateurs",
+                    explanation: "Cette solution a doublé la participation des jeunes tout en renforçant le respect pour les anciens, préservant l'essence tout en réinventant la forme.",
+                    winWinTip: "En distinguant l'essentiel (le sens, les valeurs) du secondaire (les formes, les pratiques), on peut innover radicalement sans perdre l'identité.",
+                    tip: "Face à un conflit générationnel ou culturel, cherchez d'abord ce qui est sacré (non négociable) et ce qui est flexible (adaptable)."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans le REX 8 (Santé : médecin vs patient), comment a-t-on amélioré l'observance thérapeutique de 45% ?",
+                    options: [
+                        "En transformant le patient en 'partenaire de soin' avec protocole modulable et éducation thérapeutique",
+                        "En rendant le protocole plus strict",
+                        "En menaçant le patient des conséquences",
+                        "En abandonnant le traitement difficile"
+                    ],
+                    correctAnswer: "En transformant le patient en 'partenaire de soin' avec protocole modulable et éducation thérapeutique",
+                    explanation: "Cette approche a restauré la relation médecin-patient et réduit les rechutes en respectant les limites réelles du patient.",
+                    winWinTip: "L'adhésion intérieure ('je comprends pourquoi et comment') crée 10 fois plus de compliance que l'obéissance externe ('je fais parce qu'on me le dit').",
+                    tip: "Quand quelqu'un 'ne suit pas les règles', demandez-vous si les règles sont adaptées à sa réalité, pas seulement s'il est 'non compliant'."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans le REX 9 (Transmission familiale), comment a-t-on évité les ressentiments entre enfants ?",
+                    options: [
+                        "Socle commun égal + bonus différencié assumé et expliqué + projet collectif familial",
+                        "Division mathématiquement égale",
+                        "Décision arbitraire du parent",
+                        "Vente de tout et partage de l'argent"
+                    ],
+                    correctAnswer: "Socle commun égal + bonus différencié assumé et expliqué + projet collectif familial",
+                    explanation: "Cette approche a préservé les liens familiaux tout en reconnaissant les contributions différentes, évitant tout conflit post-transmission.",
+                    winWinTip: "En créant un projet commun futur (au-delà de la simple division), on transforme une transaction potentiellement conflictuelle en aventure familiale unifiante.",
+                    tip: "Dans les héritages, l'équité perçue est plus importante que l'égalité mathématique."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans le REX 10 (Stratégie business : croissance vs résilience), quelle Troisième Voie a émergé ?",
+                    options: [
+                        "Croissance par paliers + indicateurs de résilience intégrés + réinvestissement automatique + gouvernance adaptative",
+                        "Croissance maximale rapide",
+                        "Prudence excessive et croissance lente",
+                        "Alternance entre phases de croissance et de consolidation"
+                    ],
+                    correctAnswer: "Croissance par paliers + indicateurs de résilience intégrés + réinvestissement automatique + gouvernance adaptative",
+                    explanation: "Cette stratégie a permis une croissance soutenue sans crise majeure, avec une valorisation long terme supérieure.",
+                    winWinTip: "En intégrant des indicateurs de résilience dans les décisions de croissance, on évite les bulles spéculatives et on crée une valeur plus durable.",
+                    tip: "Le vrai dilemme n'est pas 'croissance OU résilience' mais 'comment croître RÉSILIEMMENT'."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Quel principe commun à tous les REX a permis de transformer des conflits apparemment insolubles ?",
+                    options: [
+                        "L'élargissement du cadre du problème au-delà des positions initiales",
+                        "L'imposition d'une solution par une autorité externe",
+                        "Le hasard et la chance",
+                        "L'abandon des exigences d'une des parties"
+                    ],
+                    correctAnswer: "L'élargissement du cadre du problème au-delà des positions initiales",
+                    explanation: "Dans chaque cas, reformuler le problème ('pas comment partager un gâteau fixe mais comment créer un gâteau plus grand') a ouvert des solutions créatives.",
+                    winWinTip: "Élargir le cadre multiplie par 10 l'espace des solutions possibles. Un problème défini de façon étroite n'a que des solutions étroites.",
+                    tip: "Quand vous êtes bloqué sur un problème, demandez : 'Quel problème plus large résoudrions-nous en résolvant celui-ci ?'"
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans un conflit syndical-patronal célèbre résolu par la Troisième Voie, quelle innovation a permis de sauver l'entreprise ?",
+                    options: [
+                        "La création d'un comité de pilotage mixte avec pouvoir décisionnel réel sur les transformations",
+                        "L'augmentation massive des salaires",
+                        "La réduction drastique des effectifs",
+                        "La nationalisation de l'entreprise"
+                    ],
+                    correctAnswer: "La création d'un comité de pilotage mixte avec pouvoir décisionnel réel sur les transformations",
+                    explanation: "En donnant aux syndicats un vrai pouvoir de co-décision (pas seulement de consultation), la confiance est revenue et des solutions créatives ont émergé.",
+                    winWinTip: "Le partage réel du pouvoir (pas seulement des bénéfices) crée un alignement profond qui transforme les coûts fixes en investissements partagés.",
+                    tip: "Quand la confiance est rompue, seul un transfert de pouvoir réel (pas seulement des promesses) peut la restaurer."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans un conflit environnemental entre écologistes et industriels, quelle Troisième Voie a émergé ?",
+                    options: [
+                        "Création d'une 'réserve naturelle productive' où l'exploitation est limitée mais financée par la vente de crédits carbone",
+                        "Interdiction pure et simple de l'exploitation",
+                        "Exploitation sans restriction",
+                        "Relocalisation de l'industrie ailleurs"
+                    ],
+                    correctAnswer: "Création d'une 'réserve naturelle productive' où l'exploitation est limitée mais financée par la vente de crédits carbone",
+                    explanation: "Cette solution a généré plus de revenus pour l'entreprise (via crédits carbone) que l'exploitation destructive, tout en préservant l'écosystème.",
+                    winWinTip: "En monétisant les externalités positives (séquestration carbone, biodiversité), on aligne économie et écologie au lieu de les opposer.",
+                    tip: "Cherchez toujours à transformer les contraintes environnementales en avantages compétitifs plutôt qu'en coûts."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans un conflit de voisinage sur le bruit, quelle solution créative a satisfait tout le monde ?",
+                    options: [
+                        "Création d'un 'calendrier sonore' avec plages horaires précises + isolation acoustique partagée + système de signalement non conflictuel",
+                        "Déménagement d'une des parties",
+                        "Procès et injonction judiciaire",
+                        "Résignation et adaptation unilatérale"
+                    ],
+                    correctAnswer: "Création d'un 'calendrier sonore' avec plages horaires précises + isolation acoustique partagée + système de signalement non conflictuel",
+                    explanation: "En formalisant les attentes et en partageant le coût des solutions (isolation), le conflit s'est transformé en coopération de bon voisinage.",
+                    winWinTip: "La prévisibilité ('je sais quand il peut y avoir du bruit') réduit le stress de 90% même si le bruit lui-même ne diminue que de 50%.",
+                    tip: "Dans les conflits de voisinage, remplacez les règles floues ('pas trop de bruit') par des standards objectifs et mesurables."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans un conflit de copropriété sur des travaux, comment a-t-on obtenu l'unanimité ?",
+                    options: [
+                        "En présentant 3 options avec leurs implications financières ET en créant un fonds commun pour les imprévus futurs",
+                        "En imposant la solution la moins chère",
+                        "En reportant indéfiniment la décision",
+                        "En faisant voter à la majorité simple contre l'avis des opposants"
+                    ],
+                    correctAnswer: "En présentant 3 options avec leurs implications financières ET en créant un fonds commun pour les imprévus futurs",
+                    explanation: "La création du fonds commun a rassuré les plus prudents sur les dépassements de budget, permettant l'accord sur une solution de qualité.",
+                    winWinTip: "Un mécanisme de gestion des risques partagé (fonds commun) peut coûter 1% du budget mais augmenter la volonté d'investir de 100%.",
+                    tip: "Quand des gens résistent à un investissement, c'est souvent par peur des dépassements imprévisibles, pas par opposition au projet lui-même."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans un divorce conflictuel, quelle Troisième Voie a préservé les enfants et les relations futures ?",
+                    options: [
+                        "Processus de 'divorce collaboratif' avec engagement à trouver des solutions créatives pour les enfants + médiateur créatif",
+                        "Procédure judiciaire classique",
+                        "Capitulation d'une des parties",
+                        "Séparation de corps sans divorce légal"
+                    ],
+                    correctAnswer: "Processus de 'divorce collaboratif' avec engagement à trouver des solutions créatives pour les enfants + médiateur créatif",
+                    explanation: "En se focalisant sur les besoins futurs des enfants plutôt que sur les torts passés, les ex-conjoints ont pu co-construire des arrangements innovants.",
+                    winWinTip: "Un divorce bien géré préserve 80% du capital relationnel familial, ce qui vaut des millions en bien-être futur pour les enfants.",
+                    tip: "Dans les séparations, demandez : 'Comment organiser notre nouvelle relation de façon à servir au mieux ceux qui dépendent de nous ?'"
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans un conflit de succession d'entreprise familiale, comment a-t-on évité la vente et préservé l'entreprise ?",
+                    options: [
+                        "Création d'une holding familiale avec actionnariat élargi + comité de gouvernance + PDG externe temporaire",
+                        "Vente à un concurrent",
+                        "Désignation arbitraire d'un successeur",
+                        "Division de l'entreprise entre héritiers"
+                    ],
+                    correctAnswer: "Création d'une holding familiale avec actionnariat élargi + comité de gouvernance + PDG externe temporaire",
+                    explanation: "Cette structure a permis de professionnaliser la gouvernance tout en préservant le contrôle familial, avec une croissance accélérée.",
+                    winWinTip: "Séparer la propriété (holding familiale), la gouvernance (comité) et le management (PDG) triple la valeur de l'entreprise en 5 ans.",
+                    tip: "Dans les successions, distinguez soigneusement les rôles : actionnaire, administrateur, manager - rarement la même personne peut bien jouer les trois."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans un conflit entre startups pour une opportunité de marché, quelle solution a créé plus de valeur que la compétition ?",
+                    options: [
+                        "Fusion des compétences complémentaires pour créer une offre conjointe plus compétitive que chacune seule",
+                        "Guerre des prix jusqu'à la faillite d'une des deux",
+                        "Partage géographique du marché",
+                        "Abandon de l'opportunité par une des startups"
+                    ],
+                    correctAnswer: "Fusion des compétences complémentaires pour créer une offre conjointe plus compétitive que chacune seule",
+                    explanation: "En unissant leurs forces techniques et commerciales, les deux startups ont remporté un contrat 5 fois plus gros que l'opportunité initiale.",
+                    winWinTip: "1+1=11 quand les compétences sont complémentaires et non redondantes. Une coopération bien conçue bat toujours la compétition.",
+                    tip: "Avant de voir un concurrent comme un ennemi, demandez : 'Qu'avons-nous qu'ils n'ont pas, et qu'ont-ils que nous n'avons pas ? Comment pourrions-nous combiner ces forces ?'"
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans un conflit international sur des ressources en eau, quelle innovation a permis un accord durable ?",
+                    options: [
+                        "Création d'une autorité de bassin transfrontalière avec gestion intégrée et financement commun pour les infrastructures",
+                        "Guerre pour le contrôle de la ressource",
+                        "Division égale du débit",
+                        "Achat de la ressource par le pays le plus riche"
+                    ],
+                    correctAnswer: "Création d'une autorité de bassin transfrontalière avec gestion intégrée et financement commun pour les infrastructures",
+                    explanation: "Cette approche a augmenté la disponibilité en eau pour tous les pays de 30% grâce à une gestion optimisée et des investissements coordonnés.",
+                    winWinTip: "Une gouvernance commune d'une ressource rare peut créer plus de valeur (par optimisation) que le contrôle exclusif d'une partie de cette ressource.",
+                    tip: "Face à une ressource limitée, cherchez d'abord à l'optimiser collectivement, ensuite seulement à la répartir."
+                },
+                {
+                    thematic: "REX & Cas Concrets",
+                    question: "Dans un conflit entre générations sur l'utilisation des technologies, quelle Troisième Voie a émergé ?",
+                    options: [
+                        "Création d'un 'budget tech' avec formations croisées (jeunes forment les anciens, anciens forment les jeunes sur le métier) + outils hybrides",
+                        "Imposition des outils des jeunes",
+                        "Maintien des méthodes traditionnelles",
+                        "Création de deux systèmes parallèles"
+                    ],
+                    correctAnswer: "Création d'un 'budget tech' avec formations croisées (jeunes forment les anciens, anciens forment les jeunes sur le métier) + outils hybrides",
+                    explanation: "Cette approche a réduit les erreurs de 40% et augmenté la satisfaction de toutes les générations en créant un langage commun.",
+                    winWinTip: "La réciprocité dans l'apprentissage (chacun enseigne à l'autre ce qu'il maîtrise) crée une relation d'égal à égal qui transcende les différences générationnelles.",
+                    tip: "Transformez les différences générationnelles en système d'apprentissage mutuel plutôt qu'en source de conflit."
+
+                // ============ THÉMATIQUE 4: OUTILS & MÉTHODES (20 questions) ============
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Qu'est-ce que le 'Canvas de la Troisième Voie' et comment l'utilise-t-on ?",
+                    options: [
+                        "Un outil visuel en 9 cases qui guide le processus de création de solutions synergiques, de l'identification des besoins à la mise en œuvre",
+                        "Un tableau pour comparer les options",
+                        "Un outil de suivi budgétaire",
+                        "Un modèle de contrat"
+                    ],
+                    correctAnswer: "Un outil visuel en 9 cases qui guide le processus de création de solutions synergiques, de l'identification des besoins à la mise en œuvre",
+                    explanation: "Le Canvas structure la démarche : parties prenantes, besoins, contraintes, idées folles, prototypes, accords, etc., sur une page.",
+                    winWinTip: "Un Canvas bien rempli transforme un conflit complexe en projet de design collaboratif, multipliant la créativité par 5.",
+                    tip: "Commencez toujours par remplir les cases 'Parties prenantes' et 'Besoins réels' avant de chercher des solutions."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Comment utiliser le Design Thinking dans une démarche de Troisième Voie ?",
+                    options: [
+                        "Comme méthodologie d'innovation centrée sur l'humain, avec phases d'empathie, définition, idéation, prototypage et test",
+                        "Comme méthode de design graphique",
+                        "Comme outil de marketing",
+                        "Comme processus de décision rationnelle"
+                    ],
+                    correctAnswer: "Comme méthodologie d'innovation centrée sur l'humain, avec phases d'empathie, définition, idéation, prototypage et test",
+                    explanation: "Le Design Thinking structure la créativité et maintient le focus sur les besoins humains tout au long du processus.",
+                    winWinTip: "Appliqué aux conflits, le Design Thinking transforme les 'problèmes à résoudre' en 'opportunités à designer', créant 10 fois plus d'engagement.",
+                    tip: "Ne sous-estimez pas la phase d'empathie : passez au moins 30% du temps à comprendre profondément avant de chercher des solutions."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Qu'est-ce que la 'médiation créative' et en quoi diffère-t-elle de la médiation classique ?",
+                    options: [
+                        "Elle vise à co-créer des solutions nouvelles plutôt qu'à trouver un compromis entre positions existantes",
+                        "Elle utilise plus d'outils visuels",
+                        "Elle est plus rapide",
+                        "Elle ignore les aspects légaux"
+                    ],
+                    correctAnswer: "Elle vise à co-créer des solutions nouvelles plutôt qu'à trouver un compromis entre positions existantes",
+                    explanation: "Le médiateur créatif facilite l'innovation collective, pas seulement la négociation. Il utilise des techniques de créativité et de design.",
+                    winWinTip: "Un médiateur créatif peut générer des solutions à 500% de valeur là où un médiateur classique aurait obtenu un compromis à 60%-60%.",
+                    tip: "Choisissez un médiateur formé à la créativité et à l'innovation, pas seulement au droit et à la négociation."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Comment utiliser la technique des 'scénarios extrêmes' pour libérer la créativité ?",
+                    options: [
+                        "Imaginer des solutions pour des contraintes radicalement différentes (budget illimité, temps infini, aucune régulation) puis adapter",
+                        "Préparer des plans pour le pire cas possible",
+                        "Exagérer les positions pour faire peur à l'autre partie",
+                        "Ignorer cette technique car irréaliste"
+                    ],
+                    correctAnswer: "Imaginer des solutions pour des contraintes radicalement différentes (budget illimité, temps infini, aucune régulation) puis adapter",
+                    explanation: "Cette technique brise les blocages mentaux en levant temporairement toutes les contraintes, révélant des idées radicales qu'on peut ensuite adapter à la réalité.",
+                    winWinTip: "Une idée 'impossible' adaptée à 10% de sa grandeur initiale crée souvent plus de valeur qu'une idée 'réaliste' pensée dès le départ.",
+                    tip: "Commencez par 'Dans un monde parfait...' et seulement ensuite demandez 'Qu'est-ce qui nous empêche d'avoir ça, et comment contourner ces obstacles ?'"
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Qu'est-ce que le 'consentement décisionnel' et comment diffère-t-il du consensus ?",
+                    options: [
+                        "On avance si personne n'a d'objection raisonnable et sérieuse, plutôt que d'exiger l'accord positif de tous",
+                        "On vote à la majorité",
+                        "Le leader décide après consultation",
+                        "On cherche l'unanimité parfaite"
+                    ],
+                    correctAnswer: "On avance si personne n'a d'objection raisonnable et sérieuse, plutôt que d'exiger l'accord positif de tous",
+                    explanation: "Le consentement est plus rapide et plus robuste que le consensus, qui peut être bloqué par une seule personne réticente.",
+                    winWinTip: "Le consentement avec clause de révision ('testons pour 3 mois') permet d'avancer 10 fois plus vite vers des solutions innovantes.",
+                    tip: "Demandez 'Y a-t-il une raison fondamentale pour laquelle nous ne devrions PAS essayer cela ?' plutôt que 'Est-ce que tout le monde aime cette idée ?'"
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Comment utiliser la 'matrice des intérêts' pour cartographier un conflit ?",
+                    options: [
+                        "Placer sur un graphique 2 axes (ex: court terme/long terme, économique/relationnel) et positionner les intérêts de chaque partie",
+                        "Faire une liste des pour et des contre",
+                        "Calculer les coûts et bénéfices",
+                        "Classer les arguments par force"
+                    ],
+                    correctAnswer: "Placer sur un graphique 2 axes (ex: court terme/long terme, économique/relationnel) et positionner les intérêts de chaque partie",
+                    explanation: "Cette visualisation révèle les zones de convergence cachées et les tensions, guidant la recherche de solutions.",
+                    winWinTip: "Une matrice bien faite montre souvent que 80% des intérêts sont compatibles ou complémentaires, contrairement à ce que le conflit laisse croire.",
+                    tip: "Choisissez des axes qui représentent les vraies dimensions du conflit (ex: sécurité/innovation, contrôle/autonomie, qualité/rapidité)."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Qu'est-ce que la 'négociation raisonnée' (principled negotiation) et comment s'intègre-t-elle à la Troisième Voie ?",
+                    options: [
+                        "Une approche qui sépare les personnes du problème, se concentre sur les intérêts, génère des options et utilise des critères objectifs",
+                        "Une négociation dure avec préparation minutieuse",
+                        "Une négociation douce axée sur la relation",
+                        "Une technique de manipulation"
+                    ],
+                    correctAnswer: "Une approche qui sépare les personnes du problème, se concentre sur les intérêts, génère des options et utilise des critères objectifs",
+                    explanation: "Développée par Fisher et Ury, cette méthode est complémentaire à la Troisième Voie, fournissant un cadre structuré pour la phase d'exploration.",
+                    winWinTip: "Combiner négociation raisonnée et Troisième Voie crée un processus à la fois rigoureux et créatif, maximisant les chances de solutions innovantes.",
+                    tip: "Utilisez toujours des critères objectifs (benchmarks du marché, expertises indépendantes, précédents) pour évaluer les options."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Comment utiliser le 'prototypage rapide' dans la résolution de conflits complexes ?",
+                    options: [
+                        "Créer des versions simplifiées et testables des solutions potentielles pour apprendre rapidement avant de s'engager pleinement",
+                        "Faire une étude de faisabilité détaillée",
+                        "Attendre d'avoir la solution parfaite",
+                        "Tester sur un petit groupe sans informer les autres"
+                    ],
+                    correctAnswer: "Créer des versions simplifiées et testables des solutions potentielles pour apprendre rapidement avant de s'engager pleinement",
+                    explanation: "Un prototype peut être un scénario écrit, une simulation, un pilote à petite échelle, ou même un rôle-play.",
+                    winWinTip: "Un prototype raté mais instructif coûte 1% d'une mise en œuvre complète ratée, mais apporte 90% des apprentissages.",
+                    tip: "Commencez toujours par le prototype le plus simple et le moins cher qui puisse vous apprendre quelque chose d'important."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Qu'est-ce que la 'facilitation graphique' et comment aide-t-elle la Troisième Voie ?",
+                    options: [
+                        "L'utilisation de dessins, schémas et visuels en temps réel pour capter et clarifier les idées pendant les discussions",
+                        "La création de belles présentations",
+                        "L'illustration des rapports finaux",
+                        "La décoration de la salle de réunion"
+                    ],
+                    correctAnswer: "L'utilisation de dessins, schémas et visuels en temps réel pour capter et clarifier les idées pendant les discussions",
+                    explanation: "La facilitation graphique crée une mémoire visuelle partagée, réduit les malentendus, et stimule la pensée créative.",
+                    winWinTip: "Une séance bien facilitée graphiquement génère 3 fois plus d'idées créatives et réduit les malentendus de 80%.",
+                    tip: "Même des dessins très simples (schémas, flèches, icônes) valent mieux qu'aucune visualisation."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Comment utiliser les 'questions puissantes' pour ouvrir le champ des possibles ?",
+                    options: [
+                        "Poser des questions ouvertes, orientées futur, qui invitent à la réflexion profonde plutôt qu'à la justification",
+                        "Poser des questions pièges pour tester la sincérité",
+                        "Multiplier les questions de détails",
+                        "Éviter les questions difficiles"
+                    ],
+                    correctAnswer: "Poser des questions ouvertes, orientées futur, qui invitent à la réflexion profonde plutôt qu'à la justification",
+                    explanation: "Exemples : 'Qu'est-ce qui serait tellement bien que vous n'oseriez même pas y penser ?' 'Si le succès était garanti, que tenteriez-vous ?'",
+                    winWinTip: "Une seule question puissante bien placée peut transformer complètement la dynamique d'un conflit en 5 minutes.",
+                    tip: "Préparez 3-5 questions puissantes avant chaque séance importante. Les meilleures commencent souvent par 'Et si...' ou 'Comment pourrions-nous...'"
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Qu'est-ce que le 'world café' et comment l'utiliser pour résoudre des conflits complexes ?",
+                    options: [
+                        "Une méthode de dialogue en petits groupes qui tournent, permettant une intelligence collective émergente",
+                        "Une pause café prolongée",
+                        "Une réunion informelle au café du coin",
+                        "Une technique de networking"
+                    ],
+                    correctAnswer: "Une méthode de dialogue en petits groupes qui tournent, permettant une intelligence collective émergente",
+                    explanation: "Les participants changent de table régulièrement, apportant les idées d'une table à l'autre, créant un tissage d'idées riche.",
+                    winWinTip: "Un world café bien facilité peut générer des solutions à 1000% en connectant des perspectives qui ne se seraient jamais rencontrées autrement.",
+                    tip: "Utilisez le world café quand vous avez beaucoup de parties prenantes (10+) et un problème complexe nécessitant une vision systémique."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Comment utiliser le 'backcasting' (rétro-planification) pour créer des visions ambitieuses ?",
+                    options: [
+                        "Imaginer un futur idéal (ex: dans 5 ans), puis travailler à rebours pour identifier les étapes pour y arriver",
+                        "Prévoir les obstacles et les éviter",
+                        "Analyser les erreurs du passé",
+                        "Suivre un plan existant à l'envers"
+                    ],
+                    correctAnswer: "Imaginer un futur idéal (ex: dans 5 ans), puis travailler à rebours pour identifier les étapes pour y arriver",
+                    explanation: "Cette technique libère des contraintes du présent et aligne les parties sur une vision inspirante avant de discuter des difficultés.",
+                    winWinTip: "Le backcasting aligne tellement les énergies qu'il réduit de 90% les résistances au changement une fois la vision partagée.",
+                    tip: "Commencez toujours par 'Dans 5 ans, nous regardons en arrière avec fierté. Qu'avons-nous accompli de remarquable ensemble ?'"
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Qu'est-ce que l' 'appréciative inquiry' et comment l'appliquer aux conflits ?",
+                    options: [
+                        "Une approche qui se concentre sur ce qui fonctionne déjà bien et comment l'amplifier, plutôt que sur les problèmes à résoudre",
+                        "Une technique de compliment",
+                        "Une évaluation positive superficielle",
+                        "Une méthode pour éviter les conflits"
+                    ],
+                    correctAnswer: "Une approche qui se concentre sur ce qui fonctionne déjà bien et comment l'amplifier, plutôt que sur les problèmes à résoudre",
+                    explanation: "En cherchant les 'points de lumière' même dans une situation conflictuelle, on crée une énergie positive pour le changement.",
+                    winWinTip: "L'appreciative inquiry peut transformer un climat de méfiance (-100) en climat de coopération (+100) en une seule séance bien menée.",
+                    tip: "Demandez : 'Même dans cette situation difficile, qu'est-ce qui a déjà fonctionné, ne serait-ce qu'un peu ? Comment pourrions-nous en faire plus ?'"
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Comment utiliser la 'matrice de priorisation' pour trier les idées générées ?",
+                    options: [
+                        "Évaluer chaque idée sur deux axes (ex: impact/facilité) pour identifier les quick wins et les projets stratégiques",
+                        "Voter pour les idées préférées",
+                        "Classer par ordre alphabétique",
+                        "Suivre l'ordre d'apparition des idées"
+                    ],
+                    correctAnswer: "Évaluer chaque idée sur deux axes (ex: impact/facilité) pour identifier les quick wins et les projets stratégiques",
+                    explanation: "Cette visualisation objective évite les débats interminables sur quelle idée est 'meilleure' et permet de progresser par étapes.",
+                    winWinTip: "Une matrice bien faite révèle souvent des 'perles' : des idées à fort impact et facile à mettre en œuvre que personne n'avait remarquées.",
+                    tip: "Choisissez des axes adaptés à votre contexte : impact/coût, valeur relationnelle/valeur économique, court terme/long terme..."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Qu'est-ce que le 'forum ouvert' (open space technology) et quand l'utiliser ?",
+                    options: [
+                        "Une méthode d'auto-organisation où les participants créent leur propre agenda autour d'un thème central",
+                        "Une réunion sans ordre du jour",
+                        "Un débat public",
+                        "Une séance de brainstorming libre"
+                    ],
+                    correctAnswer: "Une méthode d'auto-organisation où les participants créent leur propre agenda autour d'un thème central",
+                    explanation: "Particulièrement efficace pour les conflits complexes avec de nombreuses parties prenantes, car il libère l'intelligence collective.",
+                    winWinTip: "Un forum ouvert de 2 jours peut résoudre des conflits qui traînent depuis des années, car il donne voix à tous les points de vue.",
+                    tip: "Utilisez le forum ouvert quand le conflit est 'mûr' : les parties sont fatiguées de l'impasse et prêtes à essayer quelque chose de nouveau."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Comment utiliser le 'journal de bord créatif' pendant un processus de Troisième Voie ?",
+                    options: [
+                        "Documenter non seulement les décisions mais aussi les idées folles, les insights, les émotions et les questions restantes",
+                        "Prendre des notes formelles des décisions",
+                        "Écrire un procès-verbal classique",
+                        "Ignorer la documentation pour rester flexible"
+                    ],
+                    correctAnswer: "Documenter non seulement les décisions mais aussi les idées folles, les insights, les émotions et les questions restantes",
+                    explanation: "Ce journal capture la richesse du processus et sert de mémoire institutionnelle pour les phases ultérieures.",
+                    winWinTip: "Une idée 'folle' notée à la séance 1 devient souvent la solution géniale à la séance 5. Sans documentation, elle serait oubliée.",
+                    tip: "Utilisez un format visuel et non linéaire (sketchnoting) plutôt qu'un compte-rendu textuel traditionnel."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Qu'est-ce que la 'cartographie des parties prenantes élargie' et pourquoi est-elle cruciale ?",
+                    options: [
+                        "Identifier non seulement les parties directement impliquées mais aussi celles indirectement affectées, y compris les générations futures",
+                        "Lister seulement les décideurs",
+                        "Ignorer les parties faibles",
+                        "Se concentrer sur les parties qui crient le plus fort"
+                    ],
+                    correctAnswer: "Identifier non seulement les parties directement impliquées mais aussi celles indirectement affectées, y compris les générations futures",
+                    explanation: "Cette approche systémique révèle des impacts cachés et des opportunités de création de valeur plus large.",
+                    winWinTip: "Inclure une partie prenante 'oubliée' dans la conception de la solution peut révéler des bénéfices cachés valant 100 fois le coût de l'inclusion.",
+                    tip: "Demandez systématiquement : 'Qui d'autre est affecté par cette situation, même indirectement ?'"
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Comment utiliser la 'technique des 6 chapeaux de pensée' de De Bono dans un conflit ?",
+                    options: [
+                        "Assigner différents modes de pensée (faits, émotions, critique, optimiste, créatif, méta) pour explorer le problème sous tous les angles",
+                        "Porter physiquement des chapeaux colorés",
+                        "Diviser le groupe en 6 équipes",
+                        "Changer de lieu 6 fois"
+                    ],
+                    correctAnswer: "Assigner différents modes de pensée (faits, émotions, critique, optimiste, créatif, méta) pour explorer le problème sous tous les angles",
+                    explanation: "Cette technique structure la discussion et évite la confusion entre faits, émotions et jugements.",
+                    winWinTip: "Les 6 chapeaux garantissent qu'aucune perspective n'est oubliée, multipliant par 6 la richesse de l'analyse.",
+                    tip: "Commencez toujours par le chapeau bleu (méta, processus) pour définir comment vous allez travailler ensemble."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Qu'est-ce que le 'dialogue de Bohm' et comment favorise-t-il la compréhension profonde ?",
+                    options: [
+                        "Une conversation où l'objectif est la compréhension mutuelle, sans agenda de persuasion ou de décision",
+                        "Un débat philosophique",
+                        "Une discussion informelle",
+                        "Une technique de méditation en groupe"
+                    ],
+                    correctAnswer: "Une conversation où l'objectif est la compréhension mutuelle, sans agenda de persuasion ou de décision",
+                    explanation: "En suspendant temporairement le besoin de convaincre ou de décider, les parties peuvent vraiment écouter et comprendre les perspectives différentes.",
+                    winWinTip: "Un dialogue de Bohm de 2 heures peut créer plus de compréhension mutuelle que 20 réunions de négociation.",
+                    tip: "Établissez des règles claires : pas d'interruption, pas de persuasion, écoutez pour comprendre (pas pour répondre)."
+                },
+                {
+                    thematic: "Outils & Méthodes",
+                    question: "Comment utiliser les 'personas' dans la résolution de conflits complexes ?",
+                    options: [
+                        "Créer des profils fictifs mais réalistes représentant les différentes parties prenantes pour mieux comprendre leurs perspectives",
+                        "Demander aux gens de jouer un rôle",
+                        "Étudier la psychologie des décideurs",
+                        "Ignorer cette technique car trop simplificatrice"
+                    ],
+                    correctAnswer: "Créer des profils fictifs mais réalistes représentant les différentes parties prenantes pour mieux comprendre leurs perspectives",
+                    explanation: "Les personas aident à dépersonnaliser le conflit et à explorer des solutions sans que les individus se sentent attaqués.",
+                    winWinTip: "Des personas bien construits permettent de tester 100 solutions hypothétiques en 1 heure, sans risquer de froisser qui que ce soit.",
+                    tip: "Incluez toujours les données démographiques, les motivations, les frustrations et les objectifs dans chaque persona."
+                },
+				// ============ THÉMATIQUE 5: INNOVATION & CRÉATIVITÉ (20 questions) ============
+{
+    thematic: "Innovation & Créativité",
+    question: "Qu'est-ce que le 'thinking outside the box' dans le contexte de la Troisième Voie ?",
+    options: [
+        "La capacité à sortir des cadres mentaux habituels pour imaginer des solutions radicalement nouvelles",
+        "Penser de façon linéaire et logique",
+        "Ignorer toutes les contraintes",
+        "Refuser toute solution existante"
+    ],
+    correctAnswer: "La capacité à sortir des cadres mentaux habituels pour imaginer des solutions radicalement nouvelles",
+    explanation: "Cette capacité est essentielle pour découvrir des Troisièmes Voies qui ne sont pas visibles depuis les paradigmes habituels.",
+    winWinTip: "Une seule idée 'outside the box' peut créer 1000% de valeur additionnelle en révélant des opportunités invisibles dans le cadre habituel.",
+    tip: "Pour penser outside the box, commencez par remettre en question les hypothèses les plus fondamentales : 'Et si le contraire était vrai ?'"
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Comment utiliser la 'technique du benchmark croisé' pour l'innovation dans les conflits ?",
+    options: [
+        "Chercher des solutions à des problèmes similaires dans des domaines complètement différents et les adapter",
+        "Comparer seulement avec des concurrents directs",
+        "Ignorer les benchmarks pour rester original",
+        "Utiliser uniquement des données internes"
+    ],
+    correctAnswer: "Chercher des solutions à des problèmes similaires dans des domaines complètement différents et les adapter",
+    explanation: "Une solution qui fonctionne en biologie, en sport, ou en art peut être adaptée à un conflit organisationnel avec des résultats surprenants.",
+    winWinTip: "Un benchmark venant d'un domaine sans rapport apparent peut inspirer des solutions à 500% de valeur en apportant une perspective radicalement nouvelle.",
+    tip: "Demandez : 'Qui d'autre, dans un domaine complètement différent, a résolu un problème structurellement similaire ?'"
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Quelle est l'importance de la 'diversité cognitive' dans les processus créatifs de résolution de conflits ?",
+    options: [
+        "Elle apporte des perspectives radicalement différentes qui sont essentielles pour des solutions innovantes",
+        "Elle rend les discussions plus difficiles",
+        "Elle n'a pas d'importance tant qu'on a des experts",
+        "Elle ralentit le processus inutilement"
+    ],
+    correctAnswer: "Elle apporte des perspectives radicalement différentes qui sont essentielles pour des solutions innovantes",
+    explanation: "Des personnes avec des façons de penser différentes (analytiques, intuitives, systémiques, etc.) génèrent ensemble des solutions plus riches.",
+    winWinTip: "Une équipe cognitivement diversifiée peut générer des solutions 10 fois plus innovantes qu'un groupe homogène d'experts.",
+    tip: "Incluez délibérément des personnes avec des backgrounds, disciplines et styles de pensée différents dans vos processus créatifs."
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Comment utiliser la 'provocation créative' pour briser les blocages mentaux ?",
+    options: [
+        "Formuler des énoncés intentionnellement absurdes ou provocants pour stimuler de nouvelles associations d'idées",
+        "Provoquer l'autre pour qu'il change d'avis",
+        "Exagérer les problèmes pour créer un sentiment d'urgence",
+        "Ignorer cette technique car trop risquée"
+    ],
+    correctAnswer: "Formuler des énoncés intentionnellement absurdes ou provocants pour stimuler de nouvelles associations d'idées",
+    explanation: "Exemple : 'Et si le client payait pour avoir moins de service ?' Cette provocation peut révéler un besoin caché de simplicité.",
+    winWinTip: "Une provocation bien choisie peut révéler des besoins non exprimés valant 100 fois la solution évidente.",
+    tip: "Utilisez la formule 'Et si...' de façon radicale : 'Et si nous faisions exactement le contraire de ce qui semble logique ?'"
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Qu'est-ce que le 'principe de fonctionnalité' dans l'innovation de conflits ?",
+    options: [
+        "Se concentrer sur la fonction que doit remplir la solution plutôt que sur sa forme spécifique",
+        "Toujours choisir la solution la plus fonctionnelle",
+        "Ignorer l'esthétique des solutions",
+        "Privilégier l'efficacité à tout prix"
+    ],
+    correctAnswer: "Se concentrer sur la fonction que doit remplir la solution plutôt que sur sa forme spécifique",
+    explanation: "En séparant la fonction ('assurer la sécurité') de la forme ('installer des caméras'), on découvre souvent 10 façons différentes de remplir la fonction.",
+    winWinTip: "Une fonction peut être remplie de 100 façons, certaines créant 10 fois plus de valeur que la solution évidente.",
+    tip: "Demandez : 'Quel besoin fondamental cette solution doit-elle satisfaire ?' puis 'De combien d'autres façons pourrions-nous satisfaire ce besoin ?'"
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Comment utiliser la 'pensée latérale' d'Edward de Bono dans les conflits ?",
+    options: [
+        "Chercher des solutions en explorant des associations inattendues plutôt qu'en raisonnant de façon linéaire",
+        "Penser de côté pendant que les autres parlent",
+        "Changer de sujet quand on est bloqué",
+        "Ignorer la logique traditionnelle"
+    ],
+    correctAnswer: "Chercher des solutions en explorant des associations inattendues plutôt qu'en raisonnant de façon linéaire",
+    explanation: "La pensée latérale génère des solutions en faisant des sauts créatifs, contrairement à la pensée verticale qui suit un chemin logique étape par étape.",
+    winWinTip: "Un saut latéral bien placé peut résoudre en 5 minutes un conflit qui résistait à des mois de négociation logique.",
+    tip: "Utilisez des mots aléatoires pour stimuler des associations : prenez un mot au hasard dans un dictionnaire et demandez 'Comment ce mot pourrait-il nous inspirer une solution ?'"
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Quelle est l'importance du 'droit à l'erreur' dans les processus créatifs de résolution de conflits ?",
+    options: [
+        "Il libère la créativité en permettant d'explorer des idées folles sans crainte des conséquences",
+        "Il encourage à faire des erreurs intentionnelles",
+        "Il n'a pas d'importance dans des contextes sérieux",
+        "Il doit être limité pour maintenir la rigueur"
+    ],
+    correctAnswer: "Il libère la créativité en permettant d'explorer des idées folles sans crainte des conséquences",
+    explanation: "Quand les gens craignent le jugement ou les conséquences d'erreurs, ils s'autocensurent et les solutions les plus innovantes n'émergent jamais.",
+    winWinTip: "Un espace où l'erreur est permise génère 100 fois plus d'idées radicales, dont une seule peut créer 1000% de valeur.",
+    tip: "Déclarez explicitement : 'Pendant les 30 prochaines minutes, toute idée est la bienvenue, même (surtout !) les plus folles.'"
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Comment utiliser la 'technique de l'inversion' pour innover dans les conflits ?",
+    options: [
+        "Imaginer la pire solution possible, puis inverser ses caractéristiques pour trouver des idées nouvelles",
+        "Inverser les rôles des parties",
+        "Faire le contraire de ce que l'autre suggère",
+        "Changer l'ordre des étapes du processus"
+    ],
+    correctAnswer: "Imaginer la pire solution possible, puis inverser ses caractéristiques pour trouver des idées nouvelles",
+    explanation: "En imaginant délibérément ce qu'il ne faut surtout pas faire, on découvre souvent par contraste des principes clés pour une bonne solution.",
+    winWinTip: "L'inversion révèle souvent des critères de succès cachés qui, une fois satisfaits, créent 500% de valeur supplémentaire.",
+    tip: "Posez cette question : 'Qu'est-ce qui garantirait l'échec total de notre collaboration ?' puis faites exactement l'inverse."
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Qu'est-ce que la 'créativité contrainte' et pourquoi est-elle puissante ?",
+    options: [
+        "L'innovation qui émerge précisément à cause des contraintes, pas malgré elles",
+        "La créativité limitée par trop de règles",
+        "L'innovation seulement dans les limites budgétaires",
+        "Une créativité de moindre qualité"
+    ],
+    correctAnswer: "L'innovation qui émerge précisément à cause des contraintes, pas malgré elles",
+    explanation: "Les contraintes forcent à penser différemment. Une ressource limitée, un délai court, une régulation stricte peuvent être des catalyseurs d'innovation.",
+    winWinTip: "Une contrainte bien exploitée peut devenir un avantage compétitif créant 200% de valeur par rapport à une situation sans contrainte.",
+    tip: "Au lieu de dire 'Nous ne pouvons pas à cause de cette contrainte', demandez 'Comment cette contrainte pourrait-elle nous forcer à innover de façon avantageuse ?'"
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Comment utiliser le 'principe de combinaison' pour créer des solutions innovantes ?",
+    options: [
+        "Combiner des éléments apparemment sans rapport pour créer quelque chose de nouveau et précieux",
+        "Additionner les idées de chacun",
+        "Mélanger plusieurs solutions existantes",
+        "Créer des compromis entre options"
+    ],
+    correctAnswer: "Combiner des éléments apparemment sans rapport pour créer quelque chose de nouveau et précieux",
+    explanation: "L'innovation vient souvent de la combinaison inattendue : Airbnb = bed & breakfast + internet, Uber = taxi + smartphone + géolocalisation.",
+    winWinTip: "Une combinaison innovante peut créer un nouveau marché valant 1000 fois la somme des parties séparées.",
+    tip: "Prenez deux éléments de votre conflit apparemment sans rapport et demandez : 'Que se passerait-il si nous combinions ces deux choses de façon inattendue ?'"
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Quelle est l'importance du 'temps d'incubation' dans les processus créatifs ?",
+    options: [
+        "Le cerveau continue de travailler inconsciemment sur les problèmes pendant les pauses, produisant souvent des insights soudains",
+        "Il faut laisser reposer les équipes fatiguées",
+        "C'est du temps perdu qu'il faut minimiser",
+        "Cela n'a d'importance que pour les créatifs professionnels"
+    ],
+    correctAnswer: "Le cerveau continue de travailler inconsciemment sur les problèmes pendant les pauses, produisant souvent des insights soudains",
+    explanation: "Les meilleures idées viennent souvent sous la douche, pendant une promenade, ou au réveil, pas pendant les réunions de brainstorming.",
+    winWinTip: "Une pause d'incubation de 24 heures peut multiplier par 10 la qualité des solutions en permettant des connexions inconscientes.",
+    tip: "Quand vous êtes bloqués, faites une pause délibérée (minimum 1 heure, idéalement une nuit) avant de reprendre."
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Comment utiliser la 'technique SCAMPER' pour générer des idées innovantes ?",
+    options: [
+        "Poser 7 types de questions (Substituer, Combiner, Adapter, Modifier, Proposer autre usage, Éliminer, Renverser) pour transformer une idée existante",
+        "Examiner tous les aspects d'un problème",
+        "Faire une analyse systématique des coûts",
+        "C'est une technique de gestion de projet"
+    ],
+    correctAnswer: "Poser 7 types de questions (Substituer, Combiner, Adapter, Modifier, Proposer autre usage, Éliminer, Renverser) pour transformer une idée existante",
+    explanation: "Chaque lettre de SCAMPER représente une façon différente de transformer une solution existante en quelque chose de nouveau.",
+    winWinTip: "SCAMPER appliqué à une solution médiocre peut générer 50 variantes, dont certaines sont des innovations majeures à 500% de valeur.",
+    tip: "Prenez votre meilleure solution actuelle et appliquez systématiquement chaque lettre de SCAMPER pour la faire évoluer."
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Qu'est-ce que le 'principe de simplicité' dans l'innovation de solutions ?",
+    options: [
+        "Chercher la solution la plus simple possible qui résout le problème de façon élégante",
+        "Toujours choisir l'option la moins chère",
+        "Ignorer les complexités nécessaires",
+        "Réduire la qualité pour simplifier"
+    ],
+    correctAnswer: "Chercher la solution la plus simple possible qui résout le problème de façon élégante",
+    explanation: "La simplicité est souvent le signe d'une compréhension profonde du problème. Une solution simple est aussi plus facile à mettre en œuvre et à maintenir.",
+    winWinTip: "Une solution 10 fois plus simple coûte souvent 10 fois moins à mettre en œuvre mais crée 100% de la valeur d'une solution complexe.",
+    tip: "Après avoir conçu une solution, demandez : 'Comment pourrions-nous retirer 50% des éléments tout en conservant 100% de la valeur ?'"
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Comment utiliser le 'principe d'analogie biologique' pour innover dans les conflits ?",
+    options: [
+        "S'inspirer des solutions que la nature a développées pour résoudre des problèmes similaires",
+        "Étudier le comportement animal",
+        "Faire des métaphores avec des écosystèmes",
+        "Ignorer cette approche car trop métaphorique"
+    ],
+    correctAnswer: "S'inspirer des solutions que la nature a développées pour résoudre des problèmes similaires",
+    explanation: "La nature a résolu des problèmes d'optimisation, de coopération, d'adaptation depuis des millions d'années. Le biomimétisme peut inspirer des solutions révolutionnaires.",
+    winWinTip: "Une solution inspirée de la nature est souvent durable, efficiente et élégante - créant 1000% de valeur par rapport aux solutions artificielles.",
+    tip: "Demandez : 'Comment la nature résoudrait-elle ce problème ? Comment les écosystèmes gèrent-ils les tensions entre espèces ?'"
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Quelle est l'importance de la 'tolérance à l'ambiguïté' dans l'innovation de conflits ?",
+    options: [
+        "La capacité à avancer sans certitude absolue, essentielle pour explorer des solutions nouvelles et non testées",
+        "Accepter des solutions floues",
+        "Supporter l'incertitude sans agir",
+        "Une qualité sans importance dans les affaires"
+    ],
+    correctAnswer: "La capacité à avancer sans certitude absolue, essentielle pour explorer des solutions nouvelles et non testées",
+    explanation: "Les solutions innovantes sont par définition non prouvées. Sans tolérance à l'ambiguïté, on revient toujours aux solutions connues et limitées.",
+    winWinTip: "Une tolérance modérée à l'ambiguïté permet d'explorer 100 solutions potentielles au lieu de 3, multipliant les chances de trouver une solution à 500%.",
+    tip: "Pratiquez le 'test and learn' : avancez avec la meilleure hypothèse, mesurez, ajustez, plutôt que d'attendre la certitude."
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Comment utiliser la 'technique des contraintes absurdes' pour stimuler la créativité ?",
+    options: [
+        "Imposer délibérément des contraintes impossibles ou absurdes pour forcer à penser différemment",
+        "Ignorer les contraintes réelles",
+        "Exagérer les difficultés",
+        "Rêver sans limites"
+    ],
+    correctAnswer: "Imposer délibérément des contraintes impossibles ou absurdes pour forcer à penser différemment",
+    explanation: "Exemple : 'Résolvez ce conflit sans utiliser d'argent', 'Trouvez une solution qui prend 1 minute à mettre en œuvre', 'Imaginez une solution qui coûte 0€ mais vaut 1 million'.",
+    winWinTip: "Une contrainte absurde peut révéler des principes innovants qui, une fois adaptés, créent des solutions 100 fois plus efficientes.",
+    tip: "Quand vous êtes bloqués, ajoutez une contrainte absurde : 'Maintenant, trouvez une solution qui fonctionnerait sur Mars'."
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Qu'est-ce que le 'principe d'élégance' dans les solutions innovantes ?",
+    options: [
+        "Une solution qui résout élégamment plusieurs problèmes à la fois avec un minimum de moyens",
+        "Une solution esthétiquement plaisante",
+        "Une solution complexe mais belle",
+        "Une solution chère mais impressionnante"
+    ],
+    correctAnswer: "Une solution qui résout élégamment plusieurs problèmes à la fois avec un minimum de moyens",
+    explanation: "L'élégance est l'efficience extrême : un seul mouvement qui résout dix problèmes. C'est souvent le signe d'une compréhension profonde du système.",
+    winWinTip: "Une solution élégante coûte 10% d'une solution complexe mais crée 200% de la valeur en résolvant des problèmes qu'on n'avait même pas identifiés.",
+    tip: "Cherchez toujours la solution 'kill two birds with one stone' (ou trois, ou quatre...)."
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Comment utiliser le 'jeu de rôles radical' pour explorer des perspectives nouvelles ?",
+    options: [
+        "Jouer le rôle d'une partie prenante extrême (un enfant de 5 ans, un alien, une personne du 22ème siècle) pour obtenir des insights inattendus",
+        "Changer de rôle avec l'autre partie",
+        "Jouer à être quelqu'un d'autre pour manipuler",
+        "Faire des simulations de négociation"
+    ],
+    correctAnswer: "Jouer le rôle d'une partie prenante extrême (un enfant de 5 ans, un alien, une personne du 22ème siècle) pour obtenir des insights inattendus",
+    explanation: "Ces perspectives radicalement différentes révèlent des aspects du problème invisibles depuis les positions habituelles.",
+    winWinTip: "Une perspective 'aliène' peut révéler des absurdités dans nos solutions habituelles et inspirer des innovations à 1000%.",
+    tip: "Demandez : 'Comment un enfant de 5 ans résoudrait-il ce problème ?' La simplicité de la réponse peut être révolutionnaire."
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Quelle est l'importance du 'flow state' (état de flux) dans les processus créatifs ?",
+    options: [
+        "Un état de concentration profonde et d'immersion où la créativité et la productivité sont maximales",
+        "Un état de relaxation totale",
+        "Le fait de laisser les idées couler naturellement",
+        "Un concept new-age sans fondement scientifique"
+    ],
+    correctAnswer: "Un état de concentration profonde et d'immersion où la créativité et la productivité sont maximales",
+    explanation: "Dans le flow state, les gens sont tellement absorbés par une activité qu'ils perdent la notion du temps et produisent un travail de qualité exceptionnelle.",
+    winWinTip: "Une séance de 2 heures en flow state peut produire plus de valeur créative que 20 heures de réunions standards.",
+    tip: "Créez les conditions du flow : éliminez les interruptions, définissez un objectif clair, assurez un retour immédiat sur les idées."
+},
+{
+    thematic: "Innovation & Créativité",
+    question: "Comment utiliser le 'principe de modularité' pour créer des solutions flexibles et innovantes ?",
+    options: [
+        "Concevoir des solutions comme un ensemble de modules indépendants qui peuvent être combinés de différentes façons",
+        "Diviser le problème en petites parties",
+        "Travailler par étapes séparées",
+        "Créer des solutions standards"
+    ],
+    correctAnswer: "Concevoir des solutions comme un ensemble de modules indépendants qui peuvent être combinés de différentes façons",
+    explanation: "La modularité permet d'adapter la solution aux besoins changeants sans tout repenser, et de réutiliser des modules dans d'autres contextes.",
+    winWinTip: "Une solution modulaire peut créer 500% de valeur additionnelle en permettant des combinaisons imprévues qui résolvent des problèmes futurs.",
+    tip: "Concevez toujours avec l'idée que chaque élément de votre solution pourrait être utile séparément dans un autre contexte."
+
+// ============ THÉMATIQUE 6: SYNERGIE 200%+ (20 questions) ============
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce qu'une solution 'win-win-win' dans le contexte de la synergie 200%+ ?",
+    options: [
+        "Une solution où non seulement les deux parties gagnent, mais où il y a un troisième gagnant (la communauté, l'environnement, les générations futures)",
+        "Trois parties gagnent au lieu de deux",
+        "Chaque partie gagne trois fois plus",
+        "Un compromis à trois voies"
+    ],
+    correctAnswer: "Une solution où non seulement les deux parties gagnent, mais où il y a un troisième gagnant (la communauté, l'environnement, les générations futures)",
+    explanation: "Les solutions véritablement durables créent de la valeur au-delà des parties directement impliquées, bénéficiant au système entier.",
+    winWinTip: "Une solution win-win-win crée souvent 1000% de la valeur d'une solution win-win en générant des bénéfices systémiques imprévus.",
+    tip: "Demandez toujours : 'Qui d'autre, au-delà des parties directement impliquées, pourrait bénéficier de cette solution ?'"
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Comment calculer la 'valeur synergique totale' d'une solution ?",
+    options: [
+        "Somme des gains de chaque partie + bénéfices systémiques additionnels + valeur relationnelle créée + valeur d'option future",
+        "Addition simple des gains individuels",
+        "Multiplication des gains individuels",
+        "Le gain de la partie qui gagne le plus"
+    ],
+    correctAnswer: "Somme des gains de chaque partie + bénéfices systémiques additionnels + valeur relationnelle créée + valeur d'option future",
+    explanation: "La vraie valeur synergique inclut des dimensions souvent négligées : confiance renforcée, réputation améliorée, capacité future de collaboration.",
+    winWinTip: "La valeur relationnelle créée par une bonne solution peut valoir 10 fois les gains économiques immédiats en facilitant les collaborations futures.",
+    tip: "Évaluez toujours les solutions sur au moins 4 dimensions : économique, relationnelle, systémique, temporelle."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce que l' 'effet multiplicateur' dans les solutions synergiques ?",
+    options: [
+        "Le phénomène où une solution déclenche une série de bénéfices en cascade, chacun amplifiant les précédents",
+        "Un gain qui double à chaque étape",
+        "Un effet marketing",
+        "Une exagération des bénéfices"
+    ],
+    correctAnswer: "Le phénomène où une solution déclenche une série de bénéfices en cascade, chacun amplifiant les précédents",
+    explanation: "Exemple : une solution environnementale qui réduit les coûts, améliore la réputation, attire des talents, génère des subventions, etc.",
+    winWinTip: "Un effet multiplicateur bien conçu peut transformer un gain de 10% en un gain de 1000% sur 5 ans grâce aux boucles de rétroaction positives.",
+    tip: "Cherchez toujours les solutions qui créent des boucles vertueuses plutôt que des bénéfices isolés."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Comment créer des solutions à 'rendements croissants' dans les conflits ?",
+    options: [
+        "Concevoir des solutions où la valeur créée augmente avec le temps et l'adoption, plutôt que de diminuer",
+        "Augmenter progressivement les gains",
+        "Créer des solutions évolutives",
+        "Promettre toujours plus pour le futur"
+    ],
+    correctAnswer: "Concevoir des solutions où la valeur créée augmente avec le temps et l'adoption, plutôt que de diminuer",
+    explanation: "Les réseaux, les standards, les plateformes ont des rendements croissants : plus ils sont utilisés, plus ils valent.",
+    winWinTip: "Une solution à rendements croissants peut créer 10 000% de sa valeur initiale si elle devient un standard ou une plateforme.",
+    tip: "Demandez : 'Comment cette solution pourrait-elle devenir plus précieuse avec le temps et avec plus d'utilisateurs ?'"
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce que la 'valeur d'option' dans une solution synergique ?",
+    options: [
+        "La valeur des opportunités futures que la solution rend possibles mais qui ne sont pas certaines aujourd'hui",
+        "Le coût d'une option d'achat",
+        "La possibilité de choisir entre plusieurs solutions",
+        "La flexibilité contractuelle"
+    ],
+    correctAnswer: "La valeur des opportunités futures que la solution rend possibles mais qui ne sont pas certaines aujourd'hui",
+    explanation: "Une bonne relation, une réputation de collaborateur fiable, un précédent de réussite créent des options précieuses pour le futur.",
+    winWinTip: "La valeur d'option d'une bonne collaboration peut valoir 100 fois les gains immédiats en ouvrant des portes imprévisibles.",
+    tip: "Évaluez toujours : 'Quelles portes cette solution ouvre-t-elle pour l'avenir, même si nous ne savons pas encore exactement vers quoi ?'"
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Comment créer des solutions 'antifragiles' (qui profitent des chocs) selon Taleb ?",
+    options: [
+        "Concevoir des solutions qui deviennent plus fortes face aux difficultés, aux changements, aux surprises",
+        "Renforcer les solutions contre les chocs",
+        "Éviter tout risque",
+        "S'adapter rapidement aux problèmes"
+    ],
+    correctAnswer: "Concevoir des solutions qui deviennent plus fortes face aux difficultés, aux changements, aux surprises",
+    explanation: "L'antifragilité va au-delà de la résilience (qui résiste aux chocs) : c'est la capacité à profiter de la volatilité.",
+    winWinTip: "Une solution antifragile peut créer 1000% de valeur pendant une crise alors que les solutions fragiles s'effondrent.",
+    tip: "Demandez : 'Comment pourrions-nous concevoir cette solution pour qu'elle devienne encore meilleure si les choses deviennent difficiles ?'"
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce que l' 'alignement des incitations' dans les solutions à haute valeur synergique ?",
+    options: [
+        "Structurer la solution pour que ce qui est bon pour une partie soit aussi bon pour les autres, même sans surveillance",
+        "Trouver un terrain d'entente",
+        "Créer des bonus communs",
+        "Éviter les conflits d'intérêts"
+    ],
+    correctAnswer: "Structurer la solution pour que ce qui est bon pour une partie soit aussi bon pour les autres, même sans surveillance",
+    explanation: "Quand les incitations sont parfaitement alignées, la coopération devient naturelle et les coûts de contrôle disparaissent.",
+    winWinTip: "Un alignement parfait des incitations peut réduire les coûts de transaction de 90% tout en multipliant la valeur créée par 10.",
+    tip: "Cherchez toujours à créer des structures où 'faire bien son travail' et 'servir l'intérêt collectif' sont exactement la même chose."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Comment créer des solutions à 'valeur exponentielle' plutôt que linéaire ?",
+    options: [
+        "Concevoir des solutions dont la valeur augmente de façon exponentielle avec l'échelle ou le temps",
+        "Promettre une croissance rapide",
+        "Utiliser des formules mathématiques complexes",
+        "Cibler les marchés à croissance rapide"
+    ],
+    correctAnswer: "Concevoir des solutions dont la valeur augmente de façon exponentielle avec l'échelle ou le temps",
+    explanation: "Les solutions exponentielles créent des réseaux, des effets de plateforme, des apprentissages cumulatifs qui démultiplient la valeur.",
+    winWinTip: "Une solution exponentielle peut créer 1 million d'euros de valeur là où une solution linéaire en créerait 100 000.",
+    tip: "Cherchez les effets de réseau, les coûts marginaux décroissants, les boucles d'apprentissage, les externalités positives."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce que le 'capital relationnel' et comment le mesurer dans une solution synergique ?",
+    options: [
+        "La valeur de la confiance, de la réputation et de la qualité des relations créées ou renforcées par la solution",
+        "Le réseau de contacts des parties",
+        "La capacité à bien travailler ensemble",
+        "Un concept abstrait sans mesure possible"
+    ],
+    correctAnswer: "La valeur de la confiance, de la réputation et de la qualité des relations créées ou renforcées par la solution",
+    explanation: "Le capital relationnel est un actif précieux qui réduit les coûts de transaction futurs et ouvre des opportunités.",
+    winWinTip: "1€ investi dans le capital relationnel peut générer 100€ de valeur future en réduisant les coûts de méfiance et de contrôle.",
+    tip: "Mesurez le capital relationnel par : la vitesse des décisions futures, le taux de réussite des projets communs, la réduction des contentieux."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Comment créer des solutions 'à somme positive exponentielle' ?",
+    options: [
+        "Concevoir des solutions où le gain total dépasse tellement la somme des gains individuels qu'il crée de la valeur pour tout l'écosystème",
+        "Faire gagner tout le monde un peu",
+        "Créer de la croissance économique",
+        "Distribuer équitablement les bénéfices"
+    ],
+    correctAnswer: "Concevoir des solutions où le gain total dépasse tellement la somme des gains individuels qu'il crée de la valeur pour tout l'écosystème",
+    explanation: "Ces solutions transforment les externalités négatives en externalités positives, créant des bénéfices pour des parties non directement impliquées.",
+    winWinTip: "Une solution à somme positive exponentielle peut transformer un coût de 100 en un bénéfice de 10 000 pour la société, capturant une partie de cette valeur pour les parties.",
+    tip: "Cherchez toujours à internaliser les externalités positives : comment faire en sorte que ce qui est bon pour vous soit aussi bon pour la société ?"
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce que l' 'effet de levier relationnel' dans les solutions à haute valeur ?",
+    options: [
+        "La capacité d'une petite concession à créer une valeur disproportionnée grâce à son impact symbolique ou relationnel",
+        "Utiliser ses relations pour obtenir plus",
+        "Négocier avec avantage",
+        "L'influence des parties bien connectées"
+    ],
+    correctAnswer: "La capacité d'une petite concession à créer une valeur disproportionnée grâce à son impact symbolique ou relationnel",
+    explanation: "Parfois, céder sur un point symbolique mais peu coûteux pour soi (mais important pour l'autre) crée une ouverture qui débloque tout le reste.",
+    winWinTip: "Une concession de 1% de valeur économique mais 100% de valeur symbolique peut débloquer 1000% de valeur totale en créant la confiance nécessaire.",
+    tip: "Identifiez ce qui a une haute valeur symbolique pour l'autre mais un faible coût pour vous - ce sont des leviers relationnels puissants."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Comment créer des solutions 'à preuve de futur' (future-proof) ?",
+    options: [
+        "Concevoir des solutions qui restent valables et créent de la valeur même dans des scénarios futurs très différents",
+        "Faire des prévisions exactes",
+        "Créer des solutions flexibles",
+        "Suivre les tendances actuelles"
+    ],
+    correctAnswer: "Concevoir des solutions qui restent valables et créent de la valeur même dans des scénarios futurs très différents",
+    explanation: "Une bonne solution anticipe différents futurs possibles et reste robuste face à l'incertitude.",
+    winWinTip: "Une solution future-proof peut créer 500% de valeur additionnelle en évitant des coûts d'adaptation futurs et en capturant des opportunités imprévues.",
+    tip: "Testez votre solution contre au moins 3 scénarios futurs radicalement différents (optimiste, pessimiste, disruptif)."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce que la 'valeur systémique' d'une solution ?",
+    options: [
+        "La valeur créée pour l'ensemble du système, au-delà des parties directement impliquées, y compris les effets secondaires positifs",
+        "La valeur pour l'économie nationale",
+        "La valeur mesurée par des indicateurs macroéconomiques",
+        "La contribution au PIB"
+    ],
+    correctAnswer: "La valeur créée pour l'ensemble du système, au-delà des parties directement impliquées, y compris les effets secondaires positifs",
+    explanation: "Une solution a de la valeur systémique quand elle améliore la santé de tout l'écosystème, créant ainsi un environnement plus favorable pour tous.",
+    winWinTip: "La valeur systémique peut être 100 fois la valeur capturée par les parties, et une partie de cette valeur peut être monétisée via la réputation, les subventions, etc.",
+    tip: "Évaluez toujours l'impact de votre solution sur l'ensemble de l'écosystème : fournisseurs, clients, communauté, environnement."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Comment créer des solutions 'à coûts marginaux décroissants' ?",
+    options: [
+        "Concevoir des solutions où chaque unité supplémentaire coûte moins cher à produire, permettant une diffusion large à faible coût",
+        "Réduire les coûts par économies d'échelle",
+        "Négocier des prix plus bas",
+        "Externaliser la production"
+    ],
+    correctAnswer: "Concevoir des solutions où chaque unité supplémentaire coûte moins cher à produire, permettant une diffusion large à faible coût",
+    explanation: "Les solutions digitales, les standards, les modèles réplicables ont des coûts marginaux décroissants, ce qui permet une large diffusion de la valeur.",
+    winWinTip: "Une solution à coûts marginaux décroissants peut créer 1 million d'euros de valeur pour la société tout en ne coûtant que 100 000€ à produire.",
+    tip: "Cherchez à créer des solutions 'non-rivales' (une personne peut les utiliser sans diminuer leur disponibilité pour les autres)."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce que l' 'effet de réseau' dans la création de valeur synergique ?",
+    options: [
+        "Le phénomène où une solution devient plus précieuse quand plus de personnes l'utilisent, créant une boucle vertueuse d'adoption",
+        "Le pouvoir des relations personnelles",
+        "Le marketing viral",
+        "L'effet de groupe dans les décisions"
+    ],
+    correctAnswer: "Le phénomène où une solution devient plus précieuse quand plus de personnes l'utilisent, créant une boucle vertueuse d'adoption",
+    explanation: "Exemple : un standard technique, une langue commune, une plateforme - plus il y a d'utilisateurs, plus c'est utile pour chaque utilisateur.",
+    winWinTip: "Une solution avec un fort effet de réseau peut créer 10 000% de sa valeur initiale si elle atteint la masse critique d'adoption.",
+    tip: "Cherchez à créer des solutions qui deviennent naturellement plus précieuses avec l'adoption, sans effort marketing supplémentaire."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Comment créer des solutions 'à bénéfices distribués' plutôt que concentrés ?",
+    options: [
+        "Concevoir des solutions où les bénéfices sont largement distribués parmi de nombreuses parties plutôt que concentrés sur quelques-unes",
+        "Partager équitablement les gains",
+        "Faire des dons aux plus pauvres",
+        "Réduire les inégalités"
+    ],
+    correctAnswer: "Concevoir des solutions où les bénéfices sont largement distribués parmi de nombreuses parties plutôt que concentrés sur quelques-unes",
+    explanation: "Les solutions à bénéfices distribués créent plus de stabilité et de soutien, réduisant les risques de contestation future.",
+    winWinTip: "Une solution qui bénéficie à 100 parties modestement peut créer plus de valeur totale et de stabilité qu'une solution qui enrichit massivement 2 parties.",
+    tip: "Cherchez toujours à élargir le cercle des bénéficiaires, même si les gains individuels sont plus modestes."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce que la 'valeur de résilience' dans une solution synergique ?",
+    options: [
+        "La valeur de la capacité à résister aux chocs et à s'adapter aux changements, qui évite des coûts futurs de crise",
+        "La solidité technique",
+        "La durabilité dans le temps",
+        "La capacité à survivre aux difficultés"
+    ],
+    correctAnswer: "La valeur de la capacité à résister aux chocs et à s'adapter aux changements, qui évite des coûts futurs de crise",
+    explanation: "Une solution résiliente évite des coûts futurs énormes (crises, adaptations forcées, conflits récurrents).",
+    winWinTip: "Investir 10% de plus dans la résilience peut éviter 90% des coûts d'une crise future, créant ainsi 900% de valeur.",
+    tip: "Évaluez toujours vos solutions sur leur capacité à résister à des scénarios de stress : changement de marché, crise économique, changement de régulation."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Comment créer des solutions 'à alignement temporel' des intérêts ?",
+    options: [
+        "Structurer la solution pour que les intérêts des parties soient alignés sur le court, moyen et long terme, pas seulement immédiats",
+        "Créer des échéanciers de paiement",
+        "Planifier sur plusieurs années",
+        "Équilibrer les gains immédiats et futurs"
+    ],
+    correctAnswer: "Structurer la solution pour que les intérêts des parties soient alignés sur le court, moyen et long terme, pas seulement immédiats",
+    explanation: "Quand les intérêts à toutes les échéances sont alignés, les parties ne sont pas tentées de sacrifier le futur pour le présent.",
+    winWinTip: "Un alignement temporel parfait peut multiplier par 10 la valeur à long terme en évitant les comportements court-termistes destructeurs.",
+    tip: "Vérifiez que ce qui est bon aujourd'hui reste bon dans 1 an, 5 ans, 10 ans pour toutes les parties."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce que la 'valeur de transformation' d'une solution synergique ?",
+    options: [
+        "La valeur de la transformation des parties et de leurs relations, les rendant capables de collaborations futures plus riches",
+        "Le changement culturel induit",
+        "L'apprentissage personnel",
+        "L'évolution des mentalités"
+    ],
+    correctAnswer: "La valeur de la transformation des parties et de leurs relations, les rendant capables de collaborations futures plus riches",
+    explanation: "Une bonne solution ne résout pas seulement un problème, elle transforme les parties en meilleurs collaborateurs pour l'avenir.",
+    winWinTip: "La valeur de transformation peut être infinie : des parties qui apprennent à créer ensemble de la valeur peuvent générer des innovations continues pendant des décennies.",
+    tip: "Mesurez le succès non seulement par le problème résolu, mais par la qualité améliorée de la relation et des capacités collaboratives."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Comment créer des solutions 'à externalités positives internalisées' ?",
+    options: [
+        "Concevoir des solutions où les bénéfices pour des tiers sont capturés et monétisés par les parties, créant ainsi des incitations à générer ces bénéfices",
+        "Faire payer les bénéficiaires externes",
+        "Obtenir des subventions pour les impacts positifs",
+        "Mesurer et communiquer les impacts sociaux"
+    ],
+    correctAnswer: "Concevoir des solutions où les bénéfices pour des tiers sont capturés et monétisés par les parties, créant ainsi des incitations à générer ces bénéfices",
+    explanation: "Exemple : une solution environnementale qui génère des crédits carbone monnayables, alignant intérêt économique et écologique.",
+    winWinTip: "L'internalisation des externalités positives peut transformer un coût de 100 en un profit de 200, tout en créant 1000 de valeur sociétale.",
+    tip: "Cherchez toujours comment monétiser les bénéfices sociétaux de votre solution : crédits, certifications premium, réduction d'impôts, amélioration de réputation."
+},
+{
+    thematic: "Synergie 200%+",
+    question: "Qu'est-ce que le 'dividende relationnel' d'une solution synergique ?",
+    options: [
+        "Les bénéfices relationnels continus qui découlent d'une solution bien conçée, comme la confiance accrue, la réputation améliorée, les références positives",
+        "Les gains financiers des bonnes relations",
+        "Le retour sur investissement relationnel",
+        "Les bénéfices du réseautage"
+    ],
+    correctAnswer: "Les bénéfices relationnels continus qui découlent d'une solution bien conçée, comme la confiance accrue, la réputation améliorée, les références positives",
+    explanation: "Ce dividende continue à être payé longtemps après la résolution du conflit initial, sous forme de collaborations plus faciles, de recommandations, etc.",
+    winWinTip: "Le dividende relationnel peut valoir 100 fois le gain économique immédiat en réduisant les coûts de toutes les futures interactions.",
+    tip: "Investissez toujours dans la qualité relationnelle de la solution, pas seulement dans son efficacité technique. C'est le meilleur ROI possible."
+}
+
+                // Note: Pour respecter la limite de longueur, je ne peux pas inclure toutes les 120 questions ici.
+                // Le modèle complet contiendrait 120 questions réparties équitablement entre les 6 thèmes.
+                // Les questions restantes suivraient le même format.
+            ]
+        };
+
+        // DOM Elements
+        const settingsPanelEl = document.getElementById('settings-panel');
+        const quizContentEl = document.getElementById('quiz-content');
+        const questionCountEl = document.getElementById('question-count');
+        const startQuizBtn = document.getElementById('start-quiz-btn');
+        const questionCounterEl = document.getElementById('question-counter');
+        const currentScoreEl = document.getElementById('current-score');
+        const progressBarEl = document.getElementById('progress-bar');
+        const questionTextEl = document.getElementById('question-text');
+        const thematicBadgeEl = document.getElementById('thematic-badge');
+        const optionsContainerEl = document.getElementById('options-container');
+        const explanationBoxEl = document.getElementById('explanation-box');
+        const explanationTitleEl = document.getElementById('explanation-title');
+        const explanationTextEl = document.getElementById('explanation-text');
+        const winWinTipEl = document.getElementById('win-win-tip');
+        const tipBoxEl = document.getElementById('tip-box');
+        const tipTextEl = document.getElementById('tip-text');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const finishBtn = document.getElementById('finish-btn');
+        
+        // Modal Elements
+        const resultsModal = new bootstrap.Modal(document.getElementById('resultsModal'));
+        const finalScoreCorrectEl = document.getElementById('final-score-correct');
+        const finalScoreTotalEl = document.getElementById('final-score-total');
+        const finalScorePercentageEl = document.getElementById('final-score-percentage');
+        const finalRecommendationsEl = document.getElementById('final-recommendations');
+        const techSkillsEl = document.getElementById('tech-skills');
+        const techSkillsTextEl = document.getElementById('tech-skills-text');
+        const strategicSkillsEl = document.getElementById('strategic-skills');
+        const strategicSkillsTextEl = document.getElementById('strategic-skills-text');
+        const shortTermEl = document.getElementById('short-term');
+        const longTermEl = document.getElementById('long-term');
+        const strengthsEl = document.getElementById('strengths');
+        const toolsToMasterEl = document.getElementById('tools-to-master');
+        const nextProjectEl = document.getElementById('next-project');
+        const restartQuizBtn = document.getElementById('restart-quiz-btn');
+
+        // Quiz State
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let userAnswers = [];
+        let questions = [];
+        let selectedQuestionCount = 40;
+
+        // Badge classes mapping
+        const badgeClasses = {
+            "Principes Fondamentaux": "badge-principles",
+            "Mise en Œuvre Pratique": "badge-implementation",
+            "REX & Cas Concrets": "badge-rex",
+            "Outils & Méthodes": "badge-tools",
+            "Innovation & Créativité": "badge-innovation",
+            "Synergie 200%+": "badge-synergy"
+        };
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function filterQuestionsByDomain() {
+            const domains = {
+                'domain-principles': "Principes Fondamentaux",
+                'domain-implementation': "Mise en Œuvre Pratique", 
+                'domain-rex': "REX & Cas Concrets",
+                'domain-tools': "Outils & Méthodes",
+                'domain-innovation': "Innovation & Créativité",
+                'domain-synergy': "Synergie 200%+"
+            };
+            
+            const selectedDomains = [];
+            for (const [id, domain] of Object.entries(domains)) {
+                if (document.getElementById(id).checked) {
+                    selectedDomains.push(domain);
+                }
+            }
+            
+            if (selectedDomains.length === 0) {
+                return [...quizData.questions];
+            }
+            
+            return quizData.questions.filter(q => selectedDomains.includes(q.thematic));
+        }
+
+        function startQuiz() {
+            selectedQuestionCount = parseInt(questionCountEl.value);
+            
+            let filteredQuestions = filterQuestionsByDomain();
+            
+            if (filteredQuestions.length === 0) {
+                alert('Veuillez sélectionner au moins un domaine à évaluer.');
+                return;
+            }
+            
+            if (filteredQuestions.length < selectedQuestionCount) {
+                alert(`Seulement ${filteredQuestions.length} questions disponibles dans les domaines sélectionnés. Le quiz sera limité à ce nombre.`);
+                selectedQuestionCount = filteredQuestions.length;
+            }
+            
+            const shuffledQuestions = shuffleArray(filteredQuestions);
+            questions = shuffledQuestions.slice(0, selectedQuestionCount);
+            
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = new Array(questions.length).fill(null);
+            
+            settingsPanelEl.classList.add('d-none');
+            quizContentEl.classList.remove('d-none');
+            
+            displayQuestion(currentQuestionIndex);
+            updateScoreDisplay();
+            resultsModal.hide();
+        }
+
+        <!-- function displayQuestion(index) { -->
+            <!-- explanationBoxEl.classList.add('d-none'); -->
+            
+            <!-- const question = questions[index]; -->
+            <!-- questionTextEl.textContent = question.question; -->
+            
+            <!-- thematicBadgeEl.textContent = question.thematic; -->
+            <!-- thematicBadgeEl.className = 'thematic-badge'; -->
+            <!-- thematicBadgeEl.classList.add(badgeClasses[question.thematic] || 'badge-principles'); -->
+            
+            <!-- optionsContainerEl.innerHTML = ''; -->
+            
+            <!-- question.options.forEach(optionText => { -->
+                <!-- const button = document.createElement('button'); -->
+                <!-- button.textContent = optionText; -->
+                <!-- button.classList.add('btn', 'option-btn'); -->
+                <!-- button.onclick = () => selectAnswer(button, optionText, index); -->
+                <!-- optionsContainerEl.appendChild(button); -->
+            <!-- }); -->
+            
+            <!-- updateNavigation(); -->
+            <!-- updateProgressBar(); -->
+            
+            <!-- if (userAnswers[index] !== null) { -->
+                <!-- showAnswerFeedback(index); -->
+            <!-- } -->
+        <!-- } -->
+        
+		
+		function displayQuestion(index) {
+    explanationBoxEl.classList.add('d-none');
+    tipBoxEl.classList.add('d-none');
+    
+    const question = questions[index];
+    questionTextEl.textContent = question.question;
+    
+    thematicBadgeEl.textContent = question.thematic;
+    thematicBadgeEl.className = 'thematic-badge';
+    thematicBadgeEl.classList.add(badgeClasses[question.thematic] || 'badge-principles');
+    
+    optionsContainerEl.innerHTML = '';
+    
+    // CORRECTION : Mélanger les options avant affichage
+    // Créer une copie des options et les mélanger aléatoirement
+    const shuffledOptions = [...question.options];
+    
+    // Algorithme de Fisher-Yates pour mélanger
+    for (let i = shuffledOptions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+    }
+    
+    // Afficher les options mélangées
+    shuffledOptions.forEach(optionText => {
+        const button = document.createElement('button');
+        button.textContent = optionText;
+        button.classList.add('btn', 'option-btn');
+        
+        // CORRECTION : Passer l'optionText original et non mélangé pour la vérification
+        // Mais on doit vérifier par rapport à la bonne réponse stockée
+        button.onclick = () => selectAnswer(button, optionText, index);
+        optionsContainerEl.appendChild(button);
+    });
+    
+    updateNavigation();
+    updateProgressBar();
+    
+    if (userAnswers[index] !== null) {
+        showAnswerFeedback(index);
+    }
+}
+        function selectAnswer(button, selectedAnswer, questionIndex) {
+            if (userAnswers[questionIndex] !== null) return;
+            
+            const question = questions[questionIndex];
+            const isCorrect = selectedAnswer === question.correctAnswer;
+            
+            userAnswers[questionIndex] = {
+                selected: selectedAnswer,
+                correct: question.correctAnswer,
+                isCorrect: isCorrect
+            };
+            
+            if(isCorrect) {
+                score++;
+            }
+            updateScoreDisplay();
+            showAnswerFeedback(questionIndex);
+        }
+
+        function showAnswerFeedback(index) {
+            const userAnswer = userAnswers[index];
+            if (!userAnswer) return;
+
+            const question = questions[index];
+
+            const optionButtons = optionsContainerEl.querySelectorAll('.option-btn');
+            optionButtons.forEach(btn => {
+                btn.disabled = true;
+                if (btn.textContent === userAnswer.correct) {
+                    btn.classList.add('correct');
+                } else if (btn.textContent === userAnswer.selected) {
+                    btn.classList.add('incorrect');
+                }
+            });
+
+            explanationTextEl.textContent = question.explanation;
+            
+            // Set win-win tip
+            if (question.winWinTip) {
+                winWinTipEl.textContent = question.winWinTip;
+            } else {
+                winWinTipEl.textContent = "Appliquez ce principe pour créer des solutions où toutes les parties gagnent 200%+ de valeur.";
+            }
+            
+            if (userAnswer.isCorrect) {
+                explanationTitleEl.textContent = "✅ Correct ! Connaissance validée";
+                explanationBoxEl.className = 'explanation-correct';
+            } else {
+                explanationTitleEl.textContent = "💡 À retenir pour maîtriser la 3ème Voie";
+                explanationBoxEl.className = 'explanation-incorrect';
+            }
+            explanationBoxEl.classList.remove('d-none');
+            
+            if (question.tip) {
+                tipTextEl.textContent = question.tip;
+                tipBoxEl.classList.remove('d-none');
+            } else {
+                tipBoxEl.classList.add('d-none');
+            }
+        }
+
+        function updateNavigation() {
+            prevBtn.disabled = currentQuestionIndex === 0;
+            nextBtn.classList.toggle('d-none', currentQuestionIndex === questions.length - 1);
+            finishBtn.classList.toggle('d-none', currentQuestionIndex !== questions.length - 1);
+        }
+
+        function updateProgressBar() {
+            const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+            progressBarEl.style.width = `${progress}%`;
+            progressBarEl.setAttribute('aria-valuenow', progress);
+            questionCounterEl.textContent = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
+        }
+        
+        function updateScoreDisplay() {
+            currentScoreEl.textContent = `Score: ${score}/${questions.length}`;
+        }
+
+        function handleNext() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        function handlePrev() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        function calculateSkillLevels() {
+            const thematicScores = {};
+            const difficultyScores = { technical: 0, strategic: 0 };
+            let totalAnswered = 0;
+            
+            userAnswers.forEach((answer, index) => {
+                if (answer !== null) {
+                    totalAnswered++;
+                    const question = questions[index];
+                    
+                    if (!thematicScores[question.thematic]) {
+                        thematicScores[question.thematic] = { correct: 0, total: 0 };
+                    }
+                    thematicScores[question.thematic].total++;
+                    if (answer.isCorrect) {
+                        thematicScores[question.thematic].correct++;
+                    }
+                    
+                    if (question.thematic.includes("Principes") || question.thematic.includes("Outils")) {
+                        if (answer.isCorrect) difficultyScores.technical++;
+                    } else {
+                        if (answer.isCorrect) difficultyScores.strategic++;
+                    }
+                }
+            });
+            
+            return {
+                thematicScores,
+                technicalScore: totalAnswered > 0 ? (difficultyScores.technical / totalAnswered) * 100 : 0,
+                strategicScore: totalAnswered > 0 ? (difficultyScores.strategic / totalAnswered) * 100 : 0
+            };
+        }
+
+        function showFinalResults() {
+            const percentage = (score / questions.length) * 100;
+            const skillAnalysis = calculateSkillLevels();
+            
+            let scoreColor, level, recommendationsHtml, shortTerm, longTerm;
+            let strengths, toolsToMaster, nextProject;
+            
+            if (percentage >= 90) {
+                scoreColor = '#10b981';
+                level = "Expert en 3ème Voie";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-crown text-warning"></i> Maîtrise exceptionnelle !</h5>
+                    <p>Vous maîtrisez parfaitement les principes, outils et méthodes de la Troisième Voie. Vous êtes capable de faciliter des processus synergiques créant 200%+ de valeur.</p>
+                    <div class="alert alert-success">
+                        <i class="fas fa-rocket"></i> <strong>Prochaine étape :</strong> Former d'autres personnes et faciliter des processus de Troisième Voie dans des conflits complexes.
+                    </div>
+                `;
+                shortTerm = "Facilitation de 2-3 processus de Troisième Voie réels, mentorat de débutants";
+                longTerm = "Consultant expert en résolution créative de conflits, formateur certifié 3ème Voie, auteur sur le sujet";
+                strengths = "Compréhension profonde des principes, capacité à créer des climats de sécurité psychologique, pensée systémique";
+                toolsToMaster = "Affiner la facilitation de groupes difficiles, développer des métriques d'impact 200%+";
+                nextProject = "Faciliter un conflit organisationnel majeur avec au moins 5 parties prenantes opposées";
+            } else if (percentage >= 75) {
+                scoreColor = '#3b82f6';
+                level = "Compétent Avancé";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-medal text-info"></i> Très bon niveau !</h5>
+                    <p>Vous avez une solide compréhension de la Troisième Voie et pouvez l'appliquer dans la plupart des situations. Concentrez-vous sur la pratique réelle.</p>
+                    <div class="alert alert-info">
+                        <i class="fas fa-lightbulb"></i> <strong>Focus :</strong> Pratiquez la facilitation de processus de Troisième Voie sur des conflits de complexité moyenne.
+                    </div>
+                `;
+                shortTerm = "Pratiquer avec 3-5 cas réels de complexité moyenne, se former à la facilitation graphique";
+                longTerm = "Devenir facilitateur interne dans votre organisation, résoudre des conflits inter-départementaux complexes";
+                strengths = "Bonne compréhension théorique, capacité à identifier les besoins cachés, écoute empathique";
+                toolsToMaster = "Facilitation graphique, Design Thinking appliqué aux conflits, techniques de créativité de groupe";
+                nextProject = "Résoudre un conflit entre deux départements de votre organisation avec une solution win-win 200%+";
+            } else if (percentage >= 60) {
+                scoreColor = '#f59e0b';
+                level = "Intermédiaire";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-graduation-cap text-warning"></i> Bonnes bases à consolider</h5>
+                    <p>Vous avez compris les principes fondamentaux mais devez approfondir la mise en pratique et les outils spécifiques.</p>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-book"></i> <strong>Priorité :</strong> Pratiquer sur des conflits simples et maîtriser les outils de base (Canvas, écoute empathique, questions puissantes).
+                    </div>
+                `;
+                shortTerm = "Pratiquer l'écoute empathique dans 10 conversations difficiles, utiliser le Canvas 3ème Voie sur 2 cas personnels";
+                longTerm = "Devenir référent 3ème Voie dans votre équipe, faciliter des petits conflits interpersonnels";
+                strengths = "Compréhension des concepts de base, ouverture d'esprit, volonté d'apprendre";
+                toolsToMaster = "Canvas 3ème Voie, écoute empathique avancée, technique des 5 Pourquoi, questions puissantes";
+                nextProject = "Résoudre un conflit personnel ou professionnel simple en appliquant consciemment les étapes de la 3ème Voie";
+            } else if (percentage >= 40) {
+                scoreColor = '#ef4444';
+                level = "Débutant";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-book-open text-primary"></i> Début de parcours</h5>
+                    <p>Vous commencez à comprendre la Troisième Voie. Il vous faut maintenant assimiler les principes fondamentaux avant de passer à la pratique.</p>
+                    <div class="alert alert-primary">
+                        <i class="fas fa-redo"></i> <strong>Action :</strong> Relire les principes fondamentaux et pratiquer l'écoute empathique au quotidien.
+                    </div>
+                `;
+                shortTerm = "Relire le livre de Covey, pratiquer l'écoute empathique 10 min/jour, identifier 3 conflits personnels à retravailler";
+                longTerm = "Maîtriser les 7 habitudes de Covey, appliquer la 3ème Voie dans sa vie personnelle, suivre une formation de base";
+                strengths = "Curiosité, reconnaissance de la valeur de l'approche, premiers pas dans le changement de paradigme";
+                toolsToMaster = "Écoute empathique, distinction besoins/positions, technique du 'Et si...', mentalité d'abondance";
+                nextProject = "Transformer un petit conflit personnel (famille, ami) en utilisant l'écoute empathique et en cherchant un win-win";
+            } else {
+                scoreColor = '#dc2626';
+                level = "Besoin de Formation";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-exclamation-triangle text-danger"></i> Nécessite un renforcement important</h5>
+                    <p>Vous devez reprendre les fondamentaux avant de pouvoir appliquer la Troisième Voie efficacement.</p>
+                    <div class="alert alert-danger">
+                        <i class="fas fa-university"></i> <strong>Urgence :</strong> Lire le livre 'La Troisième Voie' de Stephen Covez et suivre une introduction aux 7 habitudes.
+                    </div>
+                `;
+                shortTerm = "Lire 'Les 7 habitudes' et 'La Troisième Voie', pratiquer l'écoute sans interruption, identifier son paradigme actuel";
+                longTerm = "Comprendre la différence compromis/synergie, changer de mentalité (rareté → abondance), appliquer dans un domaine de vie";
+                strengths = "Volonté d'apprendre (vous avez fait ce quiz!), reconnaissance qu'il existe une autre façon";
+                toolsToMaster = "Écoute basique (ne pas interrompre), identification de ses propres besoins, reconnaissance de la légitimité de l'autre";
+                nextProject = "Dans une prochaine discussion difficile, pratiquer 'écouter pour comprendre' avant de préparer sa réponse";
+            }
+
+            finalScoreCorrectEl.textContent = score;
+            finalScoreTotalEl.textContent = questions.length;
+            finalScorePercentageEl.textContent = `${percentage.toFixed(0)}% - ${level}`;
+            finalScorePercentageEl.style.background = `linear-gradient(135deg, ${scoreColor} 0%, ${scoreColor}00 100%)`;
+            
+            techSkillsEl.style.width = `${skillAnalysis.technicalScore}%`;
+            strategicSkillsEl.style.width = `${skillAnalysis.strategicScore}%`;
+            techSkillsTextEl.textContent = `Compétences techniques : ${skillAnalysis.technicalScore.toFixed(0)}%`;
+            strategicSkillsTextEl.textContent = `Compétences synergiques : ${skillAnalysis.strategicScore.toFixed(0)}%`;
+            
+            finalRecommendationsEl.innerHTML = recommendationsHtml;
+            shortTermEl.textContent = shortTerm;
+            longTermEl.textContent = longTerm;
+            strengthsEl.textContent = strengths;
+            toolsToMasterEl.textContent = toolsToMaster;
+            nextProjectEl.textContent = nextProject;
+            
+            const thematicAnalysis = Object.entries(skillAnalysis.thematicScores)
+                .map(([theme, scores]) => {
+                    const themePercentage = (scores.correct / scores.total) * 100;
+                    return `<div class="mb-2">
+                        <small>${theme}: <strong>${themePercentage.toFixed(0)}%</strong> (${scores.correct}/${scores.total})</small>
+                        <div class="progress" style="height: 5px;">
+                            <div class="progress-bar" style="width: ${themePercentage}%"></div>
+                        </div>
+                    </div>`;
+                })
+                .join('');
+            
+            if (thematicAnalysis) {
+                finalRecommendationsEl.innerHTML += `
+                    <div class="mt-3">
+                        <h6><i class="fas fa-chart-bar"></i> Analyse par domaine</h6>
+                        ${thematicAnalysis}
+                    </div>
+                `;
+            }
+
+            resultsModal.show();
+        }
+
+        function restartQuiz() {
+            settingsPanelEl.classList.remove('d-none');
+            quizContentEl.classList.add('d-none');
+            resultsModal.hide();
+        }
+
+        startQuizBtn.addEventListener('click', startQuiz);
+        nextBtn.addEventListener('click', handleNext);
+        prevBtn.addEventListener('click', handlePrev);
+        finishBtn.addEventListener('click', showFinalResults);
+        restartQuizBtn.addEventListener('click', restartQuiz);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            settingsPanelEl.classList.remove('d-none');
+            quizContentEl.classList.add('d-none');
+        });
+    </script>
+</body>
+</html>
