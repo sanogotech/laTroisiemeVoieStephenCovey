@@ -1,4 +1,4 @@
-# **Méthode de la Troisième Voie – Étape 0 à 8 (+200% win-win++)**
+# **Méthode de la Troisième Voie – Étape 0 à 9 (+200% win-win++)**
 
 La **Troisième Voie** permet de générer des solutions supérieures, inclusives, durables et anti-fragiles.
 
