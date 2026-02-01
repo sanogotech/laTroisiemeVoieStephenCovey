@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Méthode Troisième Voie - Création de Solutions Win-Win++</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --principe-color: #0ea5e9;
+            --methode-color: #10b981;
+            --outil-color: #8b5cf6;
+            --etude-color: #ef4444;
+            --transcendance-color: #f59e0b;
+            --durabilite-color: #6366f1;
+            --light-bg: #f8fafc;
+            --dark-bg: #0f172a;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-light: #64748b;
+            --win-color: #10b981;
+            --winplus-color: #8b5cf6;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            padding-top: 1rem;
+            background-attachment: fixed;
+        }
+
+        .quiz-container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin-top: -1rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .quiz-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .quiz-header h1 {
+            font-weight: 800;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .quiz-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .year-badge {
+            background: linear-gradient(135deg, var(--outil-color) 0%, var(--methode-color) 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Progress & Score */
+        .progress-container {
+            margin-bottom: 2rem;
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        #question-counter {
+            font-weight: 600;
+            color: var(--principe-color);
+            font-size: 1.1rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        #current-score {
+            font-weight: 600;
+            color: var(--methode-color);
+            font-size: 1.1rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .progress {
+            height: 12px;
+            border-radius: 10px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--outil-color) 0%, var(--principe-color) 100%);
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Question Card */
+        #question-card {
+            border: none;
+            border-radius: 15px;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--principe-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #question-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+        }
+        
+        #question-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .thematic-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            border: 2px solid;
+        }
+
+        .badge-principe {
+            background-color: rgba(14, 165, 233, 0.1);
+            border-color: var(--principe-color);
+            color: var(--principe-color);
+        }
+
+        .badge-methode {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-color: var(--methode-color);
+            color: var(--methode-color);
+        }
+
+        .badge-outil {
+            background-color: rgba(139, 92, 246, 0.1);
+            border-color: var(--outil-color);
+            color: var(--outil-color);
+        }
+
+        .badge-etude {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-color: var(--etude-color);
+            color: var(--etude-color);
+        }
+
+        .badge-transcendance {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-color: var(--transcendance-color);
+            color: var(--transcendance-color);
+        }
+
+        .badge-durabilite {
+            background-color: rgba(99, 102, 241, 0.1);
+            border-color: var(--durabilite-color);
+            color: var(--durabilite-color);
+        }
+
+        /* Options */
+        .option-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            background-color: white;
+            transition: all 0.3s ease;
+            font-family: 'Roboto Mono', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-btn:hover:not([disabled]) {
+            border-color: var(--principe-color);
+            background-color: #eff6ff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);
+        }
+        
+        .option-btn.correct {
+            background-color: #f0fdf4;
+            border-color: var(--methode-color);
+            color: #065f46;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .option-btn.incorrect {
+            background-color: #fef2f2;
+            border-color: var(--etude-color);
+            color: #7f1d1d;
+            font-weight: 600;
+        }
+
+        /* Explanation Box */
+        #explanation-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            animation: fadeIn 0.5s ease;
+            border-left: 4px solid;
+        }
+        
+        #explanation-box h5 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .explanation-correct {
+            background-color: #f0fdf4;
+            border-left-color: var(--methode-color);
+        }
+
+        .explanation-incorrect {
+            background-color: #fef2f2;
+            border-left-color: var(--etude-color);
+        }
+
+        /* Tip Box */
+        .tip-box {
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            border-left: 4px solid var(--principe-color);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+        
+        .tip-box h6 {
+            color: var(--principe-color);
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-troisieme {
+            background: linear-gradient(135deg, var(--outil-color) 0%, var(--principe-color) 100%);
+            color: white;
+            border: none;
+        }
+
+        /* Thematic Cards */
+        .theme-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--principe-color);
+        }
+        
+        .theme-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--principe-color) 0%, var(--methode-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Modal Results */
+        .modal-header {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: white;
+            border-radius: 0;
+        }
+
+        .modal-title-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        
+        .final-score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            background: linear-gradient(135deg, var(--outil-color) 0%, var(--methode-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .score-text {
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .skill-meter {
+            background: var(--light-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+            
+            .quiz-header {
+                padding: 2rem 1rem;
+            }
+            
+            .quiz-header h1 {
+                font-size: 2rem;
+            }
+            
+            #question-card {
+                padding: 1.5rem;
+            }
+            
+            .quiz-navigation {
+                flex-direction: column;
+            }
+            
+            .nav-btn {
+                width: 100%;
+            }
+        }
+
+        /* Third Way elements */
+        .thirdway-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' font-family='monospace' font-size='12' fill='rgba(14, 165, 233, 0.05)'%3E+%2B%3C/text%3E%3Ctext x='40' y='40' font-family='monospace' font-size='12' fill='rgba(14, 165, 233, 0.05)'%3EW%2FW%2B%2B%3C/text%3E%3Ctext x='70' y='60' font-family='monospace' font-size='12' fill='rgba(14, 165, 233, 0.05)'%3E3V%3C/text%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .thirdway-badge {
+            background: linear-gradient(135deg, var(--outil-color) 0%, var(--methode-color) 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .case-study {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--principe-color);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .win-badge {
+            background: linear-gradient(135deg, var(--win-color) 0%, var(--winplus-color) 100%);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .step-indicator {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--principe-color) 0%, var(--methode-color) 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="thirdway-background"></div>
+    
+    <div class="container py-4">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h1><i class="fas fa-route"></i> Quiz Méthode Troisième Voie <i class="fas fa-handshake"></i></h1>
+                <p>Évaluez votre maîtrise de la création de solutions win-win++ anti-fragiles et durables (+200% valeur)</p>
+                <div class="year-badge">
+                    Objectif : Maître Praticien 3ème Voie | 0 à 9 étapes | 120 Questions
+                </div>
+            </div>
+            
+            <!-- Configuration Panel -->
+            <div id="settings-panel" class="settings-panel">
+                <h4 class="text-center mb-4"><i class="fas fa-cogs"></i> Configuration du Quiz Troisième Voie</h4>
+                
+                <div class="row mb-4">
+                    <div class="col-md-8">
+                        <label for="question-count" class="form-label">Nombre de questions :</label>
+                        <select id="question-count" class="form-select">
+                            <option value="20">20 questions (Découverte)</option>
+                            <option value="40" selected>40 questions (Apprenti)</option>
+                            <option value="60">60 questions (Pratiquant)</option>
+                            <option value="120">120 questions (Maître Praticien)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button id="start-quiz-btn" class="btn btn-troisieme w-100 pulse-animation">
+                            <i class="fas fa-rocket"></i> Démarrer le Quiz
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h5><i class="fas fa-filter"></i> Domaines à Évaluer</h5>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-principe" checked>
+                                <label class="form-check-label" for="domain-principe">
+                                    <i class="fas fa-compass text-primary me-2"></i>Principes Fondamentaux
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-methode" checked>
+                                <label class="form-check-label" for="domain-methode">
+                                    <i class="fas fa-footsteps text-success me-2"></i>Méthode 0 à 9
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-outil" checked>
+                                <label class="form-check-label" for="domain-outil">
+                                    <i class="fas fa-tools text-purple me-2"></i>Outils Créatifs
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-etude" checked>
+                                <label class="form-check-label" for="domain-etude">
+                                    <i class="fas fa-search text-danger me-2"></i>Études de Cas
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-transcendance" checked>
+                                <label class="form-check-label" for="domain-transcendance">
+                                    <i class="fas fa-mountain text-warning me-2"></i>Transcendance 50/50
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="domain-durabilite" checked>
+                                <label class="form-check-label" for="domain-durabilite">
+                                    <i class="fas fa-infinity text-indigo me-2"></i>Durabilité & Anti-Fragilité
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Thématiques -->
+                <div class="mt-4">
+                    <h5><i class="fas fa-brain"></i> 6 Piliers de la Troisième Voie</h5>
+                    <div class="row mt-3">
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-compass"></i></div>
+                                <h6>Principes Fondamentaux</h6>
+                                <p class="small mb-2">Mindset gagnant-gagnant++, penser au-delà des compromis, valeur ajoutée</p>
+                                <div>
+                                    <span class="thirdway-badge">Win-Win++</span>
+                                    <span class="thirdway-badge">+200%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-footsteps"></i></div>
+                                <h6>Méthode 0 à 9</h6>
+                                <p class="small mb-2">Étapes structurées, cartographie des parties prenantes, création de valeur</p>
+                                <div>
+                                    <span class="thirdway-badge">Étape 0-9</span>
+                                    <span class="thirdway-badge">Cartographie</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-tools"></i></div>
+                                <h6>Outils Créatifs</h6>
+                                <p class="small mb-2">Matrice des intérêts, design thinking, co-création, prototypage</p>
+                                <div>
+                                    <span class="thirdway-badge">Matrice 3V</span>
+                                    <span class="thirdway-badge">Co-création</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-search"></i></div>
+                                <h6>Études de Cas</h6>
+                                <p class="small mb-2">Applications réelles, conflits résolus, innovations sociales, entreprises</p>
+                                <div>
+                                    <span class="thirdway-badge">Cas réels</span>
+                                    <span class="thirdway-badge">Innovation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-mountain"></i></div>
+                                <h6>Transcendance 50/50</h6>
+                                <p class="small mb-2">Dépasser les compromis, créer des tiers inclusifs, penser écosystème</p>
+                                <div>
+                                    <span class="thirdway-badge">Tiers inclusif</span>
+                                    <span class="thirdway-badge">Écosystème</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="theme-card">
+                                <div class="theme-icon"><i class="fas fa-infinity"></i></div>
+                                <h6>Durabilité & Anti-Fragilité</h6>
+                                <p class="small mb-2">Solutions résilientes, valeur pérenne, adaptation, régénération</p>
+                                <div>
+                                    <span class="thirdway-badge">Anti-fragile</span>
+                                    <span class="thirdway-badge">Durable</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Content -->
+            <div id="quiz-content" class="d-none">
+                <div class="progress-container">
+                     <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span id="question-counter">Question 1 / 40</span>
+                        <span id="current-score">Score: 0</span>
+                     </div>
+                    <div class="progress">
+                        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 2.5%;" aria-valuenow="2.5" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <div id="question-card" class="card">
+                    <div class="card-body">
+                        <div class="thematic-badge badge-principe" id="thematic-badge">Principes Fondamentaux</div>
+                        <h2 id="question-text">Chargement de la question...</h2>
+                        <div id="options-container">
+                            <!-- Les options seront insérées ici -->
+                        </div>
+                        <div id="explanation-box" class="d-none">
+                            <h5 id="explanation-title"></h5>
+                            <p id="explanation-text"></p>
+                            <div id="tip-box" class="tip-box d-none">
+                                <h6><i class="fas fa-lightbulb"></i> Pour devenir Maître Praticien</h6>
+                                <p id="tip-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-navigation">
+                    <button id="prev-btn" class="btn btn-outline-secondary nav-btn" disabled>
+                        <i class="fas fa-arrow-left"></i> Précédent
+                    </button>
+                    <button id="next-btn" class="btn btn-troisieme nav-btn">
+                        Suivant <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button id="finish-btn" class="btn btn-success nav-btn d-none">
+                        <i class="fas fa-trophy"></i> Terminer & Voir les Résultats
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Résultats -->
+    <div class="modal fade" id="resultsModal" tabindex="-1" aria-labelledby="resultsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultsModalLabel">
+                        <i class="fas fa-route modal-title-icon"></i>Résultats du Quiz Troisième Voie
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="text-center mb-4">
+                        <h4 class="score-text">Votre niveau en Méthode Troisième Voie :</h4>
+                        <p class="final-score" id="final-score-percentage">0%</p>
+                        <p class="text-muted fs-5">
+                            <span id="final-score-correct">0</span> bonnes réponses sur 
+                            <span id="final-score-total">0</span> questions
+                        </p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skill-meter">
+                                <h6><i class="fas fa-compass"></i> Mindset Créatif</h6>
+                                <div class="progress mt-2" style="height: 20px;">
+                                    <div id="tech-skills" class="progress-bar bg-primary" style="width: 0%;"></div>
+                                </div>
+                                <p id="tech-skills-text" class="mt-2 small">Évaluation en cours...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-meter">
+                                <h6><i class="fas fa-handshake"></i> Intelligence Relationnelle</h6>
+                                <div class="progress mt-2" style="height: 20px;">
+                                    <div id="strategic-skills" class="progress-bar bg-success" style="width: 0%;"></div>
+                                </div>
+                                <p id="strategic-skills-text" class="mt-2 small">Évaluation en cours...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-4">
+                    
+                    <div id="final-recommendations">
+                        <!-- Recommandations seront insérées ici -->
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5><i class="fas fa-road"></i> Roadmap vers Maître Praticien (9 étapes)</h5>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="alert alert-primary">
+                                    <h6><i class="fas fa-graduation-cap"></i> Étapes 0-3 : Fondations</h6>
+                                    <p id="short-term" class="small mb-0">Chargement...</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-success">
+                                    <h6><i class="fas fa-rocket"></i> Étapes 4-9 : Maîtrise</h6>
+                                    <p id="long-term" class="small mb-0">Chargement...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i> Fermer
+                    </button>
+                    <button type="button" class="btn btn-troisieme" id="restart-quiz-btn">
+                        <i class="fas fa-redo"></i> Recommencer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Questions Méthode Troisième Voie - 120 questions réparties en 6 thématiques
+        const quizData = {
+            questions: [
+                // ============ THÉMATIQUE 1: PRINCIPES FONDAMENTAUX (20 questions) ============
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quelle est la définition de la 'Troisième Voie' dans la résolution de conflits ou de problèmes complexes ?",
+                    options: [
+                        "Une solution qui dépasse le compromis 50/50 pour créer une nouvelle réalité bénéfique pour toutes les parties",
+                        "Un simple compromis où chaque partie cède un peu de terrain",
+                        "L'imposition de la solution de la partie la plus forte",
+                        "L'abandon du problème par les deux parties"
+                    ],
+                    correctAnswer: "Une solution qui dépasse le compromis 50/50 pour créer une nouvelle réalité bénéfique pour toutes les parties",
+                    explanation: "La Troisième Voie vise à créer une nouvelle solution qui n'était pas dans les options initiales, générant +200% de valeur pour toutes les parties, pas seulement un partage des gains existants.",
+                    tip: "Maîtriser ce principe fondamental est l'étape 0 pour devenir un praticien de la Troisième Voie."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie l'objectif '+200% win-win++' dans la méthode Troisième Voie ?",
+                    options: [
+                        "Créer au moins le double de valeur totale que ce qui était initialement disponible",
+                        "Donner 200% d'effort dans les négociations",
+                        "Augmenter les bénéfices de 200% pour une seule partie",
+                        "Réduire les pertes de 200% par rapport au scénario initial"
+                    ],
+                    correctAnswer: "Créer au moins le double de valeur totale que ce qui était initialement disponible",
+                    explanation: "Le +200% représente la création de valeur nouvelle, pas seulement une redistribution. C'est la valeur ajoutée par la solution innovante qui bénéficie à toutes les parties.",
+                    tip: "Pensez toujours en termes de création de valeur, pas seulement de distribution."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quelle est la différence fondamentale entre un compromis 50/50 et une solution Troisième Voie ?",
+                    options: [
+                        "Le compromis divise la valeur existante, la Troisième Voie crée de la nouvelle valeur",
+                        "Le compromis est plus rapide à mettre en œuvre",
+                        "La Troisième Voie nécessite plus de ressources",
+                        "Il n'y a pas de différence, c'est la même chose"
+                    ],
+                    correctAnswer: "Le compromis divise la valeur existante, la Troisième Voie crée de la nouvelle valeur",
+                    explanation: "Le compromis est un jeu à somme nulle (ce que l'un gagne, l'autre perd). La Troisième Voie transforme le jeu en somme positive où tous gagnent plus.",
+                    tip: "Identifiez toujours si vous êtes dans un mindset de partage ou de création."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel est le principe de 'penser écosystème' dans la Troisième Voie ?",
+                    options: [
+                        "Considérer toutes les parties prenantes, même indirectes, et leurs interrelations",
+                        "Se concentrer uniquement sur l'environnement écologique",
+                        "Ignorer les effets externes des décisions",
+                        "Penser uniquement aux bénéfices à court terme"
+                    ],
+                    correctAnswer: "Considérer toutes les parties prenantes, même indirectes, et leurs interrelations",
+                    explanation: "La pensée écosystémique permet d'identifier des opportunités de valeur cachées en comprenant comment les différentes parties interagissent et s'influencent mutuellement.",
+                    tip: "Cartographiez toujours l'écosystème complet avant de chercher des solutions."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'anti-fragile' dans le contexte de la Troisième Voie ?",
+                    options: [
+                        "Un système qui s'améliore face aux chocs et à l'incertitude",
+                        "Un système très résistant aux changements",
+                        "Un système fragile qui doit être protégé",
+                        "Un système statique qui ne change jamais"
+                    ],
+                    correctAnswer: "Un système qui s'améliore face aux chocs et à l'incertitude",
+                    explanation: "L'anti-fragilité va au-delà de la résilience (résister aux chocs) pour inclure la capacité de tirer profit des désordres et des incertitudes.",
+                    tip: "Concevez des solutions qui transforment les problèmes en opportunités d'amélioration."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel est le rôle du 'tiers inclusif' dans la méthode Troisième Voie ?",
+                    options: [
+                        "Un élément nouveau qui intègre et transcende les oppositions initiales",
+                        "Un médiateur neutre entre les parties",
+                        "Une troisième partie prenante additionnelle",
+                        "Un arbitre qui impose une solution"
+                    ],
+                    correctAnswer: "Un élément nouveau qui intègre et transcende les oppositions initiales",
+                    explanation: "Le tiers inclusif n'est pas un compromis entre A et B, mais un C qui contient et dépasse à la fois A et B, créant une nouvelle réalité.",
+                    tip: "Cherchez toujours ce 'C' créatif plutôt qu'un milieu entre A et B."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quelle est l'importance du 'mindset abondance' dans la Troisième Voie ?",
+                    options: [
+                        "Croire qu'il est possible de créer plus de valeur pour tous, pas seulement de se partager une quantité fixe",
+                        "Avoir beaucoup de ressources financières",
+                        "Être généreux sans contrepartie",
+                        "Ignorer les contraintes de ressources"
+                    ],
+                    correctAnswer: "Croire qu'il est possible de créer plus de valeur pour tous, pas seulement de se partager une quantité fixe",
+                    explanation: "Le mindset abondance est essentiel pour sortir des jeux à somme nulle et ouvrir la créativité vers des solutions innovantes.",
+                    tip: "Questionnez toujours l'hypothèse de rareté - souvent c'est une limitation mentale, pas réelle."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'valeur multidimensionnelle' dans la Troisième Voie ?",
+                    options: [
+                        "Créer de la valeur sur plusieurs dimensions (économique, sociale, environnementale, émotionnelle, etc.)",
+                        "Mesurer la valeur uniquement en termes financiers",
+                        "Augmenter la valeur dans une seule dimension",
+                        "Ignorer certaines dimensions de valeur"
+                    ],
+                    correctAnswer: "Créer de la valeur sur plusieurs dimensions (économique, sociale, environnementale, émotionnelle, etc.)",
+                    explanation: "En élargissant la définition de la valeur, on découvre plus d'opportunités pour créer des solutions gagnant-gagnant.",
+                    tip: "Identifiez toujours au moins 5 types de valeur différents dans chaque situation."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel est le principe de 'cohérence systémique' dans la Troisième Voie ?",
+                    options: [
+                        "S'assurer que la solution améliore l'ensemble du système, pas seulement certaines parties",
+                        "Maintenir une position constante tout au long des négociations",
+                        "Suivre strictement les procédures établies",
+                        "Éviter tout changement dans le système"
+                    ],
+                    correctAnswer: "S'assurer que la solution améliore l'ensemble du système, pas seulement certaines parties",
+                    explanation: "Une solution réellement durable améliore la santé de l'ensemble du système, évitant ainsi les effets secondaires négatifs.",
+                    tip: "Pensez toujours aux effets secondaires et aux conséquences à long terme."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'durabilité régénérative' dans la Troisième Voie ?",
+                    options: [
+                        "Des solutions qui restaurent et améliorent les ressources au lieu de simplement les préserver",
+                        "Maintenir le statu quo indéfiniment",
+                        "Éviter tout impact sur l'environnement",
+                        "Utiliser uniquement des ressources renouvelables"
+                    ],
+                    correctAnswer: "Des solutions qui restaurent et améliorent les ressources au lieu de simplement les préserver",
+                    explanation: "La régénération va au-delà de la durabilité (ne pas nuire) pour inclure l'amélioration active des systèmes.",
+                    tip: "Concevez des solutions qui laissent les systèmes en meilleur état qu'avant."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel est le principe du 'win-win-win' (gagnant-gagnant-gagnant) ?",
+                    options: [
+                        "Créer des bénéfices pour toutes les parties prenantes, y compris celles qui ne sont pas directement à la table",
+                        "Obtenir trois victoires successives",
+                        "Satisfaire trois critères minimum",
+                        "Impliquer exactement trois parties"
+                    ],
+                    correctAnswer: "Créer des bénéfices pour toutes les parties prenantes, y compris celles qui ne sont pas directement à la table",
+                    explanation: "Le win-win-win inclut les effets sur l'écosystème complet, pas seulement les parties directement impliquées dans la décision.",
+                    tip: "Identifiez toujours les parties prenantes indirectes et leurs intérêts."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'pensée paradoxale' dans la Troisième Voie ?",
+                    options: [
+                        "Capacité à maintenir et intégrer des idées apparemment contradictoires pour trouver des solutions innovantes",
+                        "Penser de manière illogique et incohérente",
+                        "Refuser toute contradiction dans la pensée",
+                        "Choisir un côté des contradictions et rejeter l'autre"
+                    ],
+                    correctAnswer: "Capacité à maintenir et intégrer des idées apparemment contradictoires pour trouver des solutions innovantes",
+                    explanation: "La pensée paradoxale est essentielle pour trouver des solutions qui transcendent les oppositions binaires.",
+                    tip: "Entraînez-vous à voir les contradictions non comme des problèmes, mais comme des opportunités créatives."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel est le rôle de 'l'intention positive' dans la méthode Troisième Voie ?",
+                    options: [
+                        "Chercher les besoins et motivations positives derrière les positions initiales",
+                        "Ignorer les intentions négatives des autres",
+                        "Avoir uniquement des pensées positives",
+                        "Supposer que tout le monde a de bonnes intentions"
+                    ],
+                    correctAnswer: "Chercher les besoins et motivations positives derrière les positions initiales",
+                    explanation: "En comprenant les intentions positives sous-jacentes, on peut trouver des solutions qui satisfont les besoins réels plutôt que les positions de surface.",
+                    tip: "Demandez toujours 'pourquoi' derrière les positions pour découvrir les besoins réels."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'solution inclusive' dans le contexte de la Troisième Voie ?",
+                    options: [
+                        "Une solution qui intègre et valorise les perspectives de toutes les parties concernées",
+                        "Une solution qui exclut certaines parties pour simplifier",
+                        "Une solution qui cible uniquement la majorité",
+                        "Une solution générique qui ignore les spécificités"
+                    ],
+                    correctAnswer: "Une solution qui intègre et valorise les perspectives de toutes les parties concernées",
+                    explanation: "L'inclusion génère plus d'idées et de créativité, et augmente l'adhésion à la solution finale.",
+                    tip: "Plus une solution est inclusive, plus elle est durable et anti-fragile."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel est le principe de 'l'émergence' dans la Troisième Voie ?",
+                    options: [
+                        "Laisser émerger des solutions nouvelles des interactions complexes plutôt que de les imposer",
+                        "Attendre passivement que les solutions apparaissent",
+                        "Forcer l'émergence de solutions par la pression",
+                        "Ignorer les solutions qui émergent naturellement"
+                    ],
+                    correctAnswer: "Laisser émerger des solutions nouvelles des interactions complexes plutôt que de les imposer",
+                    explanation: "Les solutions émergentes sont souvent plus adaptées et créatives que celles imposées de l'extérieur.",
+                    tip: "Créez les conditions pour l'émergence plutôt que de concevoir toutes les solutions vous-même."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'résilience adaptative' dans la Troisième Voie ?",
+                    options: [
+                        "Capacité à s'adapter et à évoluer face aux changements, pas seulement à résister",
+                        "Rester rigide face aux changements",
+                        "Éviter tout changement pour rester stable",
+                        "Changer constamment sans direction"
+                    ],
+                    correctAnswer: "Capacité à s'adapter et à évoluer face aux changements, pas seulement à résister",
+                    explanation: "La résilience adaptative permet aux solutions de durer dans le temps en évoluant avec les circonstances.",
+                    tip: "Concevez des solutions avec des mécanismes d'adaptation intégrés."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel est le rôle de 'la transparence radicale' dans la Troisième Voie ?",
+                    options: [
+                        "Partager ouvertement toutes les informations pertinentes pour construire la confiance et la créativité",
+                        "Cacher certaines informations pour éviter les conflits",
+                        "Être transparent seulement sur ce qui est avantageux",
+                        "Ignorer la confidentialité des informations"
+                    ],
+                    correctAnswer: "Partager ouvertement toutes les informations pertinentes pour construire la confiance et la créativité",
+                    explanation: "La transparence permet à toutes les parties de comprendre pleinement la situation et de contribuer à des solutions créatives.",
+                    tip: "La transparence réduit les jeux de pouvoir et augmente la coopération créative."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'l'équité dynamique' dans la Troisième Voie ?",
+                    options: [
+                        "Une équité qui évolue avec les circonstances et les contributions, pas une égalité statique",
+                        "Toujours diviser les bénéfices également",
+                        "Donner tout à la partie la plus méritante",
+                        "Ignorer les questions d'équité pour se concentrer sur l'efficacité"
+                    ],
+                    correctAnswer: "Une équité qui évolue avec les circonstances et les contributions, pas une égalité statique",
+                    explanation: "L'équité dynamique reconnaît que les contributions et les besoins changent avec le temps, nécessitant des ajustements continus.",
+                    tip: "Concevez des mécanismes d'ajustement équitable plutôt que des règles fixes."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Quel est le principe de 'la valeur à long terme' dans la Troisième Voie ?",
+                    options: [
+                        "Prioriser la création de valeur durable sur plusieurs générations plutôt que les gains à court terme",
+                        "Se concentrer uniquement sur les résultats immédiats",
+                        "Ignorer les considérations à long terme pour des résultats rapides",
+                        "Toujours sacrifier le présent pour le futur"
+                    ],
+                    correctAnswer: "Prioriser la création de valeur durable sur plusieurs générations plutôt que les gains à court terme",
+                    explanation: "Les solutions véritablement win-win++ créent de la valeur qui dure et s'accumule avec le temps.",
+                    tip: "Évaluez toujours les solutions sur au moins trois horizons temporels : court, moyen et long terme."
+                },
+                {
+                    thematic: "Principes Fondamentaux",
+                    question: "Que signifie 'l'intelligence collective' dans la méthode Troisième Voie ?",
+                    options: [
+                        "L'utilisation combinée des connaissances, compétences et perspectives de toutes les parties pour trouver des solutions innovantes",
+                        "S'appuyer uniquement sur les experts les plus qualifiés",
+                        "Ignorer les opinions non expertes",
+                        "Laisser une seule personne décider pour tous"
+                    ],
+                    correctAnswer: "L'utilisation combinée des connaissances, compétences et perspectives de toutes les parties pour trouver des solutions innovantes",
+                    explanation: "L'intelligence collective génère des solutions plus riches et plus adaptées que celles produites individuellement.",
+                    tip: "Créez des processus qui maximisent la contribution de chaque participant."
+                },
+
+                // ============ THÉMATIQUE 2: MÉTHODE 0 À 9 (20 questions) ============
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "Quelle est l'étape 0 (zéro) de la méthode Troisième Voie et pourquoi est-elle cruciale ?",
+                    options: [
+                        "Préparer son mindset : adopter la posture mentale du créateur de valeur avant même d'aborder le problème",
+                        "Identifier immédiatement la solution la plus évidente",
+                        "Établir qui a tort et qui a raison dans la situation",
+                        "Commencer à négocier directement les positions initiales"
+                    ],
+                    correctAnswer: "Préparer son mindset : adopter la posture mentale du créateur de valeur avant même d'aborder le problème",
+                    explanation: "L'étape 0 consiste à adopter le bon état d'esprit : abondance, créativité, coopération. Sans cette base, les étapes suivantes sont inefficaces.",
+                    tip: "Ne sautez jamais l'étape 0. 80% du succès vient du bon mindset."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "Quel est l'objectif principal de l'étape 1 'Cartographie complète' ?",
+                    options: [
+                        "Identifier toutes les parties prenantes, leurs intérêts, besoins, peurs et relations, sans jugement",
+                        "Trouver immédiatement la solution",
+                        "Éliminer les parties prenantes jugées non importantes",
+                        "Déterminer qui a le plus de pouvoir dans la situation"
+                    ],
+                    correctAnswer: "Identifier toutes les parties prenantes, leurs intérêts, besoins, peurs et relations, sans jugement",
+                    explanation: "Une cartographie exhaustive permet de comprendre le système dans sa complexité, révélant des opportunités invisibles avec une vision partielle.",
+                    tip: "Passez 30% de votre temps sur la cartographie - elle révèle 70% des solutions potentielles."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "À l'étape 2 'Définition du challenge créatif', que faut-il éviter absolument ?",
+                    options: [
+                        "Formuler le problème en termes binaires ou en oppositions irréconciliables",
+                        "Inclure toutes les perspectives dans la définition",
+                        "Utiliser un langage positif et orienté solution",
+                        "Considérer le problème sous plusieurs angles"
+                    ],
+                    correctAnswer: "Formuler le problème en termes binaires ou en oppositions irréconciliables",
+                    explanation: "La formulation du problème détermine le champ des solutions possibles. Une formulation binaire limite la créativité.",
+                    tip: "Reformulez toujours 'soit A, soit B' en 'comment pouvons-nous avoir à la fois A et B, et plus encore ?'"
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "L'étape 3 'Génération d'idées folles' a pour objectif principal :",
+                    options: [
+                        "Produire un maximum d'idées sans censure, y compris les plus farfelues, pour élargir l'espace des possibles",
+                        "Trouver immédiatement la solution parfaite",
+                        "Éliminer les mauvaises idées rapidement",
+                        "Se concentrer uniquement sur des idées réalistes et réalisables"
+                    ],
+                    correctAnswer: "Produire un maximum d'idées sans censure, y compris les plus farfelues, pour élargir l'espace des possibles",
+                    explanation: "Les idées 'folles' contiennent souvent les germes de solutions innovantes. La censure prématurée tue la créativité.",
+                    tip: "Fixez un objectif minimum de 100 idées avant de commencer à filtrer."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "À l'étape 4 'Connexions surprenantes', quelle technique est la plus efficace ?",
+                    options: [
+                        "Forcer des associations entre des idées apparemment sans rapport pour générer des concepts nouveaux",
+                        "Regrouper uniquement les idées similaires",
+                        "Éliminer les idées qui ne semblent pas connectées",
+                        "Choisir la meilleure idée et l'améliorer progressivement"
+                    ],
+                    correctAnswer: "Forcer des associations entre des idées apparemment sans rapport pour générer des concepts nouveaux",
+                    explanation: "L'innovation naît souvent à l'intersection de domaines différents. Les connexions improbables génèrent des solutions révolutionnaires.",
+                    tip: "Utilisez la matrice de combinaison aléatoire : prenez une idée du groupe A et une du groupe B, forcez une connexion."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "L'étape 5 'Prototypage rapide' vise principalement à :",
+                    options: [
+                        "Tester concrètement des idées sous forme simplifiée pour apprendre rapidement et éviter les erreurs coûteuses",
+                        "Créer une version parfaite et définitive de la solution",
+                        "Convaincre les autres avec un produit fini impressionnant",
+                        "Éviter de tester pour ne pas risquer l'échec"
+                    ],
+                    correctAnswer: "Tester concrètement des idées sous forme simplifiée pour apprendre rapidement et éviter les erreurs coûteuses",
+                    explanation: "Le prototypage rapide permet d'apprendre par la pratique, d'itérer rapidement et d'impliquer les utilisateurs tôt dans le processus.",
+                    tip: "Un prototype doit prendre moins de 24h à créer et coûter moins de 100€."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "À l'étape 6 'Feedback intégratif', comment doit-on recueillir les retours ?",
+                    options: [
+                        "Avec des questions ouvertes qui explorent les besoins sous-jacents et les améliorations possibles",
+                        "En demandant simplement 'aimez-vous ou non ?'",
+                        "En défendant la solution contre les critiques",
+                        "En ignorant les feedbacks négatifs pour ne pas décourager l'équipe"
+                    ],
+                    correctAnswer: "Avec des questions ouvertes qui explorent les besoins sous-jacents et les améliorations possibles",
+                    explanation: "Le feedback intégratif cherche à comprendre les raisons profondes derrière les réactions pour améliorer la solution, pas juste à mesurer l'approbation.",
+                    tip: "Demandez toujours 'qu'est-ce qui pourrait rendre cette solution encore plus géniale pour vous ?'"
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "L'étape 7 'Optimisation systémique' se concentre sur :",
+                    options: [
+                        "Améliorer la solution pour qu'elle bénéficie à tout l'écosystème, pas seulement aux parties directement impliquées",
+                        "Maximiser les bénéfices pour la partie principale",
+                        "Réduire les coûts au minimum absolu",
+                        "Simplifier la solution au point de perdre ses avantages"
+                    ],
+                    correctAnswer: "Améliorer la solution pour qu'elle bénéficie à tout l'écosystème, pas seulement aux parties directement impliquées",
+                    explanation: "L'optimisation systémique assure la durabilité et l'anti-fragilité en créant des bénéfices pour toutes les parties prenantes, y compris indirectes.",
+                    tip: "Testez toujours votre solution avec la question : 'Comment cela affecte-t-il les parties prenantes dont nous n'avons pas encore parlé ?'"
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "À l'étape 8 'Plan de mise en œuvre adaptable', quelle caractéristique est essentielle ?",
+                    options: [
+                        "Inclure des mécanismes d'ajustement en fonction des retours et changements de contexte",
+                        "Être rigide pour assurer une exécution précise",
+                        "Ignorer les obstacles potentiels pour rester positif",
+                        "Faire reposer la mise en œuvre sur une seule personne"
+                    ],
+                    correctAnswer: "Inclure des mécanismes d'ajustement en fonction des retours et changements de contexte",
+                    explanation: "Un plan adaptable reconnaît que le futur est incertain et prévoit des moyens de s'ajuster sans tout remettre en question.",
+                    tip: "Incluez toujours des 'points de revue' réguliers pour ajuster le plan en cours de route."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "L'étape 9 'Apprentissage continu et célébration' a pour double objectif :",
+                    options: [
+                        "Capitaliser sur les apprentissages du processus et reconnaître les contributions de tous",
+                        "Célébrer uniquement le résultat final",
+                        "Ignorer les échecs pour se concentrer sur les succès",
+                        "Former une équipe permanente pour gérer le projet"
+                    ],
+                    correctAnswer: "Capitaliser sur les apprentissages du processus et reconnaître les contributions de tous",
+                    explanation: "Cette étape ferme la boucle d'apprentissage et renforce la capacité à résoudre des problèmes similaires à l'avenir, tout en construisant la confiance pour les prochains défis.",
+                    tip: "Documentez toujours 'ce que nous avons appris' indépendamment du succès ou de l'échec apparent."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "Dans la méthode 0-9, quand est-il acceptable de revenir à une étape précédente ?",
+                    options: [
+                        "À tout moment quand de nouvelles informations ou obstacles le justifient",
+                        "Jamais, il faut suivre le processus linéairement",
+                        "Seulement si la direction le demande explicitement",
+                        "Uniquement entre les étapes 5 et 6"
+                    ],
+                    correctAnswer: "À tout moment quand de nouvelles informations ou obstacles le justifient",
+                    explanation: "Le processus est itératif, pas linéaire. Revenir en arrière avec de nouvelles perspectives est souvent la clé de l'innovation.",
+                    tip: "Considérez les étapes comme des espaces de travail, pas comme une ligne de production."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "Quel outil est particulièrement utile à l'étape 1 pour cartographier les parties prenantes ?",
+                    options: [
+                        "La matrice d'empathie pour chaque partie prenante (pense, dit, fait, ressent)",
+                        "Un simple listing des noms et fonctions",
+                        "Un organigramme hiérarchique de l'organisation",
+                        "Une analyse SWOT traditionnelle"
+                    ],
+                    correctAnswer: "La matrice d'empathie pour chaque partie prenante (pense, dit, fait, ressent)",
+                    explanation: "La matrice d'empathie permet de comprendre les motivations profondes, pas seulement les positions de surface, ce qui est crucial pour trouver des solutions win-win++.",
+                    tip: "Remplissez toujours la matrice d'empathie pour au moins 5 parties prenantes clés."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "À l'étape 3, quelle technique aide à générer des idées 'folles' ?",
+                    options: [
+                        "Le 'Et si...' radical (ex: Et si l'argent n'existait pas ? Et si nous avions des pouvoirs magiques ?)",
+                        "L'analyse coûts-bénéfices rationnelle",
+                        "La recherche de best practices dans le secteur",
+                        "La consultation d'experts uniquement"
+                    ],
+                    correctAnswer: "Le 'Et si...' radical (ex: Et si l'argent n'existait pas ? Et si nous avions des pouvoirs magiques ?)",
+                    explanation: "Les contraintes radicales 'Et si...' libèrent la créativité en forçant à penser hors des cadres habituels.",
+                    tip: "Commencez chaque session de brainstorming avec 5 'Et si...' de plus en plus fous."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "Quel est l'avantage principal du prototypage rapide (étape 5) par rapport à une planification détaillée ?",
+                    options: [
+                        "Il révale des problèmes et opportunités invisibles dans la théorie",
+                        "Il est moins cher à long terme",
+                        "Il impressionne plus les investisseurs",
+                        "Il permet d'éviter complètement les erreurs"
+                    ],
+                    correctAnswer: "Il révale des problèmes et opportunités invisibles dans la théorie",
+                    explanation: "Le prototypage transforme des idées abstraites en réalité tangible, révélant des aspects que même les meilleures analyses ne peuvent anticiper.",
+                    tip: "Prototypez toujours la partie la plus risquée ou incertaine de votre solution en premier."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "À l'étape 7, que signifie 'optimiser pour l'écosystème' ?",
+                    options: [
+                        "Créer des bénéfices pour les parties prenantes indirectes et l'environnement au sens large",
+                        "Réduire l'impact environnemental au minimum",
+                        "Exclure les parties prenantes qui ne contribuent pas directement",
+                        "Se concentrer uniquement sur l'optimisation financière"
+                    ],
+                    correctAnswer: "Créer des bénéfices pour les parties prenantes indirectes et l'environnement au sens large",
+                    explanation: "Les solutions qui améliorent tout l'écosystème sont plus durables, résilientes et bénéficient d'un soutien plus large.",
+                    tip: "Identifiez toujours 3 bénéfices pour des parties prenantes indirectes dans chaque solution."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "Dans le plan de mise en œuvre (étape 8), que doivent inclure les 'mécanismes d'ajustement' ?",
+                    options: [
+                        "Des indicateurs clés de performance et des points de décision pour pivoter si nécessaire",
+                        "Une liste exhaustive de toutes les tâches possibles",
+                        "Des pénalités sévères pour les déviations du plan",
+                        "Une confiance aveugle en l'exécution parfaite"
+                    ],
+                    correctAnswer: "Des indicateurs clés de performance et des points de décision pour pivoter si nécessaire",
+                    explanation: "Les mécanismes d'ajustement permettent de naviguer l'incertitude sans perdre de vue l'objectif global.",
+                    tip: "Pour chaque objectif, définissez 2-3 indicateurs et un seuil qui déclenche une révision du plan."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "Lors de l'étape 9, quelle pratique maximise l'apprentissage pour les projets futurs ?",
+                    options: [
+                        "Conduire un 'retrospectif' structuré avec toutes les parties impliquées",
+                        "Écrire un rapport final formel pour la direction",
+                        "Célébrer rapidement et passer au projet suivant",
+                        "Analyser uniquement ce qui a fonctionné"
+                    ],
+                    correctAnswer: "Conduire un 'retrospectif' structuré avec toutes les parties impliquées",
+                    explanation: "Le rétrospectif capture les apprentissages pratiques et relationnels qui seront précieux pour les défis futurs.",
+                    tip: "Posez toujours ces 3 questions en rétrospective : 1) Qu'est-ce qui a bien fonctionné ? 2) Qu'est-ce qui a été difficile ? 3) Qu'est-ce que nous ferons différemment la prochaine fois ?"
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "Quelle est la différence entre itérer et pivoter dans le processus 0-9 ?",
+                    options: [
+                        "Itérer = améliorer progressivement une solution ; Pivoter = changer fondamentalement d'approche",
+                        "Itérer = revenir à l'étape 1 ; Pivoter = avancer à l'étape suivante",
+                        "Il n'y a pas de différence, ce sont des synonymes",
+                        "Itérer = pour les petits problèmes ; Pivoter = pour les grands problèmes"
+                    ],
+                    correctAnswer: "Itérer = améliorer progressivement une solution ; Pivoter = changer fondamentalement d'approche",
+                    explanation: "Savoir quand itérer (améliorer) et quand pivoter (changer de direction) est une compétence clé du praticien de la Troisième Voie.",
+                    tip: "Pivotez quand les feedbacks suggèrent que l'hypothèse de base est fausse, itérez quand l'hypothèse est bonne mais l'exécution imparfaite."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "Comment gérer les désaccords profonds entre parties prenantes pendant le processus 0-9 ?",
+                    options: [
+                        "Revenir à l'étape 1 pour mieux comprendre les besoins sous-jacents de chaque partie",
+                        "Forcer un compromis 50/50 pour avancer",
+                        "Donner raison à la partie la plus puissante",
+                        "Abandonner le processus"
+                    ],
+                    correctAnswer: "Revenir à l'étape 1 pour mieux comprendre les besoins sous-jacents de chaque partie",
+                    explanation: "Les désaccords profonds signalent généralement une incompréhension des besoins réels. Une cartographie plus approfondie révèle souvent des solutions invisibles.",
+                    tip: "Quand le processus bloque, c'est presque toujours un signal de revenir aux étapes précédentes pour approfondir."
+                },
+                {
+                    thematic: "Méthode 0 à 9",
+                    question: "Quelle est la durée idéale pour compléter un cycle complet 0-9 sur un problème complexe ?",
+                    options: [
+                        "De 2 à 4 semaines, selon la complexité, avec des cycles plus courts pour les sous-problèmes",
+                        "Plusieurs mois pour être exhaustif",
+                        "24 heures pour être agile",
+                        "Exactement 9 jours, une journée par étape"
+                    ],
+                    correctAnswer: "De 2 à 4 semaines, selon la complexité, avec des cycles plus courts pour les sous-problèmes",
+                    explanation: "Ce délai permet une exploration suffisante sans perdre l'élan. Des cycles plus courts créent de la pression positive, des cycles plus longs permettent la procrastination.",
+                    tip: "Commencez avec un cycle de 2 semaines, ajustez ensuite en fonction de la complexité."
+                },
+
+                // ============ THÉMATIQUE 3: OUTILS CRÉATIFS (20 questions) ============
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Qu'est-ce que la 'Matrice des Intérêts Profonds' et comment l'utilise-t-on ?",
+                    options: [
+                        "Un outil qui catégorise les intérêts de chaque partie prenante en besoins, peurs, aspirations et contraintes pour trouver des synergies cachées",
+                        "Une simple liste des positions de négociation de chaque partie",
+                        "Un organigramme des relations de pouvoir",
+                        "Une analyse financière des gains et pertes potentiels"
+                    ],
+                    correctAnswer: "Un outil qui catégorise les intérêts de chaque partie prenante en besoins, peurs, aspirations et contraintes pour trouver des synergies cachées",
+                    explanation: "En identifiant les intérêts sous les positions, on découvre des synergies improbables qui permettent des solutions créatives win-win++.",
+                    tip: "Remplissez toujours la matrice avec les parties prenantes elles-mêmes pour éviter les projections erronées."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Comment fonctionne l'outil 'Cartographie des Parties Prenantes Élargie' ?",
+                    options: [
+                        "Il inclut non seulement les parties directement impliquées mais aussi les affectées indirectement, les influenceurs et même les générations futures",
+                        "Il se limite aux décideurs ayant un pouvoir formel",
+                        "Il exclut les parties ayant des intérêts contradictoires",
+                        "Il classe les parties par ordre d'importance décroissante"
+                    ],
+                    correctAnswer: "Il inclut non seulement les parties directement impliquées mais aussi les affectées indirectement, les influenceurs et même les générations futures",
+                    explanation: "L'élargissement de la cartographie révèle des opportunités de valeur cachées et prévient les effets secondaires négatifs.",
+                    tip: "Ajoutez toujours au moins 2 parties prenantes 'invisibles' ou indirectes à votre cartographie."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Qu'est-ce que le 'Diagramme de Convergence' et à quoi sert-il ?",
+                    options: [
+                        "Un outil visuel qui montre où les intérêts de différentes parties se chevauchent et où se trouvent les zones de divergence",
+                        "Un graphique montrant l'évolution des positions dans le temps",
+                        "Un diagramme de Gantt pour planifier les étapes",
+                        "Un outil statistique pour mesurer le consensus"
+                    ],
+                    correctAnswer: "Un outil visuel qui montre où les intérêts de différentes parties se chevauchent et où se trouvent les zones de divergence",
+                    explanation: "Le diagramme de convergence aide à identifier les 'zones fertiles' pour l'innovation - là où plusieurs intérêts s'alignent, créant des opportunités de valeur multipliée.",
+                    tip: "Cherchez particulièrement les convergences entre des parties qui semblent en opposition - ce sont souvent les sources de solutions révolutionnaires."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Comment utilise-t-on le 'Brainstorming avec Contraintes Créatives' ?",
+                    options: [
+                        "En imposant des limites artificielles (ex: sans budget, en 24h, avec une technologie spécifique) pour stimuler l'innovation",
+                        "En éliminant toutes les contraintes pour être totalement libre",
+                        "En se concentrant uniquement sur les contraintes réelles les plus limitantes",
+                        "En ignorant délibérément les contraintes pour être créatif"
+                    ],
+                    correctAnswer: "En imposant des limites artificielles (ex: sans budget, en 24h, avec une technologie spécifique) pour stimuler l'innovation",
+                    explanation: "Les contraintes créatives forcent à penser différemment et génèrent des solutions qu'un brainstorming sans limites ne produit pas.",
+                    tip: "Les meilleures contraintes sont souvent les plus contraires au sens commun : 'Comment résoudre ce problème si nous avions un budget illimité MAIS seulement 24 heures ?'"
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Qu'est-ce que la 'Matrice de Combinaison Forcée' et comment génère-t-elle de l'innovation ?",
+                    options: [
+                        "Un tableau qui combine aléatoirement des éléments de différents domaines pour créer des idées nouvelles (ex: hôpital + Airbnb)",
+                        "Une méthode pour regrouper les idées similaires",
+                        "Un outil d'analyse SWOT amélioré",
+                        "Une technique pour prioriser les idées par vote"
+                    ],
+                    correctAnswer: "Un tableau qui combine aléatoirement des éléments de différents domaines pour créer des idées nouvelles (ex: hôpital + Airbnb)",
+                    explanation: "L'innovation naît souvent à l'intersection de domaines différents. La combinaison forcée crée délibérément ces intersections improbables.",
+                    tip: "Utilisez des dés ou un générateur aléatoire pour créer des combinaisons vraiment improbables."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Comment fonctionne l'outil 'Prototypage Papier' dans la Troisième Voie ?",
+                    options: [
+                        "En créant des versions basse fidélité de solutions avec papier, carton et post-its pour tester rapidement des concepts",
+                        "En dessinant des plans architecturaux détaillés",
+                        "En écrivant des spécifications techniques complètes",
+                        "En créant des maquettes digitales perfectionnées"
+                    ],
+                    correctAnswer: "En créant des versions basse fidélité de solutions avec papier, carton et post-its pour tester rapidement des concepts",
+                    explanation: "Le prototypage papier est rapide, peu coûteux et encourage les retours honnêtes (les gens critiquent plus facilement quelque chose d'évidemment imparfait).",
+                    tip: "Un prototype doit être assez bon pour être testé, pas pour être vendu."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Qu'est-ce que le 'Jeu de Rôle Inversé' et pourquoi est-il puissant ?",
+                    options: [
+                        "Demander aux participants de défendre la position de l'autre partie pour développer l'empathie et découvrir des angles nouveaux",
+                        "Changer les rôles hiérarchiques dans une équipe",
+                        "Faire l'inverse de ce qui est habituellement fait",
+                        "Négocier en commençant par les désaccords"
+                    ],
+                    correctAnswer: "Demander aux participants de défendre la position de l'autre partie pour développer l'empathie et découvrir des angles nouveaux",
+                    explanation: "En défendant la position de l'autre, on découvre souvent des arguments valables qu'on n'avait pas considérés et on identifie des préoccupations légitimes.",
+                    tip: "Après un jeu de rôle inversé, demandez toujours : 'Qu'avez-vous appris sur votre propre position en défendant celle de l'autre ?'"
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Comment utilise-t-on la 'Carte des Conséquences Imprévues' ?",
+                    options: [
+                        "En traçant systématiquement les effets secondaires potentiels d'une solution sur toutes les parties prenantes et à différents horizons temporels",
+                        "En listant uniquement les bénéfices attendus",
+                        "En se concentrant sur les conséquences immédiates et évidentes",
+                        "En ignorant les conséquences négatives pour rester positif"
+                    ],
+                    correctAnswer: "En traçant systématiquement les effets secondaires potentiels d'une solution sur toutes les parties prenantes et à différents horizons temporels",
+                    explanation: "Cet outil anticipe les problèmes avant qu'ils ne surviennent et révèle souvent des opportunités d'amélioration supplémentaires.",
+                    tip: "Cherchez toujours les conséquences aux 2nd, 3ème et 4ème niveaux - ce sont souvent les plus importantes."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Qu'est-ce que le 'Tableau de Valeur Multidimensionnelle' ?",
+                    options: [
+                        "Un outil qui évalue les solutions potentielles sur au moins 5 dimensions de valeur différentes (économique, sociale, environnementale, émotionnelle, etc.)",
+                        "Une analyse financière détaillée",
+                        "Un tableau comparatif des coûts uniquement",
+                        "Un outil pour mesurer la satisfaction client"
+                    ],
+                    correctAnswer: "Un outil qui évalue les solutions potentielles sur au moins 5 dimensions de valeur différentes (économique, sociale, environnementale, émotionnelle, etc.)",
+                    explanation: "En élargissant la définition de la valeur, on découvre que des solutions médiocres sur une dimension peuvent être excellentes sur d'autres, créant des opportunités win-win++.",
+                    tip: "Incluez toujours au moins une dimension 'inattendue' dans votre tableau (ex: beauté, plaisir, apprentissage)."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Comment fonctionne l'outil 'Scénarios Extrêmes' ?",
+                    options: [
+                        "En imaginant ce qui se passerait dans des situations extrêmes (effondrement, abondance soudaine, etc.) pour tester la robustesse des solutions",
+                        "En se concentrant uniquement sur le scénario le plus probable",
+                        "En ignorant les scénarios improbables pour ne pas s'éparpiller",
+                        "En utilisant uniquement des données historiques pour prédire l'avenir"
+                    ],
+                    correctAnswer: "En imaginant ce qui se passerait dans des situations extrêmes (effondrement, abondance soudaine, etc.) pour tester la robustesse des solutions",
+                    explanation: "Les scénarios extrêmes révèlent les faiblesses cachées et les opportunités non exploitées des solutions proposées.",
+                    tip: "Testez toujours vos solutions avec au moins 3 scénarios : pire cas, meilleur cas, et cas le plus bizarre que vous puissiez imaginer."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Qu'est-ce que la 'Matrice Gagnant-Gagnant-Gagnant' (Win-Win-Win Matrix) ?",
+                    options: [
+                        "Un outil qui évalue comment une solution bénéficie aux parties directement impliquées, aux parties indirectes et à l'écosystème au sens large",
+                        "Un tableau à trois colonnes pour comparer trois options",
+                        "Une méthode pour diviser les bénéfices en trois parts égales",
+                        "Un outil pour impliquer exactement trois parties prenantes"
+                    ],
+                    correctAnswer: "Un outil qui évalue comment une solution bénéficie aux parties directement impliquées, aux parties indirectes et à l'écosystème au sens large",
+                    explanation: "Cette matrice assure que les solutions créent de la valeur à plusieurs niveaux, augmentant ainsi leur durabilité et leur légitimité.",
+                    tip: "Si une solution ne crée pas de valeur pour au moins une partie prenante indirecte, cherchez comment l'améliorer."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Comment utilise-t-on le 'Diagramme d'Interdépendance' ?",
+                    options: [
+                        "En cartographiant comment les différentes parties prenantes dépendent les unes des autres et interagissent",
+                        "En listant les dépendances techniques d'un projet",
+                        "En créant un organigramme hiérarchique",
+                        "En analysant les dépendances financières uniquement"
+                    ],
+                    correctAnswer: "En cartographiant comment les différentes parties prenantes dépendent les unes des autres et interagissent",
+                    explanation: "Comprendre les interdépendances révèle des leviers systémiques pour créer de la valeur partagée et des solutions anti-fragiles.",
+                    tip: "Cherchez toujours les boucles de rétroaction - positives (renforcement) et négatives (équilibrage)."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Qu'est-ce que l'outil 'Questions Transformatives' et comment l'utilise-t-on ?",
+                    options: [
+                        "Des questions qui changent la perspective sur un problème (ex: 'Et si c'était une opportunité ?' 'Qui d'autre bénéficierait ?')",
+                        "Des questions techniques détaillées",
+                        "Des questions fermées pour obtenir des décisions rapides",
+                        "Des questions rhétoriques pour convaincre"
+                    ],
+                    correctAnswer: "Des questions qui changent la perspective sur un problème (ex: 'Et si c'était une opportunité ?' 'Qui d'autre bénéficierait ?')",
+                    explanation: "Les questions transforment la façon dont nous voyons les problèmes, ouvrant ainsi de nouvelles possibilités de solutions.",
+                    tip: "Ayez toujours une liste de 10 questions transformatives à portée de main pendant les séances de créativité."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Comment fonctionne la 'Carte des Ressources Cachées' ?",
+                    options: [
+                        "En identifiant les ressources sous-utilisées, les compétences latentes et les atouts invisibles de chaque partie prenante",
+                        "En listant uniquement les ressources financières disponibles",
+                        "En se concentrant sur les ressources évidentes et quantifiables",
+                        "En ignorant les ressources des parties les moins puissantes"
+                    ],
+                    correctAnswer: "En identifiant les ressources sous-utilisées, les compétences latentes et les atouts invisibles de chaque partie prenante",
+                    explanation: "Les solutions les plus innovantes combinent souvent des ressources qui n'étaient pas considérées comme pertinentes ou précieuses.",
+                    tip: "Demandez toujours : 'Qu'avez-vous qui ne vous sert à rien actuellement mais qui pourrait être précieux pour d'autres ?'"
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Qu'est-ce que le 'Journal de Bord Créatif' et pourquoi est-il utile ?",
+                    options: [
+                        "Un carnet où noter toutes les idées, observations, connexions et insights au fil du processus, même ceux qui semblent hors-sujet",
+                        "Un compte-rendu formel des réunions",
+                        "Un document pour la communication externe",
+                        "Un outil de reporting pour la direction"
+                    ],
+                    correctAnswer: "Un carnet où noter toutes les idées, observations, connexions et insights au fil du processus, même ceux qui semblent hors-sujet",
+                    explanation: "Le journal capture la matière première de l'innovation - les idées fugaces, les connections improbables, les patterns émergents.",
+                    tip: "Revisez votre journal de bord au moins une fois par semaine - les insights apparaissent souvent dans ce qui semblait anodin."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Comment utilise-t-on l'outil 'Storytelling de la Solution Future' ?",
+                    options: [
+                        "En racontant l'histoire de comment la solution fonctionnera dans le futur, du point de vue des différentes parties prenantes",
+                        "En présentant des données et statistiques seulement",
+                        "En créant un argumentaire de vente formel",
+                        "En écrivant un rapport technique détaillé"
+                    ],
+                    correctAnswer: "En racontant l'histoire de comment la solution fonctionnera dans le futur, du point de vue des différentes parties prenantes",
+                    explanation: "Le storytelling fait vivre la solution, révèle des aspects invisibles dans les analyses, et crée un engagement émotionnel.",
+                    tip: "Racontez toujours la même solution du point de vue d'au moins 3 parties prenantes différentes."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Qu'est-ce que la 'Matrice de Priorisation Créative' (pas la matrice Eisenhower) ?",
+                    options: [
+                        "Un outil qui priorise les idées non pas par importance/urgence mais par potentiel de création de valeur et facilité de test",
+                        "La classique matrice importance/urgence",
+                        "Un simple vote par points",
+                        "Une analyse coûts-bénéfices"
+                    ],
+                    correctAnswer: "Un outil qui priorise les idées non pas par importance/urgence mais par potentiel de création de valeur et facilité de test",
+                    explanation: "Cette matrice identifie les 'low hanging fruits' à fort impact et les idées révolutionnaires qui nécessitent plus de développement.",
+                    tip: "Testez toujours d'abord les idées à fort potentiel et facile à tester - elles donnent des résultats rapides qui motivent pour les défis plus complexes."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Comment fonctionne l'outil 'Feedback en Étoile' (Star Feedback) ?",
+                    options: [
+                        "Une méthode de feedback structuré avec 5 points : ce qu'on aime, ce qu'on comprend, ce qui nous questionne, ce qu'on suggère, ce qui nous inspire",
+                        "Un feedback général sans structure",
+                        "Seulement des critiques constructives",
+                        "Uniquement des compliments positifs"
+                    ],
+                    correctAnswer: "Une méthode de feedback structuré avec 5 points : ce qu'on aime, ce qu'on comprend, ce qui nous questionne, ce qu'on suggère, ce qui nous inspire",
+                    explanation: "Cette structure équilibrée encourage des retours riches et constructifs sans tomber dans la pure critique ou le compliment creux.",
+                    tip: "Utilisez toujours le feedback en étoile pour les prototypes - il génère des insights actionnables."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Qu'est-ce que la 'Carte des Alternatives Radicales' et comment l'utilise-t-on ?",
+                    options: [
+                        "Un brainstorming des solutions les plus extrêmes et improbables pour élargir le champ des possibles avant de chercher des solutions pratiques",
+                        "Une liste des solutions évidentes et réalisables",
+                        "Une analyse des solutions des concurrents",
+                        "Un benchmark des best practices"
+                    ],
+                    correctAnswer: "Un brainstorming des solutions les plus extrêmes et improbables pour élargir le champ des possibles avant de chercher des solutions pratiques",
+                    explanation: "En explorant d'abord les extrêmes, on repousse les limites de ce qui est considéré possible, rendant les solutions 'réalistes' plus innovantes.",
+                    tip: "Commencez toujours par 'la solution la plus chère/impossible/absurde' - elle contient souvent les germes de solutions praticables innovantes."
+                },
+                {
+                    thematic: "Outils Créatifs",
+                    question: "Comment utilise-t-on l'outil 'Rétrospective des Apprentissages' à la fin d'un projet ?",
+                    options: [
+                        "En identifiant systématiquement ce qui a fonctionné, ce qui a été difficile, et ce qu'on ferait différemment, avec toutes les parties impliquées",
+                        "En célébrant simplement le succès",
+                        "En blâmant les échecs sur des circonstances externes",
+                        "En faisant un simple bilan des résultats"
+                    ],
+                    correctAnswer: "En identifiant systématiquement ce qui a fonctionné, ce qui a été difficile, et ce qu'on ferait différemment, avec toutes les parties impliquées",
+                    explanation: "La rétrospective transforme l'expérience en apprentissage réutilisable, renforçant la capacité collective à résoudre des problèmes similaires à l'avenir.",
+                    tip: "Documentez toujours les apprentissages sous forme de 'principes d'action' concrets pour les projets futurs."
+                },
+
+                // ============ THÉMATIQUE 4: ÉTUDES DE CAS (20 questions) ============
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Une entreprise familiale est déchirée entre deux frères qui veulent des directions opposées pour l'entreprise. L'un veut moderniser et investir, l'autre veut préserver les traditions et la stabilité. Comment appliquer la Troisième Voie ?",
+                    options: [
+                        "Créer une nouvelle entité qui combine modernisation et tradition, peut-être une marque 'héritage innovant' avec des produits traditionnels revisités",
+                        "Forcer un compromis 50/50 avec moitié modernisation, moitié tradition",
+                        "Donner raison à l'aîné par respect des traditions",
+                        "Vendre l'entreprise pour mettre fin au conflit"
+                    ],
+                    correctAnswer: "Créer une nouvelle entité qui combine modernisation et tradition, peut-être une marque 'héritage innovant' avec des produits traditionnels revisités",
+                    explanation: "La Troisième Voie ici transcende l'opposition modernisation/tradition en créant quelque chose de nouveau qui honore les deux valeurs. Par exemple, utiliser des techniques traditionnelles pour créer des produits innovants, ou moderniser les processus tout en préservant l'identité traditionnelle dans le marketing.",
+                    tip: "Dans les conflits familiaux, cherchez toujours à honorer les valeurs sous-jacentes plutôt que les positions de surface."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Une municipalité doit choisir entre préserver une zone naturelle et construire des logements sociaux nécessaires. Opposition entre écologistes et promoteurs du logement. Solution Troisième Voie ?",
+                    options: [
+                        "Créer un éco-quartier à haute densité qui préserve 80% de la zone naturelle tout en logeant plus de personnes que prévu initialement",
+                        "Diviser la zone en deux parties égales",
+                        "Annuler le projet pour éviter le conflit",
+                        "Imposer la construction malgré l'opposition écologiste"
+                    ],
+                    correctAnswer: "Créer un éco-quartier à haute densité qui préserve 80% de la zone naturelle tout en logeant plus de personnes que prévu initialement",
+                    explanation: "La solution win-win++ ici est l'éco-quartier à haute densité : meilleure préservation écologique grâce à un design intelligent, PLUS de logements grâce à une densification créative, PLUS de valeur avec des espaces partagés et communautaires.",
+                    tip: "Dans les conflits environnement/développement, cherchez toujours des solutions qui augmentent à la fois la préservation ET la densité/qualité."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Dans un hôpital, conflit entre médecins qui veulent plus de temps avec chaque patient et administration qui doit réduire les coûts. Solution Troisième Voie ?",
+                    options: [
+                        "Réorganiser les processus pour que les médecins passent moins de temps sur l'administratif et plus avec les patients, réduisant ainsi les coûts par une meilleure efficacité",
+                        "Imposer des quotas de temps par patient",
+                        "Augmenter les effectifs malgré les contraintes budgétaires",
+                        "Réduire la qualité des soins pour économiser"
+                    ],
+                    correctAnswer: "Réorganiser les processus pour que les médecins passent moins de temps sur l'administratif et plus avec les patients, réduisant ainsi les coûts par une meilleure efficacité",
+                    explanation: "La solution win-win++ identifie que le vrai problème n'est pas le temps médecin/patient vs coûts, mais l'inefficacité des processus. En libérant du temps médical des tâches administratives, on améliore à la fois la qualité des soins ET la performance financière.",
+                    tip: "Quand deux objectifs semblent contradictoires, cherchez souvent un 'méta-problème' dont la résolution résout les deux à la fois."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Dans une entreprise, conflit entre le service commercial qui veut des produits personnalisables à l'infini et la production qui veut standardiser pour réduire les coûts. Solution Troisième Voie ?",
+                    options: [
+                        "Développer une plateforme modulaire où les clients composent leur produit à partir de modules standardisés, permettant personnalisation ET efficacité de production",
+                        "Limiter les options personnalisables à une liste fixe",
+                        "Accepter toutes les demandes de personnalisation au prix d'une forte augmentation des coûts",
+                        "Refuser toute personnalisation pour garder les coûts bas"
+                    ],
+                    correctAnswer: "Développer une plateforme modulaire où les clients composent leur produit à partir de modules standardisés, permettant personnalisation ET efficacité de production",
+                    explanation: "Le système modulaire est un classique de la Troisième Voie : il transforme l'opposition personnalisation/standardisation en une synergie où chaque module est standardisé mais les combinaisons sont personnalisées.",
+                    tip: "La modularité est souvent la clé pour résoudre l'opposition personnalisation/efficacité."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Dans un couple, un partenaire veut vivre à la campagne, l'autre en ville. Opposition apparemment irréconciliable. Solution Troisième Voie ?",
+                    options: [
+                        "Trouver une 'troisième option' comme une petite ville dynamique avec accès rapide à la nature ET à la culture urbaine, ou un arrangement temporel (ville la semaine/campagne le weekend)",
+                        "Alterner chaque année entre ville et campagne",
+                        "Vivre à mi-chemin dans une zone qui ne satisfait personne",
+                        "Se séparer à cause de cette incompatibilité"
+                    ],
+                    correctAnswer: "Trouver une 'troisième option' comme une petite ville dynamique avec accès rapide à la nature ET à la culture urbaine, ou un arrangement temporel (ville la semaine/campagne le weekend)",
+                    explanation: "En explorant les besoins sous-jacents (calme/nature pour l'un, stimulation/social pour l'autre), on trouve des solutions qui satisfont les deux mieux qu'un compromis spatial.",
+                    tip: "Dans les conflits de localisation, explorez toujours les dimensions temporelles et les 'qualités hybrides' des lieux."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Une startup doit choisir entre croissance rapide (risquée mais potentiellement très rentable) et croissance lente (sécurisée mais limitée). Solution Troisième Voie ?",
+                    options: [
+                        "Adopter une stratégie de 'croissance modulaire' avec un noyau stable qui grandit lentement ET des branches innovantes qui testent une croissance rapide",
+                        "Essayer de grandir à vitesse moyenne",
+                        "Pivoter complètement vers un autre business model",
+                        "Attendre que les conditions soient parfaites"
+                    ],
+                    correctAnswer: "Adopter une stratégie de 'croissance modulaire' avec un noyau stable qui grandit lentement ET des branches innovantes qui testent une croissance rapide",
+                    explanation: "Cette approche 'ambidextre' permet d'explorer des opportunités de croissance rapide tout en maintenant une base stable, combinant ainsi sécurité ET potentiel de rupture.",
+                    tip: "Face à des choix stratégiques binaires, explorez souvent des structures hybrides ou parallèles."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Dans une école, conflit entre enseignants traditionnels (cours magistraux, discipline stricte) et modernes (pédagogie active, autonomie). Solution Troisième Voie ?",
+                    options: [
+                        "Développer une pédagogie 'structurée mais active' avec des cadres clairs ET une autonomie dans ces cadres, formant les enseignants aux deux approches",
+                        "Laisser chaque enseignant faire comme il veut",
+                        "Imposer une méthode unique à tous",
+                        "Diviser l'école en deux sections différentes"
+                    ],
+                    correctAnswer: "Développer une pédagogie 'structurée mais active' avec des cadres clairs ET une autonomie dans ces cadres, formant les enseignants aux deux approches",
+                    explanation: "La synthèse pédagogique reconnaît que structure ET autonomie sont nécessaires, et qu'elles ne s'opposent pas quand la structure sert de cadre sécurisant pour l'exploration autonome.",
+                    tip: "Dans les conflits pédagogiques, cherchez souvent à intégrer les approches plutôt qu'à choisir entre elles."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Un restaurant doit choisir entre augmenter les prix (risque de perdre des clients) ou réduire la qualité (risque de perdre sa réputation). Solution Troisième Voie ?",
+                    options: [
+                        "Créer une nouvelle offre de valeur avec des formules innovantes (abonnements, ateliers, produits dérivés) qui augmente le revenu par client sans augmenter les prix à la carte",
+                        "Augmenter légèrement les prix et réduire légèrement la qualité",
+                        "Chercher à réduire drastiquement les coûts ailleurs",
+                        "Fermer le restaurant"
+                    ],
+                    correctAnswer: "Créer une nouvelle offre de valeur avec des formules innovantes (abonnements, ateliers, produits dérivés) qui augmente le revenu par client sans augmenter les prix à la carte",
+                    explanation: "En élargissant l'offre au-delà du simple repas, le restaurant crée de nouvelles sources de revenus qui permettent de maintenir prix ET qualité tout en augmentant la profitabilité.",
+                    tip: "Face à des choix financiers difficiles, cherchez souvent à élargir le modèle économique plutôt qu'à optimiser l'existant."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Dans un projet communautaire, conflit entre ceux qui veulent une gouvernance formelle (règles, procédures) et ceux qui veulent une gouvernance informelle (confiance, flexibilité). Solution Troisième Voie ?",
+                    options: [
+                        "Créer une 'constitution légère' avec quelques principes fondamentaux ET une grande autonomie d'action dans ce cadre, avec des processus adaptatifs",
+                        "Alterner entre gouvernance formelle et informelle",
+                        "Diviser le projet en deux groupes avec des gouvernances différentes",
+                        "N'avoir aucune gouvernance du tout"
+                    ],
+                    correctAnswer: "Créer une 'constitution légère' avec quelques principes fondamentaux ET une grande autonomie d'action dans ce cadre, avec des processus adaptatifs",
+                    explanation: "La gouvernance adaptative combine le meilleur des deux : suffisamment de structure pour éviter le chaos, suffisamment de flexibilité pour permettre l'innovation et l'adaptation.",
+                    tip: "Dans les conflits de gouvernance, pensez 'cadre souple' plutôt que 'règles rigides' ou 'aucune règle'."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Un employé veut télétravailler à 100% pour mieux concilier vie pro/perso, mais son manager veut le garder au bureau pour le travail d'équipe. Solution Troisième Voie ?",
+                    options: [
+                        "Mettre en place un modèle hybride avec des jours fixes d'équipe au bureau ET du télétravail le reste, avec des outils de collaboration améliorés",
+                        "Alterner une semaine sur deux",
+                        "Accepter le télétravail complet avec des réunions physiques occasionnelles",
+                        "Refuser le télétravail et proposer des horaires flexibles au bureau"
+                    ],
+                    correctAnswer: "Mettre en place un modèle hybride avec des jours fixes d'équipe au bureau ET du télétravail le reste, avec des outils de collaboration améliorés",
+                    explanation: "Le modèle hybride structuré maximise les bénéfices des deux modes : collaboration en présentiel ET concentration/flexibilité en distanciel, avec une prévisibilité qui aide à planifier.",
+                    tip: "Dans les conflits présentiel/distanciel, structurez le mélange plutôt que de le laisser au hasard."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Un agriculteur doit choisir entre méthodes traditionnelles (peu productives mais écologiques) et méthodes intensives (productives mais néfastes). Solution Troisième Voie ?",
+                    options: [
+                        "Adopter l'agroécologie qui combine productivité ET écologie grâce à des techniques innovantes (permaculture, agroforesterie, etc.)",
+                        "Faire 50% de chaque",
+                        "Se spécialiser dans le bio premium à très petite échelle",
+                        "Continuer en conventionnel en essayant de réduire un peu les impacts"
+                    ],
+                    correctAnswer: "Adopter l'agroécologie qui combine productivité ET écologie grâce à des techniques innovantes (permaculture, agroforesterie, etc.)",
+                    explanation: "L'agroécologie est un excellent exemple de Troisième Voie : elle dépasse l'opposition productivité/écologie en créant des systèmes qui sont à la fois très productifs ET régénératifs.",
+                    tip: "Face à des oppositions apparemment techniques, cherchez souvent des approches systémiques qui transforment les contraintes en synergies."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Une association doit choisir entre accepter un financement d'une entreprise controversée (ressources mais risque pour sa réputation) ou le refuser (intégrité mais difficultés financières). Solution Troisième Voie ?",
+                    options: [
+                        "Négocier un partenariat transformatif où l'entreprise s'engage à changer certaines pratiques en échange du financement, créant ainsi un impact positif supplémentaire",
+                        "Accepter le financement mais le cacher",
+                        "Refuser le financement et lancer une campagne de dons exceptionnelle",
+                        "Accepter le financement et ignorer les critiques"
+                    ],
+                    correctAnswer: "Négocier un partenariat transformatif où l'entreprise s'engage à changer certaines pratiques en échange du financement, créant ainsi un impact positif supplémentaire",
+                    explanation: "Cette approche transforme le dilemme éthique en opportunité de changement : l'association obtient des ressources ET crée un impact positif sur l'entreprise donatrice.",
+                    tip: "Dans les dilemmes éthiques, cherchez souvent à transformer la relation plutôt qu'à simplement accepter ou refuser."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Un créateur de contenu doit choisire entre contenu populaire (beaucoup de vues mais peu de sens) et contenu profond (peu de vues mais grande valeur). Solution Troisième Voie ?",
+                    options: [
+                        "Créer un format hybride qui rend le contenu profond accessible et engageant, ou alterner stratégiquement entre les deux types avec une cohérence globale",
+                        "Faire moitié-moitié sans stratégie",
+                        "Se spécialiser dans un créneau très étroit",
+                        "Créer deux chaînes séparées"
+                    ],
+                    correctAnswer: "Créer un format hybride qui rend le contenu profond accessible et engageant, ou alterner stratégiquement entre les deux types avec une cohérence globale",
+                    explanation: "La Troisième Voie ici consiste soit à inventer un nouveau format qui combine popularité ET profondeur, soit à créer un rythme alterné qui sert une stratégie globale cohérente.",
+                    tip: "Dans les choix de contenu, pensez souvent 'et' plutôt que 'ou' - comment rendre le profond populaire ET le populaire profond ?"
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Une ville doit choisir entre prioriser les voitures (mobilité individuelle) et les vélos/piétons (qualité de vie, écologie). Solution Troisième Voie ?",
+                    options: [
+                        "Repenser l'espace urbain avec des 'rues complètes' qui accommodent tous les modes de transport de façon sécurisée et efficace, et développer les transports en commun comme colonne vertébrale",
+                        "Créer des zones séparées pour chaque mode",
+                        "Réduire progressivement la place de la voiture sans alternative",
+                        "Laisser la voiture dominer mais créer quelques pistes cyclables"
+                    ],
+                    correctAnswer: "Repenser l'espace urbain avec des 'rues complètes' qui accommodent tous les modes de transport de façon sécurisée et efficace, et développer les transports en commun comme colonne vertébrale",
+                    explanation: "Les 'rues complètes' et les systèmes de transport intégrés représentent la Troisième Voie en urbanisme : ils créent des villes où tous les modes coexistent efficacement, avec des bénéfices multiples.",
+                    tip: "Dans les conflits de mobilité, pensez systèmes intégrés plutôt que modes séparés."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Un développeur logiciel doit choisir entre livrer rapidement (avec des bugs potentiels) ou livrer parfait (mais avec du retard). Solution Troisième Voie ?",
+                    options: [
+                        "Adopter le développement continu avec des livraisons fréquentes de petites fonctionnalités testées, permettant rapidité ET qualité progressive",
+                        "Livrer à moitié fait et corriger ensuite",
+                        "Toujours retarder pour la perfection",
+                        "Externaliser le développement pour aller plus vite"
+                    ],
+                    correctAnswer: "Adopter le développement continu avec des livraisons fréquentes de petites fonctionnalités testées, permettant rapidité ET qualité progressive",
+                    explanation: "Le développement continu/DevOps est la Troisième Voie du développement logiciel : il casse le triangle qualité/coût/délai en permettant des améliorations constantes et rapides.",
+                    tip: "Dans les dilemmes qualité/délai, pensez 'itératif et incrémental' plutôt que 'tout ou rien'."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Un magasin doit choisir entre bas prix (faible marge, volume important) et service premium (marge élevée, volume faible). Solution Troisième Voie ?",
+                    options: [
+                        "Créer une offre 'bon marché mais chic' avec une expérience client soignée à prix modéré, ou développer des services à valeur ajoutée autour des produits basiques",
+                        "Avoir deux rayons séparés",
+                        "Alterner les promotions",
+                        "Se positionner au milieu du marché"
+                    ],
+                    correctAnswer: "Créer une offre 'bon marché mais chic' avec une expérience client soignée à prix modéré, ou développer des services à valeur ajoutée autour des produits basiques",
+                    explanation: "Des marques comme Ikea ou Primark ont réussi cette Troisième Voie : prix bas MAIS expérience/design soigné, créant ainsi une nouvelle catégorie.",
+                    tip: "Dans le retail, l'opposition prix/service est souvent transcendée par l'expérience globale ou le modèle hybride."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Un manager doit choisir entre autonomie totale de son équipe (motivation mais risque de divergence) et contrôle étroit (cohésion mais démotivation). Solution Troisième Voie ?",
+                    options: [
+                        "Mettre en place un cadre clair avec des objectifs partagés ET une grande autonomie sur les moyens, avec des points réguliers d'alignement",
+                        "Donner de l'autonomie mais vérifier constamment",
+                        "Contrôler étroitement mais donner l'illusion d'autonomie",
+                        "Alterner entre les deux approches"
+                    ],
+                    correctAnswer: "Mettre en place un cadre clair avec des objectifs partagés ET une grande autonomie sur les moyens, avec des points réguliers d'alignement",
+                    explanation: "Le leadership par cadre et autonomie est la Troisième Voie du management : il aligne l'équipe sur le 'pourquoi' et le 'quoi' tout en laissant la liberté sur le 'comment'.",
+                    tip: "Un bon cadre ne limite pas, il libère en donnant des repères clairs pour l'autonomie."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Un éditeur doit choisir entre papier (tradition, tactile) et numérique (moderne, pratique). Solution Troisième Voie ?",
+                    options: [
+                        "Créer des livres 'augmentés' avec codes QR pour contenu supplémentaire, ou des bundles papier+numérique, ou des formats hybrides innovants",
+                        "Faire les deux versions séparément",
+                        "Passer entièrement au numérique avec quelques exceptions",
+                        "Rester au papier en proposant un PDF gratuit"
+                    ],
+                    correctAnswer: "Créer des livres 'augmentés' avec codes QR pour contenu supplémentaire, ou des bundles papier+numérique, ou des formats hybrides innovants",
+                    explanation: "L'édition hybride dépasse l'opposition papier/numérique en créant des produits qui combinent les avantages des deux supports.",
+                    tip: "Dans les transitions technologiques, cherchez souvent à hybrider plutôt qu'à remplacer."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Un restaurant doit choisir entre cuisine traditionnelle locale (authenticité) et cuisine internationale/fusion (innovation). Solution Troisième Voie ?",
+                    options: [
+                        "Créer une 'cuisine locale réinventée' utilisant des produits et techniques locales de façon innovante, ou des menus qui voyagent à travers les traditions revisitées",
+                        "Avoir deux menus séparés",
+                        "Alterner les cuisines selon les jours",
+                        "Fusionner sans respect pour les traditions"
+                    ],
+                    correctAnswer: "Créer une 'cuisine locale réinventée' utilisant des produits et techniques locales de façon innovante, ou des menus qui voyagent à travers les traditions revisitées",
+                    explanation: "La cuisine 'locale et créative' honore les traditions tout en les faisant évoluer, créant ainsi une identité culinaire unique qui satisfait à la fois les puristes et les explorateurs.",
+                    tip: "Dans les arts culinaires comme ailleurs, l'innovation la plus riche vient souvent de la rencontre entre tradition profondément comprise et créativité audacieuse."
+                },
+                {
+                    thematic: "Études de Cas",
+                    question: "Cas réel : Une entreprise doit choisir entre croissance organique (lente mais maîtrisée) et croissance par acquisition (rapide mais risquée). Solution Troisième Voie ?",
+                    options: [
+                        "Développer un écosystème de partenariats stratégiques et de joint-ventures qui combine contrôle ET accélération",
+                        "Alterner entre les deux stratégies",
+                        "Croître organiquement jusqu'à un certain seuil puis faire des acquisitions",
+                        "Faire des petites acquisitions pour compléter la croissance organique"
+                    ],
+                    correctAnswer: "Développer un écosystème de partenariats stratégiques et de joint-ventures qui combine contrôle ET accélération",
+                    explanation: "L'approche écosystémique est la Troisième Voie de la croissance : elle permet d'accéder à de nouvelles capacités et marchés sans les risques et coûts des acquisitions complètes.",
+                    tip: "Face à des choix stratégiques binaires, explorez souvent les formes intermédiaires ou hybrides comme les partenariats, alliances, écosystèmes."
+                },
+
+                // ============ THÉMATIQUE 5: TRANSCENDANCE 50/50 (20 questions) ============
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Que signifie véritablement 'transcender un compromis 50/50' dans la méthode Troisième Voie ?",
+                    options: [
+                        "Créer une nouvelle solution qui rend le choix initial obsolète en satisfaisant les besoins sous-jacents mieux que ne le faisaient les options originales",
+                        "Trouver un point médian acceptable entre les deux positions",
+                        "Convaincre une partie d'abandonner sa position",
+                        "Attendre que le temps résolve le conflit"
+                    ],
+                    correctAnswer: "Créer une nouvelle solution qui rend le choix initial obsolète en satisfaisant les besoins sous-jacents mieux que ne le faisaient les options originales",
+                    explanation: "La transcendance ne cherche pas le milieu, mais quelque chose de radicalement différent et supérieur. Comme l'invention de la voiture a transcendé le choix 'cheval plus rapide ou cheval plus fort'.",
+                    tip: "Quand vous pensez à un compromis, demandez-vous : 'Quel est le besoin plus profond que ni l'option A ni l'option B ne satisfont pleinement ?'"
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Comment identifie-t-on qu'un problème est 'mûr' pour être transcendé plutôt que simplement compromis ?",
+                    options: [
+                        "Quand les parties sont profondément insatisfaites des options disponibles, même si elles défendent fermement leur position",
+                        "Quand une partie domine clairement l'autre",
+                        "Quand le problème est mineur et ne mérite pas beaucoup d'effort",
+                        "Quand il y a déjà un compromis évident sur la table"
+                    ],
+                    correctAnswer: "Quand les parties sont profondément insatisfaites des options disponibles, même si elles défendent fermement leur position",
+                    explanation: "L'insatisfaction partagée face aux options existantes est le signe qu'il y a un potentiel pour une solution radicalement meilleure qui n'a pas encore été imaginée.",
+                    tip: "Écoutez les plaintes répétées 'je n'aime aucune des options' - c'est souvent l'appel du futur pour une solution transcendante."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Quelle est la différence entre 'intégrer' et 'transcender' dans la Troisième Voie ?",
+                    options: [
+                        "Intégrer = combiner des éléments des deux côtés ; Transcender = créer quelque chose de nouveau qui dépasse les deux",
+                        "Intégrer = choisir un côté ; Transcender = choisir l'autre côté",
+                        "Il n'y a pas de différence, ce sont des synonymes",
+                        "Intégrer = pour les petits problèmes ; Transcender = pour les grands problèmes"
+                    ],
+                    correctAnswer: "Intégrer = combiner des éléments des deux côtés ; Transcender = créer quelque chose de nouveau qui dépasse les deux",
+                    explanation: "L'intégration peut être une étape vers la transcendance, mais la vraie transcendance va au-delà de la simple combinaison pour créer une réalité qualitative nouvelle.",
+                    tip: "Cherchez d'abord à intégrer, mais continuez à chercher la transcendance - c'est là que se trouve le +200% de valeur."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Quel est le rôle des 'contradictions créatives' dans le processus de transcendance ?",
+                    options: [
+                        "Elles signalent les endroits où l'innovation est possible si on maintient la tension au lieu de la résoudre prématurément",
+                        "Elles doivent être éliminées rapidement pour avancer",
+                        "Elles prouvent que le problème est insoluble",
+                        "Elles indiquent qu'il faut choisir un côté"
+                    ],
+                    correctAnswer: "Elles signalent les endroits où l'innovation est possible si on maintient la tension au lieu de la résoudre prématurément",
+                    explanation: "Les contradictions créatives sont des tensions fécondes qui, maintenues assez longtemps, génèrent des solutions innovantes. Les résoudre trop tôt par un compromis tue l'innovation.",
+                    tip: "Quand vous ressentez une contradiction inconfortable, dites-vous : 'C'est ici que l'innovation se cache'."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Comment le concept de 'synthèse dialectique' (thèse-antithèse-synthèse) s'applique-t-il à la transcendance dans la Troisième Voie ?",
+                    options: [
+                        "La synthèse ne choisit pas entre thèse et antithèse mais les dépasse toutes deux en créant une nouvelle réalité qui les inclut et les transforme",
+                        "La synthèse est simplement la moyenne entre thèse et antithèse",
+                        "La synthèse choisit la thèse ou l'antithèse selon ce qui est le plus fort",
+                        "La synthèse rejette à la fois la thèse et l'antithèse"
+                    ],
+                    correctAnswer: "La synthèse ne choisit pas entre thèse et antithèse mais les dépasse toutes deux en créant une nouvelle réalité qui les inclut et les transforme",
+                    explanation: "Dans la dialectique hégélienne reprise par la Troisième Voie, la synthèse conserve ce qui est valable dans les deux opposés tout en créant quelque chose de qualitativement nouveau.",
+                    tip: "Pensez toujours : 'Comment cette solution peut-elle préserver la vérité de l'option A ET de l'option B tout en créant quelque chose de nouveau ?'"
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Quelle est l'erreur la plus commune quand on essaie de transcender un compromis ?",
+                    options: [
+                        "Chercher trop tôt une solution pratique au lieu de permettre une exploration créative sans censure",
+                        "Explorer trop longtemps sans décider",
+                        "Impliquer trop de personnes dans le processus",
+                        "Ne pas avoir assez de données"
+                    ],
+                    correctAnswer: "Chercher trop tôt une solution pratique au lieu de permettre une exploration créative sans censure",
+                    explanation: "La pression pour une solution 'réaliste' tue la créativité nécessaire à la transcendance. Il faut d'abord explorer librement, puis seulement ensuite rendre pratique.",
+                    tip: "Séparez clairement les phases 'créative/exploratoire' et 'pratique/implémentation'."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Comment sait-on qu'on a véritablement transcendé un compromis plutôt que trouvé un simple compromis déguisé ?",
+                    options: [
+                        "Quand toutes les parties sont enthousiastes et sentent qu'elles obtiennent plus que ce qu'elles espéraient initialement",
+                        "Quand une seule partie est satisfaite",
+                        "Quand la solution est compliquée et difficile à expliquer",
+                        "Quand il a fallu beaucoup de temps pour trouver la solution"
+                    ],
+                    correctAnswer: "Quand toutes les parties sont enthousiastes et sentent qu'elles obtiennent plus que ce qu'elles espéraient initialement",
+                    explanation: "La véritable transcendance génère de l'enthousiasme partagé, pas de la résignation acceptée. C'est le sentiment de 'wow, c'est bien mieux que ce que j'avais imaginé !'",
+                    tip: "Si les réactions sont tièdes ou résignées ('c'est acceptable'), continuez à chercher - vous n'avez pas encore trouvé la transcendance."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Quel rôle joue le 'cadrage du problème' dans la capacité à le transcender ?",
+                    options: [
+                        "Un cadrage large et ouvert permet plus de solutions transcendantes qu'un cadrage étroit et binaire",
+                        "Le cadrage n'a pas d'importance, seules les solutions comptent",
+                        "Un cadrage technique précis est toujours préférable",
+                        "Il faut plusieurs cadrages successifs"
+                    ],
+                    correctAnswer: "Un cadrage large et ouvert permet plus de solutions transcendantes qu'un cadrage étroit et binaire",
+                    explanation: "La façon dont on pose le problème détermine le champ des solutions possibles. Un problème posé comme 'A ou B' ne permet pas de solutions transcendantes.",
+                    tip: "Reformulez toujours les problèmes 'soit... soit...' en 'comment pouvons-nous...' ouvert."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Comment la 'pensée latérale' aide-t-elle à transcender les compromis ?",
+                    options: [
+                        "En abordant le problème par des angles inattendus et en brisant les cadres de pensée habituels",
+                        "En analysant le problème plus profondément dans le même cadre",
+                        "En consultant plus d'experts du domaine",
+                        "En faisant des recherches plus approfondies"
+                    ],
+                    correctAnswer: "En abordant le problème par des angles inattendus et en brisant les cadres de pensée habituels",
+                    explanation: "La pensée latérale (Edward de Bono) sort des sentiers battus et crée des connections improbables, essentielles pour trouver des solutions transcendantes.",
+                    tip: "Utilisez des techniques de pensée latérale comme les mots aléatoires, les provocations, ou le changement de perspective radical."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Quelle est la relation entre 'transcendance' et 'complexité' dans la Troisième Voie ?",
+                    options: [
+                        "La transcendance reconnaît et intègre la complexité plutôt que de la simplifier excessivement",
+                        "La transcendance simplifie la complexité pour la rendre gérable",
+                        "La transcendance ignore la complexité pour aller à l'essentiel",
+                        "La transcendance augmente inutilement la complexité"
+                    ],
+                    correctAnswer: "La transcendance reconnaît et intègre la complexité plutôt que de la simplifier excessivement",
+                    explanation: "Les solutions transcendantes honorent la complexité des situations réelles plutôt que de les réduire à des oppositions simplistes. Elles sont souvent elles-mêmes complexes mais de façon harmonieuse.",
+                    tip: "Une solution vraiment simple à un problème complexe est souvent une simplification excessive. Cherchez l'élégance complexe, pas la simplicité réductrice."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Comment le concept de 'tiers inclus' (de Basarab Nicolescu) s'applique-t-il à la transcendance ?",
+                    options: [
+                        "Le tiers inclus est ce qui unit deux contradictoires sans les nier, créant un nouveau niveau de réalité",
+                        "Le tiers inclus est un médiateur entre deux parties",
+                        "Le tiers inclus est une troisième option supplémentaire",
+                        "Le tiers inclus est le rejet des deux opposés"
+                    ],
+                    correctAnswer: "Le tiers inclus est ce qui unit deux contradictoires sans les nier, créant un nouveau niveau de réalité",
+                    explanation: "Dans la pensée du tiers inclus, A et non-A peuvent coexister à un niveau supérieur de réalité. C'est le fondement théorique de la transcendance dans la Troisième Voie.",
+                    tip: "Quand vous êtes coincé entre A et B, demandez : 'Quel est le C qui contient et dépasse à la fois A et B ?'"
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Quelle est l'importance du 'langage' dans le processus de transcendance ?",
+                    options: [
+                        "Un langage nouveau est souvent nécessaire pour décrire des réalités nouvelles, au-delà des catégories existantes",
+                        "Le langage n'a pas d'importance, seuls les résultats comptent",
+                        "Il faut utiliser un langage technique précis",
+                        "Le langage doit rester simple et accessible"
+                    ],
+                    correctAnswer: "Un langage nouveau est souvent nécessaire pour décrire des réalités nouvelles, au-delà des catégories existantes",
+                    explanation: "Les catégories linguistiques existantes enferment la pensée. Créer de nouveaux mots ou métaphores ouvre de nouvelles possibilités de pensée et d'action.",
+                    tip: "Si vous n'avez pas de mot pour décrire votre solution, inventez-en un - c'est souvent le signe que vous avez créé quelque chose de vraiment nouveau."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Comment la 'tolérance à l'ambiguïté' aide-t-elle à transcender les compromis ?",
+                    options: [
+                        "Elle permet de maintenir la tension créative assez longtemps pour qu'émerge une solution transcendante",
+                        "Elle permet d'accepter des solutions floues",
+                        "Elle aide à éviter les décisions difficiles",
+                        "Elle rend le processus plus confortable"
+                    ],
+                    correctAnswer: "Elle permet de maintenir la tension créative assez longtemps pour qu'émerge une solution transcendante",
+                    explanation: "L'ambiguïté est inconfortable mais nécessaire pendant la phase créative. La tolérance à cette inconfort permet de ne pas précipiter vers un compromis prématuré.",
+                    tip: "Développez votre muscle de l'ambiguïté - c'est comme un muscle créatif qui s'entraîne."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Quel est le rôle de la 'vision' dans la transcendance d'un compromis ?",
+                    options: [
+                        "Une vision inspirante de ce qui est possible au-delà du compromis motive la recherche créative et aligne les parties",
+                        "La vision n'est pas nécessaire, seule la technique compte",
+                        "La vision doit être réaliste et praticable",
+                        "La vision est un détail à la fin du processus"
+                    ],
+                    correctAnswer: "Une vision inspirante de ce qui est possible au-delà du compromis motive la recherche créative et aligne les parties",
+                    explanation: "Une vision claire et inspirante de ce qui pourrait être créé ensemble donne l'énergie et la direction pour traverser les difficultés du processus créatif.",
+                    tip: "Passez du temps à co-créer une vision inspirante avant de chercher des solutions concrètes."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Comment le 'principe de complémentarité' (de Niels Bohr) s'applique-t-il à la transcendance ?",
+                    options: [
+                        "Des descriptions apparemment contradictoires peuvent être complémentaires et nécessaires pour une compréhension complète de la réalité",
+                        "Il faut toujours choisir une seule description cohérente",
+                        "Les contradictions doivent être résolues logiquement",
+                        "La complémentarité est un principe scientifique sans application pratique"
+                    ],
+                    correctAnswer: "Des descriptions apparemment contradictoires peuvent être complémentaires et nécessaires pour une compréhension complète de la réalité",
+                    explanation: "En physique quantique et en Troisième Voie, des perspectives apparemment incompatibles peuvent être simultanément vraies et nécessaires. Leur intégration crée une compréhension plus riche.",
+                    tip: "Quand deux perspectives semblent incompatibles, demandez : 'Comment pourraient-elles être toutes les deux vraies et complémentaires ?'"
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Quelle est la différence entre 'transcendance' et 'innovation incrémentale' ?",
+                    options: [
+                        "La transcendance change les règles du jeu, l'innovation incrémentale les améliore",
+                        "Il n'y a pas de différence",
+                        "La transcendance est plus rapide",
+                        "L'innovation incrémentale est plus radicale"
+                    ],
+                    correctAnswer: "La transcendance change les règles du jeu, l'innovation incrémentale les améliore",
+                    explanation: "La transcendance est une innovation de rupture qui rend les anciens choix obsolètes. L'innovation incrémentale améliore les options existantes sans changer le paradigme.",
+                    tip: "Pour les problèmes vraiment difficiles, visez la transcendance, pas l'amélioration incrémentale."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Comment la 'métaphore' aide-t-elle à transcender les compromis ?",
+                    options: [
+                        "En permettant de voir le problème sous un angle complètement nouveau, libéré des connotations habituelles",
+                        "En simplifiant le problème à l'extrême",
+                        "En rendant le problème plus poétique",
+                        "En évitant d'aborder le problème directement"
+                    ],
+                    correctAnswer: "En permettant de voir le problème sous un angle complètement nouveau, libéré des connotations habituelles",
+                    explanation: "Les métaphores créent des isomorphismes entre domaines différents, révélant des solutions dans un domaine qui peuvent être appliquées à un autre.",
+                    tip: "Quand vous êtes bloqué, demandez : 'À quoi d'autre cela ressemble-t-il ?' La réponse peut ouvrir de nouvelles possibilités."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Quel est le rôle de 'l'intuition' dans le processus de transcendance ?",
+                    options: [
+                        "L'intuition souvent perçoit des solutions transcendantes avant que la raison ne puisse les justifier",
+                        "L'intuition n'a pas de rôle, seule la raison compte",
+                        "L'intuition doit toujours être vérifiée par des données",
+                        "L'intuition est un guide infaillible"
+                    ],
+                    correctAnswer: "L'intuition souvent perçoit des solutions transcendantes avant que la raison ne puisse les justifier",
+                    explanation: "L'intuition peut intégrer des informations complexes de façon holistique et percevoir des solutions que l'analyse rationnelle séquentielle ne voit pas.",
+                    tip: "Écoutez vos intuitions, puis cherchez à les justifier rationnellement, pas l'inverse."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Comment le 'design thinking' contribue-t-il à la transcendance des compromis ?",
+                    options: [
+                        "En mettant l'accent sur l'empathie profonde avec les utilisateurs et les prototypes rapides pour découvrir des solutions inattendues",
+                        "En suivant un processus rigide et prédéfini",
+                        "En se concentrant uniquement sur l'esthétique",
+                        "En évitant toute subjectivité"
+                    ],
+                    correctAnswer: "En mettant l'accent sur l'empathie profonde avec les utilisateurs et les prototypes rapides pour découvrir des solutions inattendues",
+                    explanation: "Le design thinking, avec son cycle empathie-définition-idéation-prototypage-test, est particulièrement adapté pour découvrir des solutions transcendantes par l'expérimentation pratique.",
+                    tip: "Intégrez les principes du design thinking dans votre processus de Troisième Voie, particulièrement l'empathie profonde et le prototypage rapide."
+                },
+                {
+                    thematic: "Transcendance 50/50",
+                    question: "Quelle est l'importance du 'contexte élargi' dans la transcendance d'un compromis ?",
+                    options: [
+                        "En élargissant le contexte, on découvre souvent que ce qui semble être un conflit insoluble dans un cadre étroit devient soluble dans un cadre plus large",
+                        "Le contexte n'a pas d'importance, seules les parties directement impliquées comptent",
+                        "Un contexte étroit permet de mieux se concentrer",
+                        "Il faut toujours rester dans le contexte immédiat du problème"
+                    ],
+                    correctAnswer: "En élargissant le contexte, on découvre souvent que ce qui semble être un conflit insoluble dans un cadre étroit devient soluble dans un cadre plus large",
+                    explanation: "Les solutions transcendantes émergent souvent quand on considère le système dans son ensemble, les relations à long terme, ou des dimensions de valeur supplémentaires.",
+                    tip: "Quand vous êtes bloqué dans un compromis, demandez : 'Dans quel contexte plus large ce choix n'aurait-il plus à être fait ?'"
+                },
+
+                // ============ THÉMATIQUE 6: DURABILITÉ & ANTI-FRAGILITÉ (20 questions) ============
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Quelle est la différence fondamentale entre 'durable' et 'anti-fragile' dans la Troisième Voie ?",
+                    options: [
+                        "Durable = résiste aux chocs ; Anti-fragile = s'améliore face aux chocs",
+                        "Il n'y a pas de différence",
+                        "Durable = pour l'environnement ; Anti-fragile = pour les systèmes sociaux",
+                        "Durable = à court terme ; Anti-fragile = à long terme"
+                    ],
+                    correctAnswer: "Durable = résiste aux chocs ; Anti-fragile = s'améliore face aux chocs",
+                    explanation: "L'anti-fragilité (concept de Nassim Taleb) va au-delà de la résilience/durabilité. Un système anti-fragile profite de la variabilité, du stress et du désordre pour devenir plus fort.",
+                    tip: "Concevez des solutions qui transforment les problèmes en opportunités d'amélioration, pas seulement qui résistent aux problèmes."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Comment une solution Troisième Voie peut-elle être à la fois durable ET anti-fragile ?",
+                    options: [
+                        "En étant conçue pour s'adapter et évoluer face aux changements, transformant les perturbations en opportunités d'amélioration",
+                        "En étant tellement solide qu'elle ne change jamais",
+                        "En évitant tout risque et incertitude",
+                        "En étant temporaire et remplaçable"
+                    ],
+                    correctAnswer: "En étant conçue pour s'adapter et évoluer face aux changements, transformant les perturbations en opportunités d'amélioration",
+                    explanation: "Les solutions véritablement win-win++ ne se contentent pas de durer, elles intègrent des mécanismes d'apprentissage et d'adaptation qui les améliorent avec le temps et face aux défis.",
+                    tip: "Incluez toujours des boucles de feedback et des mécanismes d'adaptation dans vos solutions."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Quel est le rôle de la 'redondance fonctionnelle' dans l'anti-fragilité d'une solution ?",
+                    options: [
+                        "Avoir plusieurs façons d'atteindre un objectif augmente la résilience et permet l'adaptation créative face aux perturbations",
+                        "La redondance est un gaspillage à éviter",
+                        "La redondance simplifie les systèmes",
+                        "La redondance n'a pas de rapport avec l'anti-fragilité"
+                    ],
+                    correctAnswer: "Avoir plusieurs façons d'atteindre un objectif augmente la résilience et permet l'adaptation créative face aux perturbations",
+                    explanation: "La redondance fonctionnelle (pas la duplication inefficace) permet aux systèmes de continuer à fonctionner et de s'adapter quand une voie est bloquée, créant ainsi de l'anti-fragilité.",
+                    tip: "Concevez des solutions avec au moins deux chemins différents pour atteindre chaque objectif important."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Comment le concept de 'régénération' diffère-t-il de la simple durabilité ?",
+                    options: [
+                        "La régénération restaure et améliore les systèmes, pas seulement les préserve",
+                        "Il n'y a pas de différence",
+                        "La régénération est plus facile à mettre en œuvre",
+                        "La régénération concerne uniquement l'environnement naturel"
+                    ],
+                    correctAnswer: "La régénération restaure et améliore les systèmes, pas seulement les préserve",
+                    explanation: "La pensée régénérative va au-delà de 'ne pas nuire' (durabilité) pour viser 'laisser en meilleur état' (régénération). C'est une caractéristique clé des solutions win-win++.",
+                    tip: "Demandez toujours : 'Comment cette solution peut-elle régénérer les systèmes qu'elle touche ?'"
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Quelle est l'importance des 'boucles de rétroaction courtes' dans les solutions durables et anti-fragiles ?",
+                    options: [
+                        "Elles permettent des ajustements rapides avant que les problèmes ne deviennent critiques",
+                        "Elles sont inutiles, mieux vaut des ajustements peu fréquents mais bien réfléchis",
+                        "Elles créent trop de changements constants",
+                        "Elles ne sont importantes que pour les systèmes techniques"
+                    ],
+                    correctAnswer: "Elles permettent des ajustements rapides avant que les problèmes ne deviennent critiques",
+                    explanation: "Les boucles de feedback courtes transforment les systèmes statiques (fragiles) en systèmes adaptatifs (anti-fragiles) en permettant l'apprentissage et l'ajustement continus.",
+                    tip: "Concevez vos solutions avec des points de mesure et d'ajustement fréquents (mensuels ou trimestriels, pas annuels)."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Comment une solution peut-elle être 'anti-fragile par conception' plutôt que simplement résiliente ?",
+                    options: [
+                        "En intégrant délibérément des mécanismes qui transforment les perturbations en opportunités d'apprentissage et d'amélioration",
+                        "En étant très solide pour résister à tout",
+                        "En évitant toutes les sources de stress",
+                        "En étant tellement simple qu'elle ne peut pas se briser"
+                    ],
+                    correctAnswer: "En intégrant délibérément des mécanismes qui transforment les perturbations en opportunités d'apprentissage et d'amélioration",
+                    explanation: "L'anti-fragilité par conception nécessite de penser comment le système peut tirer profit des chocs, pas seulement y survivre. Ex: le système immunitaire qui se renforce après exposition.",
+                    tip: "Pour chaque risque identifié, demandez : 'Comment pourrions-nous concevoir la solution pour qu'elle s'améliore si ce risque se réalise ?'"
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Quel est le rôle de la 'diversité' dans la durabilité et l'anti-fragilité des solutions ?",
+                    options: [
+                        "La diversité (d'approches, de perspectives, de compétences) augmente la capacité d'adaptation face à l'imprévu",
+                        "La diversité complique inutilement les solutions",
+                        "La diversité est importante seulement pour la justice sociale",
+                        "La diversité réduit l'efficacité"
+                    ],
+                    correctAnswer: "La diversité (d'approches, de perspectives, de compétences) augmente la capacité d'adaptation face à l'imprévu",
+                    explanation: "Comme dans les écosystèmes naturels, la diversité fonctionnelle augmente la résilience et la capacité d'innovation face aux changements.",
+                    tip: "Plus une solution est diverse dans ses composantes et ses approches, plus elle est durable et anti-fragile."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Comment le principe de 'modularité' contribue-t-il à l'anti-fragilité ?",
+                    options: [
+                        "Des modules indépendants mais connectés permettent de remplacer ou améliorer des parties sans tout casser",
+                        "La modularité rend les systèmes plus rigides",
+                        "La modularité n'a pas d'impact sur l'anti-fragilité",
+                        "La modularité est seulement utile pour la fabrication"
+                    ],
+                    correctAnswer: "Des modules indépendants mais connectés permettent de remplacer ou améliorer des parties sans tout casser",
+                    explanation: "La modularité permet l'évolution progressive, la réparation facile, et l'expérimentation à petite échelle - toutes caractéristiques anti-fragiles.",
+                    tip: "Concevez des solutions modulaires avec des interfaces claires entre les modules."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Qu'est-ce qu'une 'solution régénérative' dans le contexte de la Troisième Voie ?",
+                    options: [
+                        "Une solution qui restaure et améliore les systèmes sociaux, environnementaux et économiques qu'elle touche",
+                        "Une solution qui se reproduit d'elle-même",
+                        "Une solution temporaire qui sera remplacée",
+                        "Une solution très efficace mais épuisante"
+                    ],
+                    correctAnswer: "Une solution qui restaure et améliore les systèmes sociaux, environnementaux et économiques qu'elle touche",
+                    explanation: "Les solutions régénératives créent des boucles vertueuses où la mise en œuvre de la solution améliore la capacité à résoudre des problèmes similaires à l'avenir.",
+                    tip: "Évaluez toujours vos solutions sur leur capacité à régénérer, pas seulement à résoudre."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Comment une solution peut-elle être 'évolutive par conception' ?",
+                    options: [
+                        "En étant conçue pour pouvoir grandir, changer et s'adapter sans changements fondamentaux de structure",
+                        "En étant très flexible dès le début",
+                        "En étant si parfaite qu'elle n'a pas besoin de changer",
+                        "En étant temporaire et jetable"
+                    ],
+                    correctAnswer: "En étant conçue pour pouvoir grandir, changer et s'adapter sans changements fondamentaux de structure",
+                    explanation: "L'évolutivité par conception anticipe le changement et intègre des mécanismes pour l'accommoder facilement, augmentant ainsi la durabilité.",
+                    tip: "Concevez toujours avec une marge de croissance et de changement (au moins +50% de capacité que les besoins initiaux)."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Quel est le rôle des 'mécanismes d'auto-réparation' dans l'anti-fragilité ?",
+                    options: [
+                        "Ils permettent au système de se corriger automatiquement quand des problèmes surviennent, réduisant la nécessité d'interventions externes",
+                        "Ils sont inutiles, mieux vaut réparer manuellement",
+                        "Ils ne fonctionnent que dans les systèmes biologiques",
+                        "Ils rendent les systèmes plus complexes sans bénéfice"
+                    ],
+                    correctAnswer: "Ils permettent au système de se corriger automatiquement quand des problèmes surviennent, réduisant la nécessité d'interventions externes",
+                    explanation: "Comme le corps humain qui guérit de lui-même, les systèmes avec mécanismes d'auto-réparation sont plus anti-fragiles car ils transforment les dommages en occasions de renforcement.",
+                    tip: "Pour les problèmes récurrents, concevez des mécanismes d'auto-réparation plutôt que des interventions manuelles."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Comment le concept d''économie circulaire' s'intègre-t-il dans les solutions durables de la Troisième Voie ?",
+                    options: [
+                        "En concevant des solutions où les déchets d'une partie deviennent les ressources d'une autre, créant des boucles fermées de valeur",
+                        "En recyclant simplement les matériaux",
+                        "En réduisant la consommation",
+                        "En utilisant des matériaux biodégradables"
+                    ],
+                    correctAnswer: "En concevant des solutions où les déchets d'une partie deviennent les ressources d'une autre, créant des boucles fermées de valeur",
+                    explanation: "L'économie circulaire applique les principes des écosystèmes naturels aux systèmes économiques, créant des solutions qui génèrent moins de déchets et plus de valeur.",
+                    tip: "Pour chaque flux de sortie de votre solution, demandez : 'Qui pourrait en faire un flux d'entrée ?'"
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Qu'est-ce qu'une 'solution à faible entraînement' et pourquoi est-elle plus durable ?",
+                    options: [
+                        "Une solution qui nécessite peu d'énergie/maintenance pour continuer à fonctionner une fois lancée",
+                        "Une solution simple à comprendre",
+                        "Une solution bon marché",
+                        "Une solution temporaire"
+                    ],
+                    correctAnswer: "Une solution qui nécessite peu d'énergie/maintenance pour continuer à fonctionner une fois lancée",
+                    explanation: "Les solutions à faible entraînement sont plus durables car elles ne s'épuisent pas avec le temps. Elles créent des systèmes auto-entretenus ou faiblement entretenus.",
+                    tip: "Concevez des solutions qui, une fois lancées, tendent à se maintenir d'elles-mêmes (comme un jardin en permaculture vs un gazon traditionnel)."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Comment les 'solutions adaptatives' diffèrent-elles des solutions fixes ?",
+                    options: [
+                        "Elles évoluent avec le contexte et les retours, plutôt que d'être figées dans une forme initiale",
+                        "Elles sont moins fiables",
+                        "Elles sont plus compliquées",
+                        "Il n'y a pas de différence significative"
+                    ],
+                    correctAnswer: "Elles évoluent avec le contexte et les retours, plutôt que d'être figées dans une forme initiale",
+                    explanation: "Les solutions adaptatives reconnaissent que le monde change et intègrent des mécanismes pour changer avec lui, augmentant ainsi leur durée de vie et leur pertinence.",
+                    tip: "Concevez toujours des solutions avec des 'points d'adaptation' explicites où elles peuvent évoluer en fonction des retours et changements de contexte."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Quel est le rôle de la 'transparence radicale' dans la durabilité des solutions ?",
+                    options: [
+                        "Elle permet une détection précoce des problèmes et une amélioration continue par l'intelligence collective",
+                        "Elle expose les solutions à des critiques inutiles",
+                        "Elle n'a pas d'impact sur la durabilité",
+                        "Elle est seulement importante pour la responsabilité"
+                    ],
+                    correctAnswer: "Elle permet une détection précoce des problèmes et une amélioration continue par l'intelligence collective",
+                    explanation: "La transparence transforme chaque utilisateur en capteur et améliorateur potentiel, créant un système d'amélioration continue distribué.",
+                    tip: "Plus une solution est transparente dans son fonctionnement et ses résultats, plus elle peut être améliorée collectivement."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Comment une solution peut-elle être 'résiliente par la redondance' sans être inefficace ?",
+                    options: [
+                        "En ayant des chemins alternatifs qui sont utilisés dans des conditions normales, pas seulement en backup",
+                        "En dupliquant tout, quitte à être inefficace",
+                        "En n'ayant aucune redondance pour être efficace",
+                        "En externalisant la redondance"
+                    ],
+                    correctAnswer: "En ayant des chemins alternatifs qui sont utilisés dans des conditions normales, pas seulement en backup",
+                    explanation: "La redondance active (tous les chemins sont utilisés normalement) est plus efficace que la redondance passive (backup inutilisé) car elle maintient toutes les capacités opérationnelles et testées.",
+                    tip: "Concevez des systèmes où plusieurs chemins sont utilisés simultanément dans des conditions normales."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Qu'est-ce que le 'principe de précaution proactive' dans les solutions durables ?",
+                    options: [
+                        "Anticiper et prévenir les dommages potentiels avant qu'ils ne surviennent, tout en permettant l'innovation",
+                        "Éviter toute innovation risquée",
+                        "Agir seulement quand les dommages sont certains",
+                        "Ignorer les risques potentiels pour avancer plus vite"
+                    ],
+                    correctAnswer: "Anticiper et prévenir les dommages potentiels avant qu'ils ne surviennent, tout en permettant l'innovation",
+                    explanation: "Ce principe cherche à éviter les dommages irréversibles tout en permettant l'expérimentation prudente, équilibrant ainsi innovation et protection.",
+                    tip: "Pour les risques potentiellement catastrophiques, appliquez le principe de précaution ; pour les autres, préférez l'expérimentation prudente."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Comment les 'solutions échelonnables' (scalable) diffèrent-elles en termes de durabilité ?",
+                    options: [
+                        "Elles peuvent grandir ou rétrécir selon les besoins sans perdre leur efficacité, s'adaptant ainsi aux changements de contexte",
+                        "Elles sont toujours grandes et complexes",
+                        "Elles sont seulement pour les grandes organisations",
+                        "Elles ne changent jamais de taille"
+                    ],
+                    correctAnswer: "Elles peuvent grandir ou rétrécir selon les besoins sans perdre leur efficacité, s'adaptant ainsi aux changements de contexte",
+                    explanation: "L'échelonnage dans les deux directions (up AND down) est crucial pour la durabilité car il permet l'adaptation aux cycles économiques et autres changements.",
+                    tip: "Concevez des solutions qui peuvent fonctionner efficacement à différentes échelles, pas seulement grandir."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Quel est l'avantage des 'solutions distribuées' (vs centralisées) pour la durabilité et l'anti-fragilité ?",
+                    options: [
+                        "Elles n'ont pas de point de défaillance unique et peuvent continuer à fonctionner même si des parties tombent",
+                        "Elles sont plus faciles à contrôler",
+                        "Elles sont toujours plus efficaces",
+                        "Elles nécessitent moins de coordination"
+                    ],
+                    correctAnswer: "Elles n'ont pas de point de défaillance unique et peuvent continuer à fonctionner même si des parties tombent",
+                    explanation: "Les systèmes distribués (comme Internet) sont intrinsèquement plus résilients et anti-fragiles que les systèmes centralisés car les défaillances sont locales, pas globales.",
+                    tip: "Quand c'est possible, préférez les architectures distribuées aux architectures centralisées."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Comment une solution peut-elle être 'auto-renforçante' (self-reinforcing) ?",
+                    options: [
+                        "En créant des boucles de rétroaction positives où son succès crée les conditions de son succès futur",
+                        "En étant très difficile à arrêter une fois lancée",
+                        "En éliminant toute concurrence",
+                        "En nécessitant des investissements croissants"
+                    ],
+                    correctAnswer: "En créant des boucles de rétroaction positives où son succès crée les conditions de son succès futur",
+                    explanation: "Les solutions auto-renforçantes créent des dynamiques vertueuses où plus elles sont utilisées, plus elles deviennent utiles et robustes (ex: les réseaux sociaux, les standards).",
+                    tip: "Concevez des solutions avec des effets de réseau, des apprentissages cumulatifs, ou d'autres boucles de renforcement positives."
+                },
+                {
+                    thematic: "Durabilité & Anti-Fragilité",
+                    question: "Quelle est l'importance de la 'capacité d'absorption' (absorptive capacity) dans l'anti-fragilité ?",
+                    options: [
+                        "La capacité d'un système à absorber les chocs, apprendre d'eux, et se réorganiser pour devenir plus fort",
+                        "La capacité à éviter les chocs",
+                        "La solidité physique des composants",
+                        "La quantité de ressources disponibles"
+                    ],
+                    correctAnswer: "La capacité d'un système à absorber les chocs, apprendre d'eux, et se réorganiser pour devenir plus fort",
+                    explanation: "La capacité d'absorption est ce qui distingue les systèmes anti-fragiles des systèmes simplement robustes. C'est la capacité de transformer les perturbations en opportunités d'amélioration.",
+                    tip: "Mesurez vos solutions non seulement sur leur robustesse, mais sur leur capacité d'absorption et de transformation des chocs."
+                }
+            ]
+        };
+
+        // DOM Elements
+        const settingsPanelEl = document.getElementById('settings-panel');
+        const quizContentEl = document.getElementById('quiz-content');
+        const questionCountEl = document.getElementById('question-count');
+        const startQuizBtn = document.getElementById('start-quiz-btn');
+        const questionCounterEl = document.getElementById('question-counter');
+        const currentScoreEl = document.getElementById('current-score');
+        const progressBarEl = document.getElementById('progress-bar');
+        const questionTextEl = document.getElementById('question-text');
+        const thematicBadgeEl = document.getElementById('thematic-badge');
+        const optionsContainerEl = document.getElementById('options-container');
+        const explanationBoxEl = document.getElementById('explanation-box');
+        const explanationTitleEl = document.getElementById('explanation-title');
+        const explanationTextEl = document.getElementById('explanation-text');
+        const tipBoxEl = document.getElementById('tip-box');
+        const tipTextEl = document.getElementById('tip-text');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const finishBtn = document.getElementById('finish-btn');
+        
+        // Modal Elements
+        const resultsModal = new bootstrap.Modal(document.getElementById('resultsModal'));
+        const finalScoreCorrectEl = document.getElementById('final-score-correct');
+        const finalScoreTotalEl = document.getElementById('final-score-total');
+        const finalScorePercentageEl = document.getElementById('final-score-percentage');
+        const finalRecommendationsEl = document.getElementById('final-recommendations');
+        const techSkillsEl = document.getElementById('tech-skills');
+        const techSkillsTextEl = document.getElementById('tech-skills-text');
+        const strategicSkillsEl = document.getElementById('strategic-skills');
+        const strategicSkillsTextEl = document.getElementById('strategic-skills-text');
+        const shortTermEl = document.getElementById('short-term');
+        const longTermEl = document.getElementById('long-term');
+        const restartQuizBtn = document.getElementById('restart-quiz-btn');
+
+        // Quiz State
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let userAnswers = [];
+        let questions = [];
+        let selectedQuestionCount = 40;
+
+        // Badge classes mapping
+        const badgeClasses = {
+            "Principes Fondamentaux": "badge-principe",
+            "Méthode 0 à 9": "badge-methode",
+            "Outils Créatifs": "badge-outil",
+            "Études de Cas": "badge-etude",
+            "Transcendance 50/50": "badge-transcendance",
+            "Durabilité & Anti-Fragilité": "badge-durabilite"
+        };
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function filterQuestionsByDomain() {
+            const domains = {
+                'domain-principe': "Principes Fondamentaux",
+                'domain-methode': "Méthode 0 à 9", 
+                'domain-outil': "Outils Créatifs",
+                'domain-etude': "Études de Cas",
+                'domain-transcendance': "Transcendance 50/50",
+                'domain-durabilite': "Durabilité & Anti-Fragilité"
+            };
+            
+            const selectedDomains = [];
+            for (const [id, domain] of Object.entries(domains)) {
+                if (document.getElementById(id).checked) {
+                    selectedDomains.push(domain);
+                }
+            }
+            
+            if (selectedDomains.length === 0) {
+                return [...quizData.questions];
+            }
+            
+            return quizData.questions.filter(q => selectedDomains.includes(q.thematic));
+        }
+
+        function startQuiz() {
+            selectedQuestionCount = parseInt(questionCountEl.value);
+            
+            let filteredQuestions = filterQuestionsByDomain();
+            
+            if (filteredQuestions.length === 0) {
+                alert('Veuillez sélectionner au moins un domaine à évaluer.');
+                return;
+            }
+            
+            if (filteredQuestions.length < selectedQuestionCount) {
+                alert(`Seulement ${filteredQuestions.length} questions disponibles dans les domaines sélectionnés. Le quiz sera limité à ce nombre.`);
+                selectedQuestionCount = filteredQuestions.length;
+            }
+            
+            const shuffledQuestions = shuffleArray(filteredQuestions);
+            questions = shuffledQuestions.slice(0, selectedQuestionCount);
+            
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = new Array(questions.length).fill(null);
+            
+            settingsPanelEl.classList.add('d-none');
+            quizContentEl.classList.remove('d-none');
+            
+            displayQuestion(currentQuestionIndex);
+            updateScoreDisplay();
+            resultsModal.hide();
+        }
+
+        function displayQuestion(index) {
+            explanationBoxEl.classList.add('d-none');
+            tipBoxEl.classList.add('d-none');
+            
+            const question = questions[index];
+            questionTextEl.textContent = question.question;
+            
+            thematicBadgeEl.textContent = question.thematic;
+            thematicBadgeEl.className = 'thematic-badge';
+            thematicBadgeEl.classList.add(badgeClasses[question.thematic] || 'badge-principe');
+            
+            optionsContainerEl.innerHTML = '';
+            
+            question.options.forEach(optionText => {
+                const button = document.createElement('button');
+                button.textContent = optionText;
+                button.classList.add('btn', 'option-btn');
+                button.onclick = () => selectAnswer(button, optionText, index);
+                optionsContainerEl.appendChild(button);
+            });
+            
+            updateNavigation();
+            updateProgressBar();
+            
+            if (userAnswers[index] !== null) {
+                showAnswerFeedback(index);
+            }
+        }
+        
+        function selectAnswer(button, selectedAnswer, questionIndex) {
+            if (userAnswers[questionIndex] !== null) return;
+            
+            const question = questions[questionIndex];
+            const isCorrect = selectedAnswer === question.correctAnswer;
+            
+            userAnswers[questionIndex] = {
+                selected: selectedAnswer,
+                correct: question.correctAnswer,
+                isCorrect: isCorrect
+            };
+            
+            if(isCorrect) {
+                score++;
+            }
+            updateScoreDisplay();
+            showAnswerFeedback(questionIndex);
+        }
+
+        function showAnswerFeedback(index) {
+            const userAnswer = userAnswers[index];
+            if (!userAnswer) return;
+
+            const question = questions[index];
+
+            const optionButtons = optionsContainerEl.querySelectorAll('.option-btn');
+            optionButtons.forEach(btn => {
+                btn.disabled = true;
+                if (btn.textContent === userAnswer.correct) {
+                    btn.classList.add('correct');
+                } else if (btn.textContent === userAnswer.selected) {
+                    btn.classList.add('incorrect');
+                }
+            });
+
+            explanationTextEl.textContent = question.explanation;
+            if (userAnswer.isCorrect) {
+                explanationTitleEl.textContent = "✅ Correct ! Connaissance validée";
+                explanationBoxEl.className = 'explanation-correct';
+            } else {
+                explanationTitleEl.textContent = "💡 À retenir pour devenir Maître Praticien";
+                explanationBoxEl.className = 'explanation-incorrect';
+            }
+            explanationBoxEl.classList.remove('d-none');
+            
+            if (question.tip) {
+                tipTextEl.textContent = question.tip;
+                tipBoxEl.classList.remove('d-none');
+            }
+        }
+
+        function updateNavigation() {
+            prevBtn.disabled = currentQuestionIndex === 0;
+            nextBtn.classList.toggle('d-none', currentQuestionIndex === questions.length - 1);
+            finishBtn.classList.toggle('d-none', currentQuestionIndex !== questions.length - 1);
+        }
+
+        function updateProgressBar() {
+            const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+            progressBarEl.style.width = `${progress}%`;
+            progressBarEl.setAttribute('aria-valuenow', progress);
+            questionCounterEl.textContent = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
+        }
+        
+        function updateScoreDisplay() {
+            currentScoreEl.textContent = `Score: ${score}/${questions.length}`;
+        }
+
+        function handleNext() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        function handlePrev() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        function calculateSkillLevels() {
+            const thematicScores = {};
+            const difficultyScores = { technical: 0, strategic: 0 };
+            let totalAnswered = 0;
+            
+            userAnswers.forEach((answer, index) => {
+                if (answer !== null) {
+                    totalAnswered++;
+                    const question = questions[index];
+                    
+                    if (!thematicScores[question.thematic]) {
+                        thematicScores[question.thematic] = { correct: 0, total: 0 };
+                    }
+                    thematicScores[question.thematic].total++;
+                    if (answer.isCorrect) {
+                        thematicScores[question.thematic].correct++;
+                    }
+                    
+                    if (question.thematic.includes("Principes") || question.thematic.includes("Méthode")) {
+                        if (answer.isCorrect) difficultyScores.technical++;
+                    } else {
+                        if (answer.isCorrect) difficultyScores.strategic++;
+                    }
+                }
+            });
+            
+            return {
+                thematicScores,
+                technicalScore: totalAnswered > 0 ? (difficultyScores.technical / totalAnswered) * 100 : 0,
+                strategicScore: totalAnswered > 0 ? (difficultyScores.strategic / totalAnswered) * 100 : 0
+            };
+        }
+
+        function showFinalResults() {
+            const percentage = (score / questions.length) * 100;
+            const skillAnalysis = calculateSkillLevels();
+            
+            let scoreColor, level, recommendationsHtml, shortTerm, longTerm;
+            
+            if (percentage >= 90) {
+                scoreColor = '#10b981';
+                level = "Maître Praticien 3ème Voie";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-crown text-warning"></i> Excellence créative !</h5>
+                    <p>Vous maîtrisez la Méthode Troisième Voie à un niveau expert. Vous êtes capable de créer des solutions win-win++ complexes et durables.</p>
+                    <div class="alert alert-success">
+                        <i class="fas fa-rocket"></i> <strong>Prochaine étape :</strong> Facilitez des processus Troisième Voie pour d'autres, formez des praticiens, publiez des études de cas.
+                    </div>
+                `;
+                shortTerm = "Certifiez votre expertise, commencez à faciliter des processus pour d'autres, documentez vos réussites";
+                longTerm = "Consultant expert Troisième Voie, Formateur certifié, Auteur de livres/cas, Dirigeant d'organisation régénérative";
+            } else if (percentage >= 75) {
+                scoreColor = '#3b82f6';
+                level = "Praticien Avancé";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-medal text-info"></i> Très bon niveau pratique !</h5>
+                    <p>Vous pouvez appliquer la méthode avec succès dans des situations complexes. Concentrez-vous sur l'expérience pratique et l'élargissement de votre palette d'outils.</p>
+                    <div class="alert alert-info">
+                        <i class="fas fa-lightbulb"></i> <strong>Focus :</strong> Approfondissez les études de cas complexes et développez votre intuition créative.
+                    </div>
+                `;
+                shortTerm = "Appliquez la méthode sur des vrais problèmes, diversifiez vos outils créatifs, participez à des communautés de pratique";
+                longTerm = "Praticien certifié, facilitateur de processus créatifs, innovateur dans votre organisation, mentor pour débutants";
+            } else if (percentage >= 60) {
+                scoreColor = '#f59e0b';
+                level = "Praticien Intermédiaire";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-graduation-cap text-warning"></i> Bonnes bases à consolider</h5>
+                    <p>Vous comprenez les principes et la méthode, mais devez approfondir la pratique pour maîtriser la création de solutions véritablement transcendantes.</p>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-book"></i> <strong>Priorité :</strong> Pratiquez les outils créatifs et travaillez sur des études de cas réelles.
+                    </div>
+                `;
+                shortTerm = "Pratiquez les outils sur des problèmes simples, étudiez des cas réels, participez à des ateliers pratiques";
+                longTerm = "Praticien opérationnel, facilitateur d'équipe, résolveur de problèmes dans votre domaine, apprenant avancé";
+            } else if (percentage >= 40) {
+                scoreColor = '#ef4444';
+                level = "Apprenti";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-book-open text-primary"></i> Début prometteur</h5>
+                    <p>Vous avez saisi les concepts de base. Il vous faut maintenant pratiquer la méthode étape par étape sur des problèmes concrets.</p>
+                    <div class="alert alert-primary">
+                        <i class="fas fa-redo"></i> <strong>Action :</strong> Commencez par appliquer les étapes 0-3 sur des problèmes simples de votre vie ou travail.
+                    </div>
+                `;
+                shortTerm = "Appliquez les 3 premières étapes sur 3 problèmes simples, maîtrisez les outils de base, trouvez un mentor";
+                longTerm = "Apprenti avancé, praticien sur problèmes simples, membre actif d'une communauté d'apprentissage";
+            } else {
+                scoreColor = '#dc2626';
+                level = "Débutant Absolu";
+                recommendationsHtml = `
+                    <h5><i class="fas fa-exclamation-triangle text-danger"></i> Nécessite un apprentissage structuré</h5>
+                    <p>Vous devez reprendre les fondamentaux avant de pouvoir appliquer la méthode efficacement.</p>
+                    <div class="alert alert-danger">
+                        <i class="fas fa-university"></i> <strong>Urgence :</strong> Suivez une formation structurée sur les principes de base.
+                    </div>
+                `;
+                shortTerm = "Formation de base, lecture des principes fondamentaux, pratique des exercices simples, observation de processus";
+                longTerm = "Apprenti débutant, observateur de processus, expérimentateur prudent sur petits problèmes";
+            }
+
+            finalScoreCorrectEl.textContent = score;
+            finalScoreTotalEl.textContent = questions.length;
+            finalScorePercentageEl.textContent = `${percentage.toFixed(0)}% - ${level}`;
+            finalScorePercentageEl.style.background = `linear-gradient(135deg, ${scoreColor} 0%, ${scoreColor}00 100%)`;
+            
+            techSkillsEl.style.width = `${skillAnalysis.technicalScore}%`;
+            strategicSkillsEl.style.width = `${skillAnalysis.strategicScore}%`;
+            techSkillsTextEl.textContent = `Mindset créatif : ${skillAnalysis.technicalScore.toFixed(0)}%`;
+            strategicSkillsTextEl.textContent = `Intelligence relationnelle : ${skillAnalysis.strategicScore.toFixed(0)}%`;
+            
+            finalRecommendationsEl.innerHTML = recommendationsHtml;
+            shortTermEl.textContent = shortTerm;
+            longTermEl.textContent = longTerm;
+            
+            const thematicAnalysis = Object.entries(skillAnalysis.thematicScores)
+                .map(([theme, scores]) => {
+                    const themePercentage = (scores.correct / scores.total) * 100;
+                    return `<div class="mb-2">
+                        <small>${theme}: <strong>${themePercentage.toFixed(0)}%</strong> (${scores.correct}/${scores.total})</small>
+                        <div class="progress" style="height: 5px;">
+                            <div class="progress-bar" style="width: ${themePercentage}%"></div>
+                        </div>
+                    </div>`;
+                })
+                .join('');
+            
+            if (thematicAnalysis) {
+                finalRecommendationsEl.innerHTML += `
+                    <div class="mt-3">
+                        <h6><i class="fas fa-chart-bar"></i> Analyse par pilier</h6>
+                        ${thematicAnalysis}
+                    </div>
+                `;
+            }
+
+            resultsModal.show();
+        }
+
+        function restartQuiz() {
+            settingsPanelEl.classList.remove('d-none');
+            quizContentEl.classList.add('d-none');
+            resultsModal.hide();
+        }
+
+        startQuizBtn.addEventListener('click', startQuiz);
+        nextBtn.addEventListener('click', handleNext);
+        prevBtn.addEventListener('click', handlePrev);
+        finishBtn.addEventListener('click', showFinalResults);
+        restartQuizBtn.addEventListener('click', restartQuiz);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            settingsPanelEl.classList.remove('d-none');
+            quizContentEl.classList.add('d-none');
+        });
+    </script>
+</body>
+</html>
