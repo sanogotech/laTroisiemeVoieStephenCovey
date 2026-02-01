@@ -487,7 +487,7 @@
         <div class="col-lg-8 mx-auto">
           <h2 class="text-center mb-4">Introduction à la Méthode Troisième Voie</h2>
           
-          <div class="card mb-4">
+          <div >
             <div class="card-header">
               <h4><i class="bi bi-bullseye me-2"></i>Contexte et objectifs</h4>
             </div>
@@ -561,171 +561,872 @@
     <section id="etapes" class="mb-5 py-5">
       <h2 class="text-center mb-5">Les 10 Étapes de la Troisième Voie</h2>
       
-      <!-- Étape 0 -->
-      <div id="etape0" class="step-card">
-        <div class="card">
-          <div class="card-header d-flex justify-content-between align-items-center">
-            <div>
-              <span class="step-number">0</span>
-              <h4 class="d-inline mb-0">Préparation stratégique et cadrage</h4>
-            </div>
-            <span class="badge bg-success">Fondation</span>
+    <!-- Étape 0 - Déjà fournie -->
+<div id="etape0" class="step-card">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <span class="step-number">0</span>
+        <h4 class="d-inline mb-0">Préparation stratégique et cadrage</h4>
+      </div>
+      <span class="badge bg-success">Fondation</span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5><i class="bi bi-target me-2"></i>Objectif</h5>
+          <p>Définir le périmètre, les objectifs, les parties prenantes et les ressources pour que tout le processus ait une base solide.</p>
+          
+          <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
+          <div class="checklist-item">
+            <input type="checkbox" id="check0-1"> 
+            <label for="check0-1">Définir périmètre de la transformation (secteurs, territoires, projets)</label>
           </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-                <h5><i class="bi bi-target me-2"></i>Objectif</h5>
-                <p>Définir le périmètre, les objectifs, les parties prenantes et les ressources pour que tout le processus ait une base solide.</p>
-                
-                <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
-                <div class="checklist-item">
-                  <input type="checkbox" id="check0-1"> 
-                  <label for="check0-1">Définir périmètre de la transformation (secteurs, territoires, projets)</label>
-                </div>
-                <div class="checklist-item">
-                  <input type="checkbox" id="check0-2"> 
-                  <label for="check0-2">Identifier les objectifs stratégiques à court, moyen et long terme</label>
-                </div>
-                <div class="checklist-item">
-                  <input type="checkbox" id="check0-3"> 
-                  <label for="check0-3">Cartographier toutes les parties prenantes et influenceurs</label>
-                </div>
-                
-                <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist0')">
-                  <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
-                </button>
-                
-                <div id="checklist0" style="display: none;">
-                  <div class="checklist-item">
-                    <input type="checkbox" id="check0-4"> 
-                    <label for="check0-4">Évaluer ressources disponibles : budget, données, compétences, technologies</label>
-                  </div>
-                  <div class="checklist-item">
-                    <input type="checkbox" id="check0-5"> 
-                    <label for="check0-5">Poser principes directeurs : inclusivité, transparence, anti-corruption, innovation, durabilité</label>
-                  </div>
-                  <div class="checklist-item">
-                    <input type="checkbox" id="check0-6"> 
-                    <label for="check0-6">Collecter données fiables pour analyses futures</label>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col-md-6">
-                <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
-                <div class="warning-box">
-                  <p><strong>Ne pas démarrer sans cadrage clair</strong> → confusion et perte de temps</p>
-                  <p><strong>Ignorer parties prenantes clés</strong> → résistance ou sabotage</p>
-                </div>
-                
-                <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
-                <div class="tip-box">
-                  <p><strong>Tableau de cadrage initial :</strong> enjeux / acteurs / ressources / contraintes</p>
-                  <p><strong>Exemples :</strong> Côte d'Ivoire 2026 → définir ministères, bailleurs, hubs régionaux</p>
-                </div>
-                
-                <div class="mt-4">
-                  <h6><i class="bi bi-bar-chart me-2"></i>Statistiques REX</h6>
-                  <p>Les projets avec cadrage initial complet ont <strong>3x plus de chances</strong> d'atteindre leurs objectifs</p>
-                  <div class="progress progress-third-way">
-                    <div class="progress-bar" style="width: 85%"></div>
-                  </div>
-                  <small>85% de succès avec cadrage complet vs 28% sans</small>
-                </div>
-              </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check0-2"> 
+            <label for="check0-2">Identifier les objectifs stratégiques à court, moyen et long terme</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check0-3"> 
+            <label for="check0-3">Cartographier toutes les parties prenantes et influenceurs</label>
+          </div>
+          
+          <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist0')">
+            <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
+          </button>
+          
+          <div id="checklist0" style="display: none;">
+            <div class="checklist-item">
+              <input type="checkbox" id="check0-4"> 
+              <label for="check0-4">Évaluer ressources disponibles : budget, données, compétences, technologies</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check0-5"> 
+              <label for="check0-5">Poser principes directeurs : inclusivité, transparence, anti-corruption, innovation, durabilité</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check0-6"> 
+              <label for="check0-6">Collecter données fiables pour analyses futures</label>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Étape 1 -->
-      <div id="etape1" class="step-card">
-        <div class="card">
-          <div class="card-header d-flex justify-content-between align-items-center">
-            <div>
-              <span class="step-number">1</span>
-              <h4 class="d-inline mb-0">Identification des tensions et conflits</h4>
-            </div>
-            <span class="badge bg-info">Analyse</span>
+        
+        <div class="col-md-6">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
+          <div class="warning-box">
+            <p><strong>Ne pas démarrer sans cadrage clair</strong> → confusion et perte de temps</p>
+            <p><strong>Ignorer parties prenantes clés</strong> → résistance ou sabotage</p>
           </div>
-          <div class="card-body">
-            <!-- Similar structure for other steps -->
-            <p><strong>Objectif :</strong> Cartographier tensions et opportunités de synergies.</p>
-            
-            <div class="row">
-              <div class="col-md-6">
-                <h6><i class="bi bi-tools me-2"></i>Outils recommandés</h6>
-                <ul>
-                  <li>Brainstorming multi-acteurs</li>
-                  <li>Diagrammes causes-effets</li>
-                  <li>Cartes mentales</li>
-                  <li>Matrice impact vs probabilité</li>
-                </ul>
-              </div>
-              
-              <div class="col-md-6">
-                <h6><i class="bi bi-graph-up me-2"></i>Impact mesurable</h6>
-                <p>Identification précoce des tensions réduit les délais de résolution de <strong>40%</strong></p>
-                <div class="impact-meter">
-                  <div class="impact-indicator" style="left: 40%">
-                    <div class="impact-value">-40% délais</div>
-                  </div>
-                </div>
-              </div>
+          
+          <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
+          <div class="tip-box">
+            <p><strong>Tableau de cadrage initial :</strong> enjeux / acteurs / ressources / contraintes</p>
+            <p><strong>Exemples :</strong> Côte d'Ivoire 2026 → définir ministères, bailleurs, hubs régionaux</p>
+          </div>
+          
+          <div class="mt-4">
+            <h6><i class="bi bi-bar-chart me-2"></i>Statistiques REX</h6>
+            <p>Les projets avec cadrage initial complet ont <strong>3x plus de chances</strong> d'atteindre leurs objectifs</p>
+            <div class="progress progress-third-way">
+              <div class="progress-bar" style="width: 85%"></div>
             </div>
+            <small>85% de succès avec cadrage complet vs 28% sans</small>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
-      <!-- More steps would continue here (Étape 2-9) -->
-      <!-- For brevity, I'll show the structure for one more step -->
-
-      <!-- Étape 9 -->
-      <div id="etape9" class="step-card">
-        <div class="card">
-          <div class="card-header d-flex justify-content-between align-items-center">
-            <div>
-              <span class="step-number">9</span>
-              <h4 class="d-inline mb-0">Boucle de rétroaction, résilience et innovation permanente</h4>
-            </div>
-            <span class="badge bg-primary">Optimisation</span>
+<!-- Étape 1 -->
+<div id="etape1" class="step-card">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <span class="step-number">1</span>
+        <h4 class="d-inline mb-0">Identification des tensions et conflits</h4>
+      </div>
+      <span class="badge bg-info">Analyse</span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5><i class="bi bi-target me-2"></i>Objectif</h5>
+          <p>Cartographier tensions et opportunités de synergies entre toutes les parties prenantes.</p>
+          
+          <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
+          <div class="checklist-item">
+            <input type="checkbox" id="check1-1"> 
+            <label for="check1-1">Lister toutes tensions et conflits apparents</label>
           </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-                <h5><i class="bi bi-arrow-repeat me-2"></i>Objectif</h5>
-                <p>Assurer <strong>résilience, adaptation continue et innovation systématique</strong>.</p>
-                
-                <h5 class="mt-4"><i class="bi bi-speedometer2 me-2"></i>Dashboard Dynamique</h5>
-                <p>Mettre en place un système de monitoring multi-KPIs avec :</p>
-                <ul>
-                  <li>Alertes automatiques sur les écarts</li>
-                  <li>Visualisation en temps réel des performances</li>
-                  <li>Benchmarking avec scénarios optimiste/intermédiaire/crise</li>
-                </ul>
-              </div>
-              
-              <div class="col-md-6">
-                <h5><i class="bi bi-rocket-takeoff me-2"></i>Innovation Systématique</h5>
-                <div class="tip-box">
-                  <p><strong>Culture d'expérimentation :</strong> 10% du temps dédié à l'innovation disruptive</p>
-                  <p><strong>Scénarios 2040 :</strong> optimiste, intermédiaire, crise pour l'anticipation</p>
-                  <p><strong>Exemple :</strong> ajustement CAISTAB + hubs régionaux → résilience et innovation permanente</p>
-                </div>
-                
-                <div class="mt-4">
-                  <h6><i class="bi bi-trophy me-2"></i>Résultats attendus</h6>
-                  <p>Augmentation de <strong>200%</strong> de la capacité d'innovation sur 3 cycles</p>
-                  <div class="progress progress-third-way">
-                    <div class="progress-bar" style="width: 75%"></div>
-                  </div>
-                  <small>75% des organisations atteignent l'innovation systémique après 3 cycles</small>
-                </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check1-2"> 
+            <label for="check1-2">Identifier interdépendances et synergies potentielles</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check1-3"> 
+            <label for="check1-3">Identifier parties prenantes affectées et influentes</label>
+          </div>
+          
+          <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist1')">
+            <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
+          </button>
+          
+          <div id="checklist1" style="display: none;">
+            <div class="checklist-item">
+              <input type="checkbox" id="check1-4"> 
+              <label for="check1-4">Créer matrice impact vs probabilité</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check1-5"> 
+              <label for="check1-5">Documenter tout pour consultation future</label>
+            </div>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-tools me-2"></i>Outils recommandés</h5>
+          <ul>
+            <li>Brainstorming multi-acteurs</li>
+            <li>Diagrammes causes-effets</li>
+            <li>Cartes mentales</li>
+            <li>Matrice impact vs probabilité</li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
+          <div class="warning-box">
+            <p><strong>Se limiter aux conflits visibles</strong> → manque de profondeur d'analyse</p>
+            <p><strong>Ignorer effets indirects</strong> sur autres acteurs non directement impliqués</p>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
+          <div class="tip-box">
+            <p><strong>Exemple concret :</strong> Conflit croissance vs inclusion → hub industriel régional pour jobs urbains et ruraux</p>
+            <p><strong>Approche :</strong> Organiser des ateliers avec représentants de toutes les parties</p>
+          </div>
+          
+          <div class="mt-4">
+            <h6><i class="bi bi-graph-up me-2"></i>Impact mesurable</h6>
+            <p>Identification précoce des tensions réduit les délais de résolution de <strong>40%</strong></p>
+            <div class="impact-meter">
+              <div class="impact-indicator" style="left: 40%">
+                <div class="impact-value">-40% délais</div>
               </div>
             </div>
+            <small>Étude : 78% des projets identifiant tôt les tensions atteignent leurs objectifs</small>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Étape 2 -->
+<div id="etape2" class="step-card">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <span class="step-number">2</span>
+        <h4 class="d-inline mb-0">Analyse des besoins réels et profonds</h4>
+      </div>
+      <span class="badge bg-info">Analyse approfondie</span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5><i class="bi bi-target me-2"></i>Objectif</h5>
+          <p>Identifier <strong>la vraie raison derrière les demandes ou tensions</strong>, au-delà des besoins apparents.</p>
+          
+          <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
+          <div class="checklist-item">
+            <input type="checkbox" id="check2-1"> 
+            <label for="check2-1">Séparer besoins apparents vs besoins réels</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check2-2"> 
+            <label for="check2-2">Identifier motivations, contraintes, peurs sous-jacentes</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check2-3"> 
+            <label for="check2-3">Prioriser selon impact stratégique</label>
+          </div>
+          
+          <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist2')">
+            <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
+          </button>
+          
+          <div id="checklist2" style="display: none;">
+            <div class="checklist-item">
+              <input type="checkbox" id="check2-4"> 
+              <label for="check2-4">Cartographier interactions entre besoins multiples</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check2-5"> 
+              <label for="check2-5">Valider besoins avec les parties prenantes</label>
+            </div>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-tools me-2"></i>Méthodes clés</h5>
+          <ul>
+            <li><strong>Méthode des 5 Pourquoi</strong> : questionner systématiquement</li>
+            <li>Focus groups et ateliers participatifs</li>
+            <li>Enquêtes et interviews approfondies</li>
+            <li>Observation ethnographique</li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
+          <div class="warning-box">
+            <p><strong>Confondre symptômes et causes</strong> → traiter les effets plutôt que les causes racines</p>
+            <p><strong>Ne pas inclure besoins invisibles ou émotionnels</strong> → solutions incomplètes</p>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
+          <div class="tip-box">
+            <p><strong>Exemple transformationnel :</strong> besoin apparent "emploi" = besoin réel "sécurité économique + accès aux services + dignité"</p>
+            <p><strong>Technique :</strong> Laddering - remonter des attributs aux bénéfices fonctionnels, émotionnels, existentiels</p>
+          </div>
+          
+          <div class="mt-4">
+            <h6><i class="bi bi-bar-chart me-2"></i>Statistiques REX</h6>
+            <p>L'analyse des besoins profonds augmente la pertinence des solutions de <strong>65%</strong></p>
+            <div class="progress progress-third-way">
+              <div class="progress-bar" style="width: 65%"></div>
+            </div>
+            <small>Solutions basées sur besoins réels : 89% d'adoption vs 35% pour solutions superficielles</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Étape 3 -->
+<div id="etape3" class="step-card">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <span class="step-number">3</span>
+        <h4 class="d-inline mb-0">Définition des objectifs stratégiques</h4>
+      </div>
+      <span class="badge bg-warning">Stratégie</span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5><i class="bi bi-target me-2"></i>Objectif</h5>
+          <p>Traduire besoins profonds en <strong>objectifs mesurables et inspirants</strong> alignés sur la vision +200% win-win++.</p>
+          
+          <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
+          <div class="checklist-item">
+            <input type="checkbox" id="check3-1"> 
+            <label for="check3-1">Traduire besoins en objectifs SMART (spécifiques, mesurables, atteignables, réalistes, temporels)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check3-2"> 
+            <label for="check3-2">Identifier synergies possibles entre objectifs</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check3-3"> 
+            <label for="check3-3">Définir KPIs associés à chaque objectif</label>
+          </div>
+          
+          <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist3')">
+            <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
+          </button>
+          
+          <div id="checklist3" style="display: none;">
+            <div class="checklist-item">
+              <input type="checkbox" id="check3-4"> 
+              <label for="check3-4">Prioriser selon impact et faisabilité</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check3-5"> 
+              <label for="check3-5">Établir hiérarchie d'objectifs (stratégiques → opérationnels)</label>
+            </div>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-tools me-2"></i>Cadres utilisés</h5>
+          <ul>
+            <li><strong>SMART+</strong> : Spécifique, Mesurable, Atteignable, Réaliste, Temporel + Synergique</li>
+            <li><strong>OKR</strong> (Objectives and Key Results)</li>
+            <li><strong>Balanced Scorecard</strong> (perspectives multiples)</li>
+            <li>Arbre d'objectifs (logique moyens-fins)</li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
+          <div class="warning-box">
+            <p><strong>Objectifs flous ou contradictoires</strong> → confusion dans l'exécution</p>
+            <p><strong>KPIs insuffisants ou non mesurables</strong> → impossibilité de suivre les progrès</p>
+            <p><strong>Sous-estimation des interdépendances</strong> → effets secondaires négatifs</p>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
+          <div class="tip-box">
+            <p><strong>Exemple transformationnel :</strong> "Réduire concentration Abidjan + stimuler croissance régionale" → KPI : % PIB hors Abidjan, création d'emplois régionaux</p>
+            <p><strong>Technique :</strong> Objectifs en cascade - du national au local avec indicateurs adaptés</p>
+          </div>
+          
+          <div class="mt-4">
+            <h6><i class="bi bi-graph-up me-2"></i>Impact mesurable</h6>
+            <p>Objectifs SMART augmentent la probabilité de succès de <strong>70%</strong></p>
+            <div class="impact-meter">
+              <div class="impact-indicator" style="left: 70%">
+                <div class="impact-value">+70% succès</div>
+              </div>
+            </div>
+            <small>Étude : 92% des projets avec objectifs clairs atteignent >80% de leurs cibles</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Étape 4 -->
+<div id="etape4" class="step-card">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <span class="step-number">4</span>
+        <h4 class="d-inline mb-0">Génération de solutions créatives intégratives</h4>
+      </div>
+      <span class="badge bg-primary">Créativité</span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5><i class="bi bi-target me-2"></i>Objectif</h5>
+          <p>Concevoir solutions <strong>supérieures à la somme des parties</strong>, créant +200% win-win++ pour toutes les parties prenantes.</p>
+          
+          <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
+          <div class="checklist-item">
+            <input type="checkbox" id="check4-1"> 
+            <label for="check4-1">Générer ≥3 alternatives pour chaque problème</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check4-2"> 
+            <label for="check4-2">Vérifier impact sur toutes parties prenantes</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check4-3"> 
+            <label for="check4-3">Évaluer faisabilité et durabilité de chaque solution</label>
+          </div>
+          
+          <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist4')">
+            <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
+          </button>
+          
+          <div id="checklist4" style="display: none;">
+            <div class="checklist-item">
+              <input type="checkbox" id="check4-4"> 
+              <label for="check4-4">Rechercher innovations technologiques, organisationnelles et sociales</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check4-5"> 
+              <label for="check4-5">Tester l'effet synergique (1+1=3+)</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check4-6"> 
+              <label for="check4-6">Intégrer principes d'économie circulaire et régénérative</label>
+            </div>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-tools me-2"></i>Techniques de créativité</h5>
+          <ul>
+            <li><strong>Brainstorming avec contraintes inversées</strong></li>
+            <li><strong>REX internationaux</strong> (Chili, Norvège, Ghana, Rwanda)</li>
+            <li>Design thinking avec prototypage rapide</li>
+            <li>Scénarios "Et si..." extrêmes</li>
+            <li>Analogies inter-sectorielles</li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
+          <div class="warning-box">
+            <p><strong>Se limiter à compromis</strong> → valeur maximale non atteinte</p>
+            <p><strong>Ignorer faisabilité financière ou sociale</strong> → solutions théoriques non applicables</p>
+            <p><strong>Biais de groupe</strong> → pensée unique, manque de diversité d'idées</p>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
+          <div class="tip-box">
+            <p><strong>Exemple transformationnel :</strong> "Décentralisation industrielle + hubs régionaux" → emploi + infrastructures + innovation → +200% impact économique et social</p>
+            <p><strong>Technique :</strong> Matrice 2x2 pour combiner solutions opposées</p>
+            <p><strong>REX Chili :</strong> Fonds souverain + innovation sociale = stabilité + croissance inclusive</p>
+          </div>
+          
+          <div class="mt-4">
+            <h6><i class="bi bi-bar-chart me-2"></i>Statistiques REX</h6>
+            <p>Solutions intégratives génèrent <strong>3.5x plus de valeur</strong> que les compromis</p>
+            <div class="progress progress-third-way">
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+            <small>90% des solutions Troisième Voie dépassent les attentes initiales vs 45% pour les compromis</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Étape 5 -->
+<div id="etape5" class="step-card">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <span class="step-number">5</span>
+        <h4 class="d-inline mb-0">Évaluation des risques et scénarios</h4>
+      </div>
+      <span class="badge bg-danger">Robustesse</span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5><i class="bi bi-target me-2"></i>Objectif</h5>
+          <p>Tester robustesse des solutions face aux <strong>chocs futurs</strong> et incertitudes, garantir l'anti-fragilité.</p>
+          
+          <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
+          <div class="checklist-item">
+            <input type="checkbox" id="check5-1"> 
+            <label for="check5-1">Identifier risques financiers, sociaux, politiques, climatiques</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check5-2"> 
+            <label for="check5-2">Créer scénarios optimiste, intermédiaire, crise</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check5-3"> 
+            <label for="check5-3">Stress-tests financiers et macroéconomiques</label>
+          </div>
+          
+          <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist5')">
+            <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
+          </button>
+          
+          <div id="checklist5" style="display: none;">
+            <div class="checklist-item">
+              <input type="checkbox" id="check5-4"> 
+              <label for="check5-4">Ajuster solutions selon résultats des tests</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check5-5"> 
+              <label for="check5-5">Évaluer impacts en cascade (effets domino)</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check5-6"> 
+              <label for="check5-6">Définir plans de contingence pour chaque scénario</label>
+            </div>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-tools me-2"></i>Méthodes d'évaluation</h5>
+          <ul>
+            <li><strong>Scenario Planning</strong> avec 3 horizons</li>
+            <li>Monte-Carlo simulations pour incertitudes</li>
+            <li>Analyse de sensibilité (what-if analysis)</li>
+            <li>Matrice probabilité-impact</li>
+            <li>War-gaming pour risques géopolitiques</li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
+          <div class="warning-box">
+            <p><strong>Ignorer risques indirects</strong> → vulnérabilités cachées</p>
+            <p><strong>Ne pas inclure scénarios extrêmes</strong> → préparation insuffisante aux crises</p>
+            <p><strong>Biais d'optimisme</strong> → sous-estimation des menaces</p>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
+          <div class="tip-box">
+            <p><strong>Exemple concret :</strong> CAISTAB 2.0 → stress-test prix cacao, solvabilité → stabilité revenus paysans même en crise</p>
+            <p><strong>Technique :</strong> "Pre-mortem" - imaginer l'échec pour identifier les faiblesses</p>
+            <p><strong>REX Norvège :</strong> Fonds pétrolier avec règles anti-cycliques = résilience face aux chocs</p>
+          </div>
+          
+          <div class="mt-4">
+            <h6><i class="bi bi-graph-up me-2"></i>Impact mesurable</h6>
+            <p>Évaluation complète réduit les dépassements de budget de <strong>50%</strong></p>
+            <div class="impact-meter">
+              <div class="impact-indicator" style="left: 50%">
+                <div class="impact-value">-50% dépassement</div>
+              </div>
+            </div>
+            <small>Solutions testées sur scénarios extrêmes : 85% de résilience vs 40% pour solutions non testées</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Étape 6 -->
+<div id="etape6" class="step-card">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <span class="step-number">6</span>
+        <h4 class="d-inline mb-0">Priorisation et planification</h4>
+      </div>
+      <span class="badge bg-primary">Exécution</span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5><i class="bi bi-target me-2"></i>Objectif</h5>
+          <p>Définir ordre de mise en œuvre selon impact, urgence et faisabilité, avec roadmap 3-5 ans.</p>
+          
+          <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
+          <div class="checklist-item">
+            <input type="checkbox" id="check6-1"> 
+            <label for="check6-1">Créer roadmap 3-5 ans avec phases claires</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check6-2"> 
+            <label for="check6-2">Définir responsabilités et ressources par phase</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check6-3"> 
+            <label for="check6-3">Identifier quick wins pour crédibilité initiale</label>
+          </div>
+          
+          <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist6')">
+            <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
+          </button>
+          
+          <div id="checklist6" style="display: none;">
+            <div class="checklist-item">
+              <input type="checkbox" id="check6-4"> 
+              <label for="check6-4">Définir jalons et points de contrôle</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check6-5"> 
+              <label for="check6-5">Équilibrer court terme (résultats) et long terme (transformation)</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check6-6"> 
+              <label for="check6-6">Créer plan de déploiement progressif (pilote → généralisation)</label>
+            </div>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-tools me-2"></i>Outils de priorisation</h5>
+          <ul>
+            <li><strong>Matrice Impact/Effort</strong> (quick wins vs grands projets)</li>
+            <li><strong>Roadmapping visuel</strong> avec dépendances</li>
+            <li>Value Stream Mapping pour optimisation flux</li>
+            <li>Cost-Benefit Analysis dynamique</li>
+            <li>Critères multi-niveaux (impact social, économique, environnemental)</li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
+          <div class="warning-box">
+            <p><strong>Priorisation basée sur politique plutôt que valeur réelle</strong> → sous-optimisation</p>
+            <p><strong>Ignorer interconnexions entre projets</strong> → conflits et redondances</p>
+            <p><strong>Surcharge des capacités</strong> → épuisement et échec</p>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
+          <div class="tip-box">
+            <p><strong>Exemple transformationnel :</strong> "Digitalisation marchés publics" → impact immédiat sur transparence + mobilisation ressources pour infrastructures</p>
+            <p><strong>Technique :</strong> Phasage en vagues successives avec apprentissage entre chaque</p>
+            <p><strong>REX Singapour :</strong> Transformation par étapes sur 30 ans avec réévaluation constante</p>
+          </div>
+          
+          <div class="mt-4">
+            <h6><i class="bi bi-bar-chart me-2"></i>Statistiques REX</h6>
+            <p>Roadmaps flexibles augmentent l'adaptabilité de <strong>60%</strong></p>
+            <div class="progress progress-third-way">
+              <div class="progress-bar" style="width: 60%"></div>
+            </div>
+            <small>Approches agiles : 75% d'efficacité vs 45% pour plans rigides en contexte incertain</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Étape 7 -->
+<div id="etape7" class="step-card">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <span class="step-number">7</span>
+        <h4 class="d-inline mb-0">Implémentation et suivi</h4>
+      </div>
+      <span class="badge bg-success">Action</span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5><i class="bi bi-target me-2"></i>Objectif</h5>
+          <p>Assurer <strong>exécution efficace et adaptabilité</strong> grâce à un suivi continu et réactif.</p>
+          
+          <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
+          <div class="checklist-item">
+            <input type="checkbox" id="check7-1"> 
+            <label for="check7-1">Mettre en place dashboard KPI temps réel</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check7-2"> 
+            <label for="check7-2">Revue trimestrielle + audits indépendants</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check7-3"> 
+            <label for="check7-3">Ajuster actions selon résultats et feedback</label>
+          </div>
+          
+          <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist7')">
+            <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
+          </button>
+          
+          <div id="checklist7" style="display: none;">
+            <div class="checklist-item">
+              <input type="checkbox" id="check7-4"> 
+              <label for="check7-4">Communiquer progrès aux parties prenantes</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check7-5"> 
+              <label for="check7-5">Mettre en place système d'alerte précoce</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check7-6"> 
+              <label for="check7-6">Adapter ressources selon besoins émergents</label>
+            </div>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-tools me-2"></i>Instruments de suivi</h5>
+          <ul>
+            <li><strong>Dashboard dynamique multi-KPIs</strong></li>
+            <li>Systèmes de reporting automatique</li>
+            <li>Réunions de cadence (hebdomadaires/mensuelles)</li>
+            <li>Tableaux de bord visuels (Kanban, Gantt)</li>
+            <li>Outils collaboratifs en temps réel</li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
+          <div class="warning-box">
+            <p><strong>Ne pas suivre KPIs</strong> → perte de contrôle et dérive</p>
+            <p><strong>Ignorer feedback terrain</strong> → déconnexion de la réalité</p>
+            <p><strong>Micro-management</strong> → étouffement de l'initiative</p>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
+          <div class="tip-box">
+            <p><strong>Exemple concret :</strong> Suivi CAISTAB 2.0 : ajustement automatique prix garanti → stabilité revenus paysans</p>
+            <p><strong>Technique :</strong> Management visuel avec codes couleurs (vert/orange/rouge)</p>
+            <p><strong>REX Estonie :</strong> Digitalisation complète avec suivi en temps réel = efficacité ×10</p>
+          </div>
+          
+          <div class="mt-4">
+            <h6><i class="bi bi-graph-up me-2"></i>Impact mesurable</h6>
+            <p>Suivi continu améliore la performance de <strong>45%</strong></p>
+            <div class="impact-meter">
+              <div class="impact-indicator" style="left: 45%">
+                <div class="impact-value">+45% performance</div>
+              </div>
+            </div>
+            <small>Projets avec dashboard temps réel : 80% dans les délais vs 55% sans suivi approprié</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Étape 8 -->
+<div id="etape8" class="step-card">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <span class="step-number">8</span>
+        <h4 class="d-inline mb-0">Capitalisation et apprentissage</h4>
+      </div>
+      <span class="badge bg-info">Savoir</span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5><i class="bi bi-target me-2"></i>Objectif</h5>
+          <p>Transformer résultats en <strong>savoir stratégique</strong> pour réplication et amélioration continue.</p>
+          
+          <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
+          <div class="checklist-item">
+            <input type="checkbox" id="check8-1"> 
+            <label for="check8-1">Recueillir feedback de toutes parties prenantes</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check8-2"> 
+            <label for="check8-2">Documenter réussites et échecs (post-mortem)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check8-3"> 
+            <label for="check8-3">Mettre à jour méthodologie et bonnes pratiques</label>
+          </div>
+          
+          <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist8')">
+            <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
+          </button>
+          
+          <div id="checklist8" style="display: none;">
+            <div class="checklist-item">
+              <input type="checkbox" id="check8-4"> 
+              <label for="check8-4">Créer bibliothèque de cas et leçons apprises</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check8-5"> 
+              <label for="check8-5">Former nouvelles équipes avec savoir accumulé</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check8-6"> 
+              <label for="check8-6">Intégrer REX internationaux dans référentiel</label>
+            </div>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-tools me-2"></i>Méthodes de capitalisation</h5>
+          <ul>
+            <li><strong>After Action Review (AAR)</strong> systématique</li>
+            <li>Communautés de pratique et partage</li>
+            <li>Base de connaissances interactive</li>
+            <li>Retours d'expérience structurés (RETEX)</li>
+            <li>Benchmarking comparatif</li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
+          <div class="warning-box">
+            <p><strong>Ne pas capitaliser</strong> → chaque cycle redémarre à zéro</p>
+            <p><strong>Omettre REX internationaux</strong> → réinvention de solutions existantes</p>
+            <p><strong>Documentation trop lourde</strong> → non-utilisation pratique</p>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
+          <div class="tip-box">
+            <p><strong>Exemples internationaux :</strong> Chili, Norvège : adaptation fonds souverains → leçons pour diversification industrielle ivoirienne</p>
+            <p><strong>Technique :</strong> "Learning loops" rapides (sprint → rétro → ajustement)</p>
+            <p><strong>REX Corée du Sud :</strong> Système national d'apprentissage = croissance rapide + adaptation</p>
+          </div>
+          
+          <div class="mt-4">
+            <h6><i class="bi bi-bar-chart me-2"></i>Statistiques REX</h6>
+            <p>Organisations apprenantes progressent <strong>2x plus vite</strong></p>
+            <div class="progress progress-third-way">
+              <div class="progress-bar" style="width: 100%"></div>
+            </div>
+            <small>100% des projets qui capitalisent améliorent leurs performances au cycle suivant</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Étape 9 -->
+<div id="etape9" class="step-card">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <span class="step-number">9</span>
+        <h4 class="d-inline mb-0">Boucle de rétroaction, résilience et innovation permanente</h4>
+      </div>
+      <span class="badge bg-dark">Perpétuel</span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5><i class="bi bi-target me-2"></i>Objectif</h5>
+          <p>Assurer <strong>résilience, adaptation continue et innovation systématique</strong> sur le long terme (2040+).</p>
+          
+          <h5 class="mt-4"><i class="bi bi-list-check me-2"></i>Checklist</h5>
+          <div class="checklist-item">
+            <input type="checkbox" id="check9-1"> 
+            <label for="check9-1">Dashboard dynamique multi-KPI avec alertes automatiques</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check9-2"> 
+            <label for="check9-2">Revue semestrielle pour ajustement stratégique</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check9-3"> 
+            <label for="check9-3">Identifier innovations et opportunités à chaque cycle</label>
+          </div>
+          
+          <button class="btn btn-third-way mt-3" onclick="toggleChecklist('checklist9')">
+            <i class="bi bi-chevron-down me-1"></i>Voir toute la checklist
+          </button>
+          
+          <div id="checklist9" style="display: none;">
+            <div class="checklist-item">
+              <input type="checkbox" id="check9-4"> 
+              <label for="check9-4">Documenter impacts pour apprentissage futur</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check9-5"> 
+              <label for="check9-5">Intégrer scénarios 2040 : optimiste, intermédiaire, crise</label>
+            </div>
+            <div class="checklist-item">
+              <input type="checkbox" id="check9-6"> 
+              <label for="check9-6">Créer mécanismes d'auto-adaptation systémique</label>
+            </div>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-tools me-2"></i>Systèmes d'innovation</h5>
+          <ul>
+            <li><strong>Culture d'expérimentation</strong> (10% budget innovation)</li>
+            <li>Laboratoires d'innovation régionaux</li>
+            <li>Veille technologique et sociale permanente</li>
+            <li>Réseaux d'échange inter-secteurs</li>
+            <li>Incubateurs et accélérateurs</li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Warnings / Pièges</h5>
+          <div class="warning-box">
+            <p><strong>Ignorer signaux faibles</strong> → perte d'anticipation et réactivité</p>
+            <p><strong>Ne pas réévaluer régulièrement KPIs</strong> → obsolescence des indicateurs</p>
+            <p><strong>Routine et bureaucratie</strong> → étouffement de l'innovation</p>
+          </div>
+          
+          <h5 class="mt-4"><i class="bi bi-lightbulb me-2"></i>Tips / REX</h5>
+          <div class="tip-box">
+            <p><strong>Exemple systémique :</strong> Ajustement CAISTAB + hubs régionaux + digitalisation → résilience et innovation permanente</p>
+            <p><strong>Technique :</strong> "Horizon scanning" pour détection précoce des tendances</p>
+            <p><strong>REX Finlande :</strong> Système éducatif en évolution permanente = adaptation continue</p>
+          </div>
+          
+          <div class="mt-4">
+            <h6><i class="bi bi-graph-up me-2"></i>Impact mesurable</h6>
+            <p>Systèmes apprenants génèrent <strong>200% d'innovation</strong> supplémentaire sur 3 cycles</p>
+            <div class="impact-meter">
+              <div class="impact-indicator" style="left: 75%">
+                <div class="impact-value">+200% innovation</div>
+              </div>
+            </div>
+            <small>75% des organisations avec boucle permanente atteignent l'innovation systémique après 3 cycles</small>
+          </div>
+          
+          <div class="alert alert-info mt-4">
+            <h6><i class="bi bi-stars me-2"></i>Vision stratégique finale</h6>
+            <p class="mb-1"><strong>Principe clé :</strong> solutions +200% win-win++, durables et inclusives</p>
+            <p class="mb-0"><strong>Objectif ultime :</strong> créer un système résilient, adaptable, anti-fragile, générateur d'innovation et de prospérité partagée jusqu'en 2040 et au-delà</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+	  
+	  
     </section>
 
     <!-- Dashboard Section -->
@@ -778,7 +1479,7 @@
         </div>
         
         <div class="col-md-4">
-          <div class="dashboard-card mb-4">
+          <div >
             <h5><i class="bi bi-calendar-check me-2"></i>Prochaines Échéances</h5>
             <ul class="list-group list-group-flush">
               <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -795,8 +1496,10 @@
               </li>
             </ul>
           </div>
-          
-          <div class="dashboard-card">
+		    
+			
+          <br>
+          <div >
             <h5><i class="bi bi-people me-2"></i>Parties Prenantes Engagées</h5>
             <div class="mt-3">
               <div class="d-flex align-items-center mb-3">
