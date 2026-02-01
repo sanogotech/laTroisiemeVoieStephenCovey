@@ -2412,13 +2412,16 @@
             "Durabilité & Anti-Fragilité": "badge-durabilite"
         };
 
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
+		// Modifier la fonction shuffleArray pour qu'elle mélange aussi les options de chaque question
+		function shuffleArray(array) {
+			const newArray = [...array];
+			for (let i = newArray.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+			}
+			return newArray;
+		}
+
 
         function filterQuestionsByDomain() {
             const domains = {
@@ -2474,85 +2477,94 @@
             resultsModal.hide();
         }
 
-        function displayQuestion(index) {
-            explanationBoxEl.classList.add('d-none');
-            tipBoxEl.classList.add('d-none');
-            
-            const question = questions[index];
-            questionTextEl.textContent = question.question;
-            
-            thematicBadgeEl.textContent = question.thematic;
-            thematicBadgeEl.className = 'thematic-badge';
-            thematicBadgeEl.classList.add(badgeClasses[question.thematic] || 'badge-principe');
-            
-            optionsContainerEl.innerHTML = '';
-            
-            question.options.forEach(optionText => {
-                const button = document.createElement('button');
-                button.textContent = optionText;
-                button.classList.add('btn', 'option-btn');
-                button.onclick = () => selectAnswer(button, optionText, index);
-                optionsContainerEl.appendChild(button);
-            });
-            
-            updateNavigation();
-            updateProgressBar();
-            
-            if (userAnswers[index] !== null) {
-                showAnswerFeedback(index);
-            }
-        }
+		// Modifier la fonction displayQuestion pour mélanger les options
+		function displayQuestion(index) {
+			explanationBoxEl.classList.add('d-none');
+			tipBoxEl.classList.add('d-none');
+			
+			const question = questions[index];
+			questionTextEl.textContent = question.question;
+			
+			thematicBadgeEl.textContent = question.thematic;
+			thematicBadgeEl.className = 'thematic-badge';
+			thematicBadgeEl.classList.add(badgeClasses[question.thematic] || 'badge-principe');
+			
+			optionsContainerEl.innerHTML = '';
+			
+			// MÉLANGE DES OPTIONS - CORRECTION DU BUG
+			// Créer une copie des options et les mélanger
+			const shuffledOptions = shuffleArray([...question.options]);
+			
+			shuffledOptions.forEach(optionText => {
+				const button = document.createElement('button');
+				button.textContent = optionText;
+				button.classList.add('btn', 'option-btn');
+				button.onclick = () => selectAnswer(button, optionText, index);
+				optionsContainerEl.appendChild(button);
+			});
+			
+			updateNavigation();
+			updateProgressBar();
+			
+			if (userAnswers[index] !== null) {
+				showAnswerFeedback(index);
+			}
+		}
         
-        function selectAnswer(button, selectedAnswer, questionIndex) {
-            if (userAnswers[questionIndex] !== null) return;
-            
-            const question = questions[questionIndex];
-            const isCorrect = selectedAnswer === question.correctAnswer;
-            
-            userAnswers[questionIndex] = {
-                selected: selectedAnswer,
-                correct: question.correctAnswer,
-                isCorrect: isCorrect
-            };
-            
-            if(isCorrect) {
-                score++;
-            }
-            updateScoreDisplay();
-            showAnswerFeedback(questionIndex);
-        }
+     // Modifier la fonction selectAnswer pour gérer le bon choix malgré le mélange
+	function selectAnswer(button, selectedAnswer, questionIndex) {
+		if (userAnswers[questionIndex] !== null) return;
+		
+		const question = questions[questionIndex];
+		const isCorrect = selectedAnswer === question.correctAnswer;
+		
+		userAnswers[questionIndex] = {
+			selected: selectedAnswer,
+			correct: question.correctAnswer,
+			isCorrect: isCorrect
+		};
+		
+		if(isCorrect) {
+			score++;
+		}
+		updateScoreDisplay();
+		showAnswerFeedback(questionIndex);
+	}
 
-        function showAnswerFeedback(index) {
-            const userAnswer = userAnswers[index];
-            if (!userAnswer) return;
+		
+		// Modifier la fonction showAnswerFeedback pour trouver la bonne réponse parmi les options mélangées
+		function showAnswerFeedback(index) {
+			const userAnswer = userAnswers[index];
+			if (!userAnswer) return;
 
-            const question = questions[index];
+			const question = questions[index];
 
-            const optionButtons = optionsContainerEl.querySelectorAll('.option-btn');
-            optionButtons.forEach(btn => {
-                btn.disabled = true;
-                if (btn.textContent === userAnswer.correct) {
-                    btn.classList.add('correct');
-                } else if (btn.textContent === userAnswer.selected) {
-                    btn.classList.add('incorrect');
-                }
-            });
+			const optionButtons = optionsContainerEl.querySelectorAll('.option-btn');
+			optionButtons.forEach(btn => {
+				btn.disabled = true;
+				// CORRECTION : Comparer avec la bonne réponse stockée dans userAnswer.correct
+				if (btn.textContent === userAnswer.correct) {
+					btn.classList.add('correct');
+				} else if (btn.textContent === userAnswer.selected) {
+					btn.classList.add('incorrect');
+				}
+			});
 
-            explanationTextEl.textContent = question.explanation;
-            if (userAnswer.isCorrect) {
-                explanationTitleEl.textContent = "✅ Correct ! Connaissance validée";
-                explanationBoxEl.className = 'explanation-correct';
-            } else {
-                explanationTitleEl.textContent = "💡 À retenir pour devenir Maître Praticien";
-                explanationBoxEl.className = 'explanation-incorrect';
-            }
-            explanationBoxEl.classList.remove('d-none');
-            
-            if (question.tip) {
-                tipTextEl.textContent = question.tip;
-                tipBoxEl.classList.remove('d-none');
-            }
-        }
+			explanationTextEl.textContent = question.explanation;
+			if (userAnswer.isCorrect) {
+				explanationTitleEl.textContent = "✅ Correct ! Connaissance validée";
+				explanationBoxEl.className = 'explanation-correct';
+			} else {
+				explanationTitleEl.textContent = "💡 À retenir pour devenir Maître Praticien";
+				explanationBoxEl.className = 'explanation-incorrect';
+			}
+			explanationBoxEl.classList.remove('d-none');
+			
+			if (question.tip) {
+				tipTextEl.textContent = question.tip;
+				tipBoxEl.classList.remove('d-none');
+			}
+		}
 
         function updateNavigation() {
             prevBtn.disabled = currentQuestionIndex === 0;
